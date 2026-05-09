@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbddc7c2a6687d42aff9c99ee69afbc, type: 3}
   m_Name: Placeholder red
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Red
-  itemPrefab: {fileID: 0}
+  itemName: PlaceHolderR
+  itemPrefab: {fileID: 4231018610271980203, guid: 77365c2c9cdf349469437ffd80b8f985, type: 3}
+  itemOffset: {x: 0, y: 0.25, z: 0}
+  itemScale: {x: 0.5, y: 0.5, z: 0.5}
+  relativeScale: 1
   itemSprite: {fileID: 21300000, guid: 1ccb74efa3ef63547bba000d2649efdf, type: 3}
   itemSpriteColor: {r: 1, g: 0, b: 0, a: 1}
   flipX: 0

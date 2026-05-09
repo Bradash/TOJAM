@@ -1,17 +1,21 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class ItemDisplay : MonoBehaviour
 {
     public TMPro.TMP_Text locationText;
     public string location;
-    public ItemData item;
+    [FormerlySerializedAs("item")] public ItemData itemData;
     public Transform itemPosition;
     public Transform itemParent;
-    
+    public bool storeDisplay = true;
+    public bool generateRandom = true;
+
+    private Item item;
     private GameObject itemObject;
-    private Transform itemTransform;
+    //private Transform itemTransform;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
@@ -23,99 +27,107 @@ public class ItemDisplay : MonoBehaviour
             itemParent.SetParent(transform);
             itemParent.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
-            
+
+        if (generateRandom)
+        {
+            itemData = ItemSystem.Instance.GetRandomItem(storeDisplay);
+        }
+
+        if (itemData)
+        {
+            CreateItem();
+        }
         Display();
     }
 
+    public void CreateItem()
+    {
+        string destination = location;
+        if (!storeDisplay)
+            destination = ItemSystem.Instance.GetRandomAvailableDisplay();
+ 
+        itemObject = Instantiate(itemData.itemPrefab);
+        item = itemObject.GetComponent<Item>();
+        item.itemDestination  = destination;
+        item.storeItem = storeDisplay;
+        UpdateTransform();
+        itemObject.name = itemData.itemName;
+
+    }
     private void Display()
     {
         if(locationText)
             locationText.text = location;
-        if (item == null)
-        {
-            RemoveItem();
-            return;
-        }
+        
         if (!itemParent)
         {
             itemParent = new GameObject("ItemParent").transform;
             itemParent.SetParent(transform);
             itemParent.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
-        if (itemObject == null)
-        {
-            if (itemParent.childCount > 0)
-            {
-                itemObject = itemParent.GetChild(0).gameObject;
-            }
-        }
-        if (itemObject != null)
-        {
-            if (item.itemName == itemObject.name)
-            {
-                UpdateTransform(true);
-                return;
-            }
-            RemoveItem();
-        }
-        if(item.itemPrefab == null)
-            return;
-        itemObject = Instantiate(item.itemPrefab);
-        UpdateTransform();
-        itemObject.name = item.itemName;
 
+        if (!itemObject) return;
+        UpdateTransform(true);
     }
-
+    
     private void UpdateTransform(bool update = false)
     {
         if(!itemPosition)
             itemPosition = transform;
-        itemTransform = itemObject.transform;
+        Transform itemTransform = itemObject.transform;
         if (update)
             itemTransform.parent = null;
-        switch (item.relativeScale)
+        switch (itemData.relativeScale)
         {
             // set scale before parent to set global scale
             case true when !update:
-                itemTransform.localScale.Scale(item.itemScale);
+                itemTransform.localScale.Scale(itemData.itemScale);
                 break;
             case false:
-                itemTransform.localScale = item.itemScale;
+                itemTransform.localScale = itemData.itemScale;
                 break;
         }
 
-        itemTransform.localScale = item.itemScale;
+        //itemTransform.localScale = itemData.itemScale;
         itemTransform.SetParent(itemParent,true);
         itemTransform.localRotation = Quaternion.identity;
-        itemTransform.position = itemPosition.position + item.itemOffset;
+        itemTransform.position = itemPosition.position + itemData.itemOffset;
     }
     private void RemoveItem()
     {
-        if (itemObject == null) return;
-        if (Application.isPlaying)
-            Destroy(itemObject);
-        else
-            DestroyImmediate(itemObject);
         itemObject = null;
-        item = null;
+        itemData = null;
     }
 
-    public ItemData TakeItem()
+    public bool TryTakeItem(out Item item)
     {
-        if (item == null) return null;
-        ItemData getItem = item;
+        item = this.item;
+        if (this.item == null) return false;
         RemoveItem();
         Display();
-        return getItem;
+        return true;
     }
 
-    public ItemData ReplaceItem(ItemData newItem)
+    public bool TryReplaceItem(Item swapItem, out Item takeItem )
     {
-        ItemData oldItem = item;
-        item = newItem;
-        RemoveItem();
+        if (!swapItem || swapItem.itemDestination != location)
+        {
+            takeItem = null;
+            return false;
+        }
+        takeItem = item;
+        if (takeItem)
+        {
+            takeItem.transform.parent = null;
+            takeItem.gameObject.SetActive(false);
+        }
+        
+        item = swapItem;
+        itemData = swapItem.itemData;
+        itemObject = item.gameObject;
+        itemObject.SetActive(true);
         Display();
-        return oldItem;
+        return true;
     }
 
     private void OnValidate()

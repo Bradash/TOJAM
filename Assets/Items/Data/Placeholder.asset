@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbddc7c2a6687d42aff9c99ee69afbc, type: 3}
   m_Name: Placeholder
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: PlaceHolder
+  itemName: PlaceHolderW
+  itemPrefab: {fileID: 5850170396350786782, guid: 19b1a7e0e75e99d43be36e0f7e9f8929, type: 3}
+  itemOffset: {x: 0, y: 0.25, z: 0}
+  itemScale: {x: 0.5, y: 0.5, z: 0.5}
+  relativeScale: 1
   itemSprite: {fileID: 21300000, guid: 1ccb74efa3ef63547bba000d2649efdf, type: 3}
-  itemColor: {r: 1, g: 1, b: 1, a: 1}
+  itemSpriteColor: {r: 1, g: 1, b: 1, a: 1}
   flipX: 1
   flipY: 0

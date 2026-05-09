@@ -1,0 +1,68 @@
+using UnityEngine;
+
+public class ItemInteraction : MonoBehaviour
+{
+    private Camera mainCamera;
+    private Vector3 pos;
+    
+    public LayerMask layerMask;
+    public float interactionDistance;
+    public QueryTriggerInteraction queryTriggerInteraction;
+    
+    public ItemInventory  itemInventory;
+
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        mainCamera = Camera.main;
+        pos = new Vector3(0.5f, 0.5f, 0);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            if (Input.mouseScrollDelta.y > 0)
+                itemInventory.SelectNextSlot();
+            else
+                itemInventory.SelectPrevSlot();
+        }
+        if (Input.GetMouseButton(0))
+        {
+            Ray ray = mainCamera.ViewportPointToRay(pos);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, interactionDistance, layerMask, queryTriggerInteraction))
+            {
+                ItemDisplay itemDisplay;
+                if (hit.collider.TryGetComponent<ItemDisplay>(out itemDisplay))
+                {
+                    ReplaceItemInInventory(itemDisplay);
+                    return;
+                }
+                if (hit.collider.TryGetComponent<Item>(out Item item))
+                {
+                    if (item.TryGetItemDisplay(out itemDisplay))
+                    {
+                        ReplaceItemInInventory(itemDisplay);
+                        return;
+                    }
+
+                    itemInventory.SetItem(item);
+                }
+            }
+        }
+    }
+
+    private void ReplaceItemInInventory(ItemDisplay itemDisplay)
+    {
+        Item item = itemInventory.GetSelectedItem();
+        if (!itemDisplay.TryReplaceItem(item, out Item takeItem)) return;
+        if (takeItem)
+        {
+            itemInventory.SetItemInSelectedSlot(takeItem);
+        }
+    }
+}

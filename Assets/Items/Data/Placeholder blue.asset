@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bbddc7c2a6687d42aff9c99ee69afbc, type: 3}
-  m_Name: Placeholder red
+  m_Name: Placeholder blue
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: 
+  itemName: Blue
+  itemPrefab: {fileID: 0}
   itemSprite: {fileID: 21300000, guid: 1ccb74efa3ef63547bba000d2649efdf, type: 3}
-  itemColor: {r: 1, g: 0, b: 0, a: 1}
+  itemSpriteColor: {r: 0, g: 0, b: 1, a: 1}
   flipX: 0
   flipY: 0

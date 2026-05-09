@@ -32,6 +32,7 @@ public class EnemyStateChase : EnemyState
             _thrower = Enemy.GetComponent<EnemyThrow>();
 
         Agent.SetDestination(Enemy.target.position);
+        Enemy.enemySound.foundSound();
     }
 
     public override void Tick()

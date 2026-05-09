@@ -13,6 +13,8 @@ public class FPSController : MonoBehaviour
     private float verticalRotation;
     private CharacterController characterController;
 
+    [SerializeField] FootSteps footSteps;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -29,6 +31,15 @@ public class FPSController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal") * walkSpeed;
         float verticalInput = Input.GetAxis("Vertical") * walkSpeed;
+
+        if (horizontalInput != 0 || verticalInput != 0)
+        {
+            footSteps.isWalking = true;
+        }
+        else
+        {
+            footSteps.isWalking = false;
+        }
 
         Vector3 speed = new Vector3(horizontalInput, 0, verticalInput) * walkSpeed;
         speed = transform.rotation * speed;

@@ -9,8 +9,9 @@ public class EnemyVision : MonoBehaviour
     [Header("Vision")]
     [Tooltip("Maximum detection range in world units.")]
     public float viewDistance = 12f;
+    public float soundDistance = 3f;
 
-[Tooltip("Horizontal cone width in degrees (e.g. 90 = 45 degrees left and right).")]
+    [Tooltip("Horizontal cone width in degrees (e.g. 90 = 45 degrees left and right).")]
     [Range(0f, 360f)]
     public float fieldOfView = 90f;
 
@@ -37,6 +38,7 @@ public class EnemyVision : MonoBehaviour
         Vector3 toTarget = aimPoint - origin;
         float   distance = toTarget.magnitude;
 
+        if (distance < soundDistance) return true;
         if (distance > viewDistance) return false;
 
         // ── Horizontal FOV check (XZ plane) ──
@@ -92,6 +94,29 @@ public class EnemyVision : MonoBehaviour
             Gizmos.color = new Color(0f, 0.85f, 1f, 0.35f);
             Gizmos.DrawLine(prev, cur);
             prev = cur;
+        }
+
+        // Sound boundary rays
+        Quaternion lSRot = Quaternion.AngleAxis(-360 * 0.5f, Vector3.up);
+        Quaternion rSRot = Quaternion.AngleAxis(360 * 0.5f, Vector3.up);
+        Vector3 lSDir = lSRot * fwd * soundDistance;
+        Vector3 rSDir = rSRot * fwd * soundDistance;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(origin, lSDir);
+        Gizmos.DrawRay(origin, rSDir);
+
+        // Sound arc
+        Vector3 prevS = origin + lSDir;
+        for (int i = 1; i <= segments; i++)
+        {
+            float t = (float)i / segments;
+            float ang = Mathf.Lerp(-360 * 0.5f, 360 * 0.5f, t);
+            Vector3 dir = Quaternion.AngleAxis(ang, Vector3.up) * fwd;
+            Vector3 cur = origin + dir * soundDistance;
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(prevS, cur);
+            prevS = cur;
         }
 
         // Vertical boundary rays (up and down)

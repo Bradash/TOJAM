@@ -50,10 +50,15 @@ public class EnemyAI : MonoBehaviour
     EnemyStateChase   _chaseState;
     EnemyStateSearch  _searchState;
 
+    //Sound
+    public EnemySound enemySound { get; private set; }
+
     void Awake()
     {
         Agent  = GetComponent<NavMeshAgent>();
         Vision = GetComponent<EnemyVision>();
+
+        enemySound = GetComponent<EnemySound>();
 
         _wanderState = new EnemyStateWander(this);
         _chaseState  = new EnemyStateChase(this);

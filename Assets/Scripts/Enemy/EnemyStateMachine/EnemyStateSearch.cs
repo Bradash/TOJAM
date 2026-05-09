@@ -31,6 +31,7 @@ public class EnemyStateSearch : EnemyState
         _reachedLastKnown = false;
 
         Agent.SetDestination(Enemy.LastKnownPlayerPosition);
+        Enemy.enemySound.suspiciousSound();
     }
 
     public override void Tick()

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ItemInteraction : MonoBehaviour
@@ -10,6 +11,7 @@ public class ItemInteraction : MonoBehaviour
     public QueryTriggerInteraction queryTriggerInteraction;
     
     public ItemInventory  itemInventory;
+    public static event Action OnStoreSwapCompleted;
 
 
 
@@ -37,6 +39,13 @@ public class ItemInteraction : MonoBehaviour
             Ray ray = mainCamera.ViewportPointToRay(pos);
             RaycastHit hit;
             if (!Physics.Raycast(ray, out hit, interactionDistance, layerMask, queryTriggerInteraction)) return;
+            if (hit.collider.CompareTag("Car"))
+            {
+                if (itemInventory.TryRemoveSelectedStoreItem())
+                {
+                    OnStoreSwapCompleted?.Invoke();
+                }   
+            }
             ItemDisplay itemDisplay;
             if (hit.collider.TryGetComponent<ItemDisplay>(out itemDisplay))
             {

@@ -94,6 +94,19 @@ public class ItemInventory : MonoBehaviour
     {
         return (slots[selectedItemSlot].item, selectedItemSlot);
     }
+
+    public bool TryRemoveSelectedStoreItem()
+    {
+        InventorySlot inventorySlot = slots[selectedItemSlot];
+        if (inventorySlot.HasItem && inventorySlot.item.storeItem)
+        {
+            Destroy(inventorySlot.item.gameObject);
+            inventorySlot.item = null;
+            InventoryUpdated(inventorySlot);
+            return true;
+        }
+        return false;
+    }
     public bool TryRemoveItemInSlot(int slot)
     {
         if (slots[slot] == null)

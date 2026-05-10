@@ -5,6 +5,12 @@ using UnityEngine.Serialization;
 
 public class ItemDisplay : MonoBehaviour
 {
+    /// <summary>
+    /// Fires when a swap-item is successfully placed into a store display
+    /// at its correct destination. Used by GameManager to count win progress.
+    /// </summary>
+    public static event Action<ItemDisplay> OnStoreSwapCompleted;
+
     public TMPro.TMP_Text locationText;
     public string location;
     public ItemData itemData;
@@ -144,6 +150,9 @@ public class ItemDisplay : MonoBehaviour
         itemObject = item.gameObject;
         itemObject.SetActive(true);
         Display();
+
+        if (storeDisplay)
+            OnStoreSwapCompleted?.Invoke(this);
 
         return true;
     }

@@ -23,6 +23,8 @@ public class ItemInteraction : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (Time.timeScale == 0f) return;
+
         if (Input.mouseScrollDelta.y != 0)
         {
             if (Input.mouseScrollDelta.y > 0)

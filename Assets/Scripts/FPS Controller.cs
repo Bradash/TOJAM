@@ -24,6 +24,10 @@ public class FPSController : MonoBehaviour
 
     private void Update()
     {
+        // Mouse look uses Input directly and would still rotate during a paused
+        // (timeScale = 0) game-over screen — gate the whole controller.
+        if (Time.timeScale == 0f) return;
+
         HandleMovement();
         HandleRotation();
     }

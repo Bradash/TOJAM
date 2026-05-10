@@ -3,7 +3,7 @@ using UnityEngine;
 public class FootSteps : MonoBehaviour
 {
     AudioSource audioSource;
-    [SerializeField]     AudioClip[] audioClips;
+    [SerializeField]  AudioClip[] audioClips;
     public bool isWalking = false;
     private void Awake()
     {

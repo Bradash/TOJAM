@@ -55,8 +55,9 @@ public class ItemInteraction : MonoBehaviour
 
     private void ReplaceItemInInventory(ItemDisplay itemDisplay)
     {
-        Item item = itemInventory.GetSelectedItem();
+        (Item item, int slot) = itemInventory.GetSelectedItem();
         if (!itemDisplay.TryReplaceItem(item, out Item takeItem)) return;
+        itemInventory.TryRemoveItemInSlot(slot);
         if (takeItem)
         {
             itemInventory.SetItemInSelectedSlot(takeItem);

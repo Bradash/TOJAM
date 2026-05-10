@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class ItemInventory : MonoBehaviour
@@ -9,6 +10,7 @@ public class ItemInventory : MonoBehaviour
     public int selectedItemSlot = 0;
     public TMP_Text destText;
     private Item selectedItem;
+    [SerializeField] FPSController fpsController;
 
     private void Start()
     {
@@ -24,7 +26,7 @@ public class ItemInventory : MonoBehaviour
             }
             slots[i].itemUI.SelectedUIObject.SetActive(slot == i);
         }
-        selectedItem = GetSelectedItem();
+        (selectedItem,_) = GetSelectedItem();
         if (!destText) return;
         if (selectedItem)
         {
@@ -64,14 +66,52 @@ public class ItemInventory : MonoBehaviour
         item.gameObject.SetActive(false);
         item.transform.parent = null;
         item.itemDisplay = null;
+        InventoryUpdated(slots[slot]);
         return true;
+    }
+
+    public void SetWeightCarried() {   
+        float weight = 0;
+        foreach (var slot in slots)
+        {
+            if (slot.HasItem)
+                weight += 1;
+        }
+        fpsController.weightCarried = weight;
     }
 
     public bool SetItemInSelectedSlot(Item item) => SetItemInSlot(selectedItemSlot, item);
 
-    public Item GetSelectedItem()
+    public (Item item, int slot) GetSelectedItem()
     {
-        return slots[selectedItemSlot].item;
+        return (slots[selectedItemSlot].item, selectedItemSlot);
+    }
+    public bool TryRemoveItemInSlot(int slot)
+    {
+        if (slots[slot] == null)
+        {
+            return false;
+        }
+        
+        if (!slots[slot].HasItem)
+            return false;
+        slots[slot].item = null;
+        slots[slot].itemUI.UpdateImage();
+        InventoryUpdated(slots[slot]);
+        return true;
+    }
+
+    private void InventoryUpdated(InventorySlot slot)
+    {
+        if (slot.HasItem)
+        {
+            slot.itemUI.UpdateImage();
+        }
+        else
+        {
+            slot.itemUI.UpdateImage(slot.item.itemData);
+        }
+        SetWeightCarried();
     }
 
     public bool TryRemoveItemInSlot(int slot, out Item item)

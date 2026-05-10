@@ -14,9 +14,11 @@ public class FPSController : MonoBehaviour
     private CharacterController characterController;
 
     [SerializeField] FootSteps footSteps;
+    public float weightCarried;
 
     private void Start()
     {
+        weightCarried = 1f;
         characterController = GetComponent<CharacterController>();
         mainCamera = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
@@ -39,6 +41,7 @@ public class FPSController : MonoBehaviour
         if (horizontalInput != 0 || verticalInput != 0)
         {
             footSteps.isWalking = true;
+            footSteps.footPitch = weightCarried * 0.1f;
         }
         else
         {
@@ -48,7 +51,7 @@ public class FPSController : MonoBehaviour
         Vector3 speed = new Vector3(horizontalInput, 0, verticalInput) * walkSpeed;
         speed = transform.rotation * speed;
 
-        characterController.SimpleMove(speed);
+        characterController.SimpleMove(speed/weightCarried);
     }
     void HandleRotation()
     {

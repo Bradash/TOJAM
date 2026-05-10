@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bbddc7c2a6687d42aff9c99ee69afbc, type: 3}
+  m_Name: crate of tall cans RED
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemName: crate of tall cans RED
+  itemPrefab: {fileID: 7337940716063650194, guid: a66ee841650f10f43877f71aa5e071bd, type: 3}
+  itemOffset: {x: 0, y: 0, z: 0}
+  itemScale: {x: 1, y: 1, z: 1}
+  editScale: 0
+  itemSprite: {fileID: 0}
+  itemSpriteColor: {r: 1, g: 1, b: 1, a: 1}

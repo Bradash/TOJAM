@@ -27,6 +27,36 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Gas station light frame
+    second: {fileID: 2100000, guid: ff11e8b5a667eef449f47719da90044f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gas station pillar
+    second: {fileID: 2100000, guid: 30bceb42401c1e14389be9ef45e455fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gas station roof
+    second: {fileID: 2100000, guid: c2a8c184cecfd094c8959f9d39e0e17b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: b81640c0cff263d4fa1b56b196ca2164, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Petrol
+    second: {fileID: 2100000, guid: 7bff7be59da3a7a43ab2a6dc83ca7d57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Petrol platform
+    second: {fileID: 2100000, guid: e659c9435ff8ff54792c683501ce71aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Sign
     second: {fileID: 2100000, guid: 2ec5ae62e521a174eb49e3b571ede787, type: 2}
   - first:

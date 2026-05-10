@@ -16,6 +16,6 @@ MonoBehaviour:
   itemPrefab: {fileID: 3795032737087270871, guid: 945188cf5dc70f84b90fcef591863f63, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
   itemScale: {x: 1, y: 1, z: 1}
-  relativeScale: 1
+  editScale: 0
   itemSprite: {fileID: 21300000, guid: 09d0a9862e8b1e6408fd258c0ebfa866, type: 3}
   itemSpriteColor: {r: 1, g: 1, b: 1, a: 1}

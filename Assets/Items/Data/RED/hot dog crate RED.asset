@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: hot dog crate RED
   itemPrefab: {fileID: 6172007369845961082, guid: ed1096ab08c7ea24fafcd5eb259d2733, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
-  itemScale: {x: 1, y: 1, z: 1}
-  editScale: 0
+  itemScale: {x: 2, y: 2, z: 2}
+  editScale: 1
   itemSprite: {fileID: 0}
   itemSpriteColor: {r: 1, g: 1, b: 1, a: 1}

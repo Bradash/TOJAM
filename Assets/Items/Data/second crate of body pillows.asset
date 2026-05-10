@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: second crate of body pillows
   itemPrefab: {fileID: 127585471650273619, guid: cba8b8efe6d730c418d016eb82255647, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
-  itemScale: {x: 1, y: 1, z: 1}
-  relativeScale: 1
+  itemScale: {x: 2, y: 2, z: 2}
+  editScale: 1
   itemSprite: {fileID: 21300000, guid: 3de1c6241e8ec7943bd6fb9e037fc9c7, type: 3}
   itemSpriteColor: {r: 1, g: 1, b: 1, a: 1}

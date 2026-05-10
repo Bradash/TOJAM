@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: small crate of cereal
   itemPrefab: {fileID: 956476994414668145, guid: 37aa5e1cf037ca043a02defa9812d9b9, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
-  itemScale: {x: 1, y: 1, z: 1}
-  relativeScale: 1
+  itemScale: {x: 2, y: 2, z: 2}
+  editScale: 1
   itemSprite: {fileID: 21300000, guid: 923c225f88348c24d8ef3bb124076fab, type: 3}
   itemSpriteColor: {r: 1, g: 1, b: 1, a: 1}

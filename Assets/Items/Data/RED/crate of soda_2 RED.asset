@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: crate of soda_2 RED
   itemPrefab: {fileID: 3692545307412751367, guid: cd9263a5ca9a3ca43a81223fecccac99, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
-  itemScale: {x: 1, y: 1, z: 1}
-  editScale: 0
+  itemScale: {x: 2, y: 2, z: 2}
+  editScale: 1
   itemSprite: {fileID: 0}
   itemSpriteColor: {r: 1, g: 1, b: 1, a: 1}

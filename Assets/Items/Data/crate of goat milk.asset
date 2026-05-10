@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: crate of goat milk
   itemPrefab: {fileID: 4187058031444417467, guid: d72e9eb1336507248afcb3ba40a17380, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
-  itemScale: {x: 1, y: 1, z: 1}
-  relativeScale: 1
+  itemScale: {x: 1.9, y: 1.9, z: 1.9}
+  editScale: 1
   itemSprite: {fileID: 21300000, guid: ea00875fcda882f438d05a16fc37e12e, type: 3}
   itemSpriteColor: {r: 1, g: 1, b: 1, a: 1}

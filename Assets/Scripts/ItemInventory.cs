@@ -11,10 +11,18 @@ public class ItemInventory : MonoBehaviour
     public TMP_Text destText;
     private Item selectedItem;
     [SerializeField] FPSController fpsController;
-
+    public Color emptyColor;
     private void Start()
     {
         SelectSlot(selectedItemSlot);
+        foreach (var slot in slots)
+        {
+            if (slot == null)
+            {
+                throw new NullReferenceException("InventorySlot is null");
+            }
+            slot.itemUI.emptyColor = emptyColor;
+        }
     }
     public void SelectSlot(int slot)
     {
@@ -71,11 +79,11 @@ public class ItemInventory : MonoBehaviour
     }
 
     public void SetWeightCarried() {   
-        float weight = 0;
+        float weight = 1;
         foreach (var slot in slots)
         {
             if (slot.HasItem)
-                weight += 1;
+                weight += 0.5f;
         }
         fpsController.weightCarried = weight;
     }
@@ -103,7 +111,7 @@ public class ItemInventory : MonoBehaviour
 
     private void InventoryUpdated(InventorySlot slot)
     {
-        if (slot.HasItem)
+        if (!slot.HasItem)
         {
             slot.itemUI.UpdateImage();
         }
@@ -155,6 +163,7 @@ public class InventorySlot
 [Serializable]
 public class ItemUIData
 {
+    public Color emptyColor;
     public Image itemImage;
     public GameObject SelectedUIObject;
 
@@ -166,6 +175,6 @@ public class ItemUIData
     public void UpdateImage()
     {
         itemImage.sprite = null;
-        itemImage.color = Color.white;
+        itemImage.color = emptyColor;
     }
 }

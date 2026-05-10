@@ -1527,7 +1527,7 @@ Transform:
   m_GameObject: {fileID: 188676224}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.766, y: 0, z: -0.408}
+  m_LocalPosition: {x: 7.766, y: 0, z: -0.298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8213,6 +8213,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: adfc208fe92c0fe4eb4bf522a3fb95b6, type: 3}
   - {fileID: 8300000, guid: 91626f5b84ad2c14f9c1b201e267d3a1, type: 3}
   isWalking: 1
+  footPitch: 0
 --- !u!1 &1025510877
 GameObject:
   m_ObjectHideFlags: 0
@@ -9973,6 +9974,7 @@ MonoBehaviour:
   mouseSensitivity: 2
   upDownRange: 80
   footSteps: {fileID: 2124932519}
+  weightCarried: 0
 --- !u!143 &1218581013
 CharacterController:
   m_ObjectHideFlags: 0
@@ -11978,22 +11980,28 @@ MonoBehaviour:
   slots:
   - item: {fileID: 0}
     itemUI:
+      emptyColor: {r: 0, g: 0, b: 0, a: 0}
       itemImage: {fileID: 1705868550}
       SelectedUIObject: {fileID: 745531535}
   - item: {fileID: 0}
     itemUI:
+      emptyColor: {r: 0, g: 0, b: 0, a: 0}
       itemImage: {fileID: 1412954400}
       SelectedUIObject: {fileID: 1235028121}
   - item: {fileID: 0}
     itemUI:
+      emptyColor: {r: 0, g: 0, b: 0, a: 0}
       itemImage: {fileID: 78337402}
       SelectedUIObject: {fileID: 1619175604}
   - item: {fileID: 0}
     itemUI:
+      emptyColor: {r: 0, g: 0, b: 0, a: 0}
       itemImage: {fileID: 1962383099}
       SelectedUIObject: {fileID: 690280353}
   selectedItemSlot: 0
   destText: {fileID: 297210370}
+  fpsController: {fileID: 1218581012}
+  emptyColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1513340155
 Transform:
   m_ObjectHideFlags: 0
@@ -17667,6 +17675,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: adfc208fe92c0fe4eb4bf522a3fb95b6, type: 3}
   - {fileID: 8300000, guid: 91626f5b84ad2c14f9c1b201e267d3a1, type: 3}
   isWalking: 0
+  footPitch: 0
 --- !u!1 &711678052055393656
 GameObject:
   m_ObjectHideFlags: 0

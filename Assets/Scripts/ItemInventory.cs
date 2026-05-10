@@ -30,7 +30,8 @@ public class ItemInventory : MonoBehaviour
         {
             destText.text = selectedItem.storeItem ? "Car" : selectedItem.itemDestination;
         }
-        destText.text = selectedItem?.itemDestination ?? "";
+        else
+            destText.text = "";
     }
 
     public bool SetItem(Item item)

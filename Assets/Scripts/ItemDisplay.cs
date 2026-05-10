@@ -72,6 +72,7 @@ public class ItemDisplay : MonoBehaviour
         item = itemObject.GetComponent<Item>();
         item.itemDestination  = destination;
         item.storeItem = storeDisplay;
+        item.itemDisplay = this;
         UpdateTransform();
         itemObject.name = itemData.itemName;
 
@@ -123,7 +124,7 @@ public class ItemDisplay : MonoBehaviour
 
     public bool TryReplaceItem(Item swapItem, out Item takeItem )
     {
-        if (!swapItem || swapItem.itemDestination != location)
+        if (storeDisplay && (!swapItem || swapItem.itemDestination != location))
         {
             takeItem = null;
             return false;
@@ -133,13 +134,17 @@ public class ItemDisplay : MonoBehaviour
         {
             takeItem.transform.parent = null;
             takeItem.gameObject.SetActive(false);
+            takeItem.itemDisplay = null;
         }
         
         item = swapItem;
+        if (!item) return true;
+        item.itemDisplay = this;
         itemData = swapItem.itemData;
         itemObject = item.gameObject;
         itemObject.SetActive(true);
         Display();
+
         return true;
     }
 

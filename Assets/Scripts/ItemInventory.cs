@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,13 @@ public class ItemInventory : MonoBehaviour
 {
     public InventorySlot[] slots;
     public int selectedItemSlot = 0;
-    
+    public TMP_Text destText;
+    private Item selectedItem;
+
+    private void Start()
+    {
+        SelectSlot(selectedItemSlot);
+    }
     public void SelectSlot(int slot)
     {
         for (int i = 0; i < slots.Length; i++)
@@ -17,6 +24,13 @@ public class ItemInventory : MonoBehaviour
             }
             slots[i].itemUI.SelectedUIObject.SetActive(slot == i);
         }
+        selectedItem = GetSelectedItem();
+        if (!destText) return;
+        if (selectedItem)
+        {
+            destText.text = selectedItem.storeItem ? "Car" : selectedItem.itemDestination;
+        }
+        destText.text = selectedItem?.itemDestination ?? "";
     }
 
     public bool SetItem(Item item)
@@ -48,6 +62,7 @@ public class ItemInventory : MonoBehaviour
         slots[slot].itemUI.UpdateImage(item.itemData);
         item.gameObject.SetActive(false);
         item.transform.parent = null;
+        item.itemDisplay = null;
         return true;
     }
 

@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2870700292089159290}
-  m_Layer: 0
+  - component: {fileID: -7382217895739221669}
+  - component: {fileID: -2072203780672861134}
+  m_Layer: 7
   m_Name: crate of small cans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,6 +44,43 @@ Transform:
   - {fileID: 1286791061341821402}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7382217895739221669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133187885602096500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b40357be40466d8149d571f7d35e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemData: {fileID: 11400000, guid: a6f9f2ff00233cc4aa0e9b721801c9ae, type: 2}
+  itemDestination: 
+  storeItem: 0
+  itemDisplay: {fileID: 0}
+--- !u!65 &-2072203780672861134
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133187885602096500}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.26880795, y: 0.13763563, z: 0.23597145}
+  m_Center: {x: 0.06300002, y: -0.0063275807, z: -0.041499853}
 --- !u!1001 &147012984933882201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109,6 +148,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
       propertyPath: m_Name
       value: small_can_opened (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -188,6 +231,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: small_can_opened (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -265,6 +312,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
       propertyPath: m_Name
       value: small_can_opened (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -344,6 +395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: box container (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6aa09693b338ba948a5fcd5579a07959, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -421,6 +476,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
       propertyPath: m_Name
       value: small_can_opened (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -500,6 +559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: small_can_opened (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -577,6 +640,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
       propertyPath: m_Name
       value: small_can_opened (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -656,6 +723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: small_can_opened (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -733,6 +804,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
       propertyPath: m_Name
       value: small_can_opened (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -812,6 +887,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: small_can_opened (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -889,6 +968,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
       propertyPath: m_Name
       value: small_can_opened (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2a4e69f9aa94f445b75eea510366ee5, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

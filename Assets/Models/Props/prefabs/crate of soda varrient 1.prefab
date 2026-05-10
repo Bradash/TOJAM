@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3516401373882293179}
-  m_Layer: 0
+  - component: {fileID: -3236462276279515265}
+  - component: {fileID: -8270459699054613834}
+  m_Layer: 7
   m_Name: crate of soda varrient 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,6 +47,43 @@ Transform:
   - {fileID: 8254961775772075252}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3236462276279515265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5633138276257071460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b40357be40466d8149d571f7d35e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemData: {fileID: 11400000, guid: adca85be57ed44147bd723feae18660d, type: 2}
+  itemDestination: 
+  storeItem: 0
+  itemDisplay: {fileID: 0}
+--- !u!65 &-8270459699054613834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5633138276257071460}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3875606, y: 0.20694965, z: 0.35167372}
+  m_Center: {x: -0.10520005, y: 0.08234603, z: -0.01827193}
 --- !u!1001 &573438203050954326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,6 +151,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d896c458321167e47b830cbc79932411, type: 3}
       propertyPath: m_Name
       value: 6pack holder (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d896c458321167e47b830cbc79932411, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -191,6 +234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle_FBX (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -268,6 +315,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d896c458321167e47b830cbc79932411, type: 3}
       propertyPath: m_Name
       value: 6pack holder (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d896c458321167e47b830cbc79932411, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -347,6 +398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle_FBX (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -424,6 +479,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
       propertyPath: m_Name
       value: Bottle_FBX (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -503,6 +562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle_FBX (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -580,6 +643,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
       propertyPath: m_Name
       value: Bottle_FBX (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -659,6 +726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle_FBX (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -736,6 +807,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d896c458321167e47b830cbc79932411, type: 3}
       propertyPath: m_Name
       value: 6pack holder (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d896c458321167e47b830cbc79932411, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -815,6 +890,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle_FBX (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -892,6 +971,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
       propertyPath: m_Name
       value: Bottle_FBX (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -971,6 +1054,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle_FBX (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f064155e6b488874681c457d6750c7b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1049,6 +1136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: box container (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6aa09693b338ba948a5fcd5579a07959, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1126,6 +1217,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d896c458321167e47b830cbc79932411, type: 3}
       propertyPath: m_Name
       value: 6pack holder (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d896c458321167e47b830cbc79932411, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

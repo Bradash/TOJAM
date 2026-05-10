@@ -34,6 +34,18 @@ public class ItemSystem : MonoBehaviour
 
     public string GetRandomAvailableDisplay()
     {
+        if (!Application.isPlaying)
+        {
+            return "Test 1";
+        }
+        
+        if (availableDisplays.Count == 0)
+        {
+            //None Available
+            return "NA";
+        }
+
+     
         int index = Random.Range(0, availableDisplays.Count);
         string available = availableDisplays[index];
         availableDisplays.RemoveAt(index);

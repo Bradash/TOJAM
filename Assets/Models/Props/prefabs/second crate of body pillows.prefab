@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7301572013446123632}
-  m_Layer: 0
+  - component: {fileID: -2729386054634120507}
+  - component: {fileID: -3574437812255686294}
+  m_Layer: 7
   m_Name: second crate of body pillows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,6 +36,43 @@ Transform:
   - {fileID: 649640733652509306}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2729386054634120507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127585471650273619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b40357be40466d8149d571f7d35e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemData: {fileID: 11400000, guid: 74bb5712c202d0f4ca92ab8f8052116a, type: 2}
+  itemDestination: 
+  storeItem: 0
+  itemDisplay: {fileID: 0}
+--- !u!65 &-3574437812255686294
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127585471650273619}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.30665326, y: 0.51903677, z: 0.34511566}
+  m_Center: {x: 0, y: 0.12752989, z: 0}
 --- !u!1001 &54555412512566965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,6 +140,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8a0d228bf03a6264c84230aa7057c8e1, type: 3}
       propertyPath: m_Name
       value: Body_pillow (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8a0d228bf03a6264c84230aa7057c8e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -180,6 +223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: box_opened (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6dd14dcf69dc1f84b80c9feafe534f94, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -257,6 +304,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8a0d228bf03a6264c84230aa7057c8e1, type: 3}
       propertyPath: m_Name
       value: Body_pillow (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8a0d228bf03a6264c84230aa7057c8e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

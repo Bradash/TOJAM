@@ -8,7 +8,7 @@ public class ItemData : ScriptableObject
     public GameObject itemPrefab;
     public Vector3 itemOffset;
     public Vector3 itemScale =  Vector3.one;
-    public bool relativeScale = true;
+    public bool editScale = false;
     [Header("Sprite")]
     public Sprite itemSprite;
     public Color itemSpriteColor = Color.white;

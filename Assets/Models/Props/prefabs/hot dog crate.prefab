@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4695675038460628351}
-  m_Layer: 0
+  - component: {fileID: 1520270662398048948}
+  - component: {fileID: -7770244355696846119}
+  m_Layer: 7
   m_Name: hot dog crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,6 +46,43 @@ Transform:
   - {fileID: 6270158001542326496}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1520270662398048948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172007369845961082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b40357be40466d8149d571f7d35e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemData: {fileID: 11400000, guid: 9730b15f10942154490ec799b85a078f, type: 2}
+  itemDestination: 
+  storeItem: 0
+  itemDisplay: {fileID: 0}
+--- !u!65 &-7770244355696846119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172007369845961082}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.26880777, y: 0.12712552, z: 0.23597169}
+  m_Center: {x: 0.00000011920929, y: 0.02715636, z: -0.00000023841858}
 --- !u!1001 &1296317399878359527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,9 +143,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -182,9 +249,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -260,9 +355,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -338,9 +461,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -416,9 +567,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -494,9 +673,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -572,9 +779,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -658,6 +893,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: box container (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6aa09693b338ba948a5fcd5579a07959, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -728,9 +967,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -806,9 +1073,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -884,9 +1179,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -962,9 +1285,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1040,9 +1391,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6495043479489641722, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4145987232607213244, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499895471219637243, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -484087498418579917, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -101995987315201441, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: m_Name
       value: BURGER_PACKAGED5 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460421872517367723, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5477663987047780924, guid: b89a7c9a980eda345ab0b98d751bd369, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

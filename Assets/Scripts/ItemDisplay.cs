@@ -7,7 +7,7 @@ public class ItemDisplay : MonoBehaviour
 {
     public TMPro.TMP_Text locationText;
     public string location;
-    [FormerlySerializedAs("item")] public ItemData itemData;
+    public ItemData itemData;
     public Transform itemPosition;
     public Transform itemParent;
     public bool storeDisplay = true;
@@ -15,22 +15,25 @@ public class ItemDisplay : MonoBehaviour
 
     private Item item;
     private GameObject itemObject;
+    private ItemSystem itemSystem;
     //private Transform itemTransform;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        if(!itemPosition)
-            itemPosition = transform;
+        itemSystem = ItemSystem.Instance;
         if (!itemParent)
         {
             itemParent = new GameObject("ItemParent").transform;
             itemParent.SetParent(transform);
+            itemParent.localScale = Vector3.one;
             itemParent.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
+        if(!itemPosition)
+            itemPosition = itemParent;
 
         if (generateRandom)
         {
-            itemData = ItemSystem.Instance.GetRandomItem(storeDisplay);
+            itemData = itemSystem.GetRandomItem(storeDisplay);
         }
 
         if (itemData)
@@ -40,11 +43,30 @@ public class ItemDisplay : MonoBehaviour
         Display();
     }
 
+    [ContextMenu("TestItemDisplay")]
+    private void TestItemDisplay()
+    {
+        itemSystem = FindAnyObjectByType<ItemSystem>();
+        if (generateRandom)
+        {
+            itemData = itemSystem.GetRandomItem(storeDisplay);
+        }
+
+        if (itemData)
+        {
+            CreateItem();
+        }
+        else
+        {
+            Debug.LogWarning("TestItemDisplay: No item found");
+        }
+        Display();
+    }
     public void CreateItem()
     {
         string destination = location;
         if (!storeDisplay)
-            destination = ItemSystem.Instance.GetRandomAvailableDisplay();
+            destination = itemSystem.GetRandomAvailableDisplay();
  
         itemObject = Instantiate(itemData.itemPrefab);
         item = itemObject.GetComponent<Item>();
@@ -75,20 +97,11 @@ public class ItemDisplay : MonoBehaviour
         if(!itemPosition)
             itemPosition = transform;
         Transform itemTransform = itemObject.transform;
-        if (update)
+        //if (update)
             itemTransform.parent = null;
-        switch (itemData.relativeScale)
-        {
-            // set scale before parent to set global scale
-            case true when !update:
-                itemTransform.localScale.Scale(itemData.itemScale);
-                break;
-            case false:
-                itemTransform.localScale = itemData.itemScale;
-                break;
-        }
 
-        //itemTransform.localScale = itemData.itemScale;
+        if(itemData.editScale)
+            itemTransform.localScale = itemData.itemScale;
         itemTransform.SetParent(itemParent,true);
         itemTransform.localRotation = Quaternion.identity;
         itemTransform.position = itemPosition.position + itemData.itemOffset;

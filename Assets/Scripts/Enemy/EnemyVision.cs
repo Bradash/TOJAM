@@ -22,8 +22,12 @@ public class EnemyVision : MonoBehaviour
     [Tooltip("Eye height offset above the transform pivot.")]
     public float eyeHeight = 0.6f;
 
-    [Tooltip("Layers treated as solid obstacles that block line-of-sight (walls, floors, props). Do NOT include the player layer here.")]
+    [Tooltip("Layers treated as solid obstacles that block line-of-sight (walls, floors, props). Do NOT include the player layer here. Set to Nothing to rely purely on aggro zones.")]
     public LayerMask obstacleMask;
+
+    [Header("Aggro Zones (optional)")]
+    [Tooltip("If any zones are assigned, the enemy can only see the player while the player is inside at least one of them.")]
+    public EnemyAggroZone[] aggroZones;
 
     /// <summary>
     /// Returns true when the target is inside the FOV cone and has an
@@ -38,26 +42,47 @@ public class EnemyVision : MonoBehaviour
         Vector3 toTarget = aimPoint - origin;
         float   distance = toTarget.magnitude;
 
-        if (distance < soundDistance) return true;
         if (distance > viewDistance) return false;
 
-        // ── Horizontal FOV check (XZ plane) ──
-        Vector3 forwardFlat   = Vector3.ProjectOnPlane(transform.forward, Vector3.up);
-        Vector3 toTargetFlat  = Vector3.ProjectOnPlane(toTarget,          Vector3.up);
-        if (forwardFlat.sqrMagnitude > 0.001f && toTargetFlat.sqrMagnitude > 0.001f)
+        // ── Aggro zone gate ──
+        // If zones are configured, the player must be inside one to be detectable.
+        if (aggroZones != null && aggroZones.Length > 0)
         {
-            if (Vector3.Angle(forwardFlat, toTargetFlat) > fieldOfView * 0.5f)
+            bool inAnyZone = false;
+            for (int i = 0; i < aggroZones.Length; i++)
+            {
+                if (aggroZones[i] != null && aggroZones[i].Contains(target.position))
+                {
+                    inAnyZone = true;
+                    break;
+                }
+            }
+            if (!inAnyZone) return false;
+        }
+
+        // Within soundDistance the enemy "hears" the player and skips FOV checks,
+        // but walls still block detection (raycast below).
+        bool withinSoundRange = distance < soundDistance;
+
+        if (!withinSoundRange)
+        {
+            // ── Horizontal FOV check (XZ plane) ──
+            Vector3 forwardFlat   = Vector3.ProjectOnPlane(transform.forward, Vector3.up);
+            Vector3 toTargetFlat  = Vector3.ProjectOnPlane(toTarget,          Vector3.up);
+            if (forwardFlat.sqrMagnitude > 0.001f && toTargetFlat.sqrMagnitude > 0.001f)
+            {
+                if (Vector3.Angle(forwardFlat, toTargetFlat) > fieldOfView * 0.5f)
+                    return false;
+            }
+
+            // ── Vertical FOV check ──
+            float horizontalDist = toTargetFlat.magnitude;
+            float verticalAngle  = Mathf.Abs(Mathf.Atan2(toTarget.y, horizontalDist) * Mathf.Rad2Deg);
+            if (verticalAngle > verticalFieldOfView * 0.5f)
                 return false;
         }
 
-        // ── Vertical FOV check ──
-        float horizontalDist = toTargetFlat.magnitude;
-        float verticalAngle  = Mathf.Abs(Mathf.Atan2(toTarget.y, horizontalDist) * Mathf.Rad2Deg);
-        if (verticalAngle > verticalFieldOfView * 0.5f)
-            return false;
-
-        // ── Wall / obstacle check ──
-        // Cast only against obstacle layers
+        // ── Wall / obstacle check (always runs, including for sound) ──
         if (Physics.Raycast(origin, toTarget.normalized, distance, obstacleMask,
                             QueryTriggerInteraction.Ignore))
             return false;
@@ -71,6 +96,19 @@ public class EnemyVision : MonoBehaviour
     {
         Vector3 origin = transform.position + Vector3.up * eyeHeight;
         Vector3 fwd    = transform.forward;
+
+        // ── Live line-of-sight ray to the current target (runtime only) ──
+        if (Application.isPlaying)
+        {
+            EnemyAI ai = GetComponent<EnemyAI>();
+            if (ai != null && ai.target != null)
+            {
+                Vector3 aim = ai.target.position + Vector3.up * eyeHeight;
+                Gizmos.color = ai.PlayerVisible ? Color.green : Color.red;
+                Gizmos.DrawLine(origin, aim);
+                Gizmos.DrawSphere(aim, 0.08f);
+            }
+        }
 
         // Horizontal boundary rays
         Quaternion lRot = Quaternion.AngleAxis(-fieldOfView * 0.5f, Vector3.up);

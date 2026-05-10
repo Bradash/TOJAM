@@ -108,13 +108,36 @@ public class EnemyAI : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, wanderRadius);
 
-        if (Application.isPlaying && _stateMachine?.CurrentStateName == "Search")
+        // Catch radius — when the player is inside, they get caught
+        Gizmos.color = new Color(1f, 0.2f, 0.2f, 0.9f);
+        Gizmos.DrawWireSphere(transform.position, catchRadius);
+
+        if (Application.isPlaying)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(LastKnownPlayerPosition, 0.25f);
-            Gizmos.DrawLine(transform.position, LastKnownPlayerPosition);
-            Gizmos.color = new Color(1f, 0f, 0f, 0.15f);
-            Gizmos.DrawWireSphere(LastKnownPlayerPosition, searchRadius);
+            // State / blackboard label above the enemy's head
+            string state   = _stateMachine?.CurrentStateName ?? "—";
+            string visible = PlayerVisible ? "SEEN" : "lost";
+            UnityEditor.Handles.color = Color.white;
+            UnityEditor.Handles.Label(
+                transform.position + Vector3.up * 2.2f,
+                $"{name}\nState: {state}\nTarget: {visible}\nSpeed: {CurrentChaseSpeed:0.0}");
+
+            // Current NavMesh destination
+            if (Agent != null && Agent.hasPath)
+            {
+                Gizmos.color = new Color(0f, 1f, 0.6f, 0.9f);
+                Gizmos.DrawSphere(Agent.destination, 0.18f);
+                Gizmos.DrawLine(transform.position, Agent.destination);
+            }
+
+            if (_stateMachine?.CurrentStateName == "Search")
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawSphere(LastKnownPlayerPosition, 0.25f);
+                Gizmos.DrawLine(transform.position, LastKnownPlayerPosition);
+                Gizmos.color = new Color(1f, 0f, 0f, 0.15f);
+                Gizmos.DrawWireSphere(LastKnownPlayerPosition, searchRadius);
+            }
         }
     }
 #endif

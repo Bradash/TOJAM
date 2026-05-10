@@ -34,7 +34,7 @@ public class ItemInteraction : MonoBehaviour
             else
                 itemInventory.SelectPrevSlot();
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = mainCamera.ViewportPointToRay(pos);
             RaycastHit hit;

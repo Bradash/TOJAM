@@ -12,6 +12,4 @@ public class ItemData : ScriptableObject
     [Header("Sprite")]
     public Sprite itemSprite;
     public Color itemSpriteColor = Color.white;
-    public bool flipX = false;
-    public bool flipY = false;
 }

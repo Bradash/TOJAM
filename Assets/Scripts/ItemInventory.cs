@@ -34,6 +34,11 @@ public class ItemInventory : MonoBehaviour
             }
             slots[i].itemUI.SelectedUIObject.SetActive(slot == i);
         }
+        UpdateDest();
+    }
+
+    private void UpdateDest()
+    {
         (selectedItem,_) = GetSelectedItem();
         if (!destText) return;
         if (selectedItem)
@@ -133,6 +138,7 @@ public class ItemInventory : MonoBehaviour
             slot.itemUI.UpdateImage(slot.item.itemData);
         }
         SetWeightCarried();
+        UpdateDest();
     }
 
     public bool TryRemoveItemInSlot(int slot, out Item item)

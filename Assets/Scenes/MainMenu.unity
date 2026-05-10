@@ -10983,23 +10983,28 @@ MonoBehaviour:
   slots:
   - item: {fileID: 0}
     itemUI:
+      emptyColor: {r: 0, g: 0, b: 0, a: 0}
       itemImage: {fileID: 0}
       SelectedUIObject: {fileID: 0}
   - item: {fileID: 0}
     itemUI:
+      emptyColor: {r: 0, g: 0, b: 0, a: 0}
       itemImage: {fileID: 0}
       SelectedUIObject: {fileID: 0}
   - item: {fileID: 0}
     itemUI:
+      emptyColor: {r: 0, g: 0, b: 0, a: 0}
       itemImage: {fileID: 0}
       SelectedUIObject: {fileID: 0}
   - item: {fileID: 0}
     itemUI:
+      emptyColor: {r: 0, g: 0, b: 0, a: 0}
       itemImage: {fileID: 0}
       SelectedUIObject: {fileID: 0}
   selectedItemSlot: 0
   destText: {fileID: 0}
   fpsController: {fileID: 0}
+  emptyColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1513340155
 Transform:
   m_ObjectHideFlags: 0
@@ -13259,7 +13264,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e4aacac6dec30eb4587c3863f01fed41, type: 3}
+  m_Resource: {fileID: 8300000, guid: 316ac79d19e08c84e8d54275e290c2f4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 0.9

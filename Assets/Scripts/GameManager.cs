@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         else
             Debug.LogWarning("[GameManager] No PlayerRespawn found — catch tracking disabled.");
 
-        ItemDisplay.OnStoreSwapCompleted += HandleSwap;
+        ItemInteraction.OnStoreSwapCompleted += HandleSwap;
 
         if (winPanel)  winPanel.SetActive(false);
         if (losePanel) losePanel.SetActive(false);
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
     void OnDestroy()
     {
         if (_playerRespawn != null) _playerRespawn.OnRespawn -= HandleCaught;
-        ItemDisplay.OnStoreSwapCompleted -= HandleSwap;
+        ItemInteraction.OnStoreSwapCompleted -= HandleSwap;
         if (Instance == this) Instance = null;
     }
 
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         if (CatchCount >= maxCatches) Lose();
     }
 
-    void HandleSwap(ItemDisplay display)
+    void HandleSwap()
     {
         if (GameOver) return;
         SwapCount++;

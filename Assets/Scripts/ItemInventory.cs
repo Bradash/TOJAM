@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class ItemInventory : MonoBehaviour
@@ -9,6 +10,7 @@ public class ItemInventory : MonoBehaviour
     public int selectedItemSlot = 0;
     public TMP_Text destText;
     private Item selectedItem;
+    [SerializeField] FPSController fpsController;
 
     private void Start()
     {
@@ -64,7 +66,18 @@ public class ItemInventory : MonoBehaviour
         item.gameObject.SetActive(false);
         item.transform.parent = null;
         item.itemDisplay = null;
+        setWeightCarried();
         return true;
+    }
+
+    public void setWeightCarried() {   
+        float weight = 0;
+        foreach (var slot in slots)
+        {
+            if (slot.HasItem)
+                weight += 1;
+        }
+        fpsController.weightCarried = weight;
     }
 
     public bool SetItemInSelectedSlot(Item item) => SetItemInSlot(selectedItemSlot, item);

@@ -12,6 +12,7 @@ public class ItemInteraction : MonoBehaviour
     
     public ItemInventory  itemInventory;
     public static event Action OnStoreSwapCompleted;
+    public PromptDisplay promptDisplay;
 
 
 
@@ -67,6 +68,11 @@ public class ItemInteraction : MonoBehaviour
     private void ReplaceItemInInventory(ItemDisplay itemDisplay)
     {
         (Item item, int slot) = itemInventory.GetSelectedItem();
+        if (item && item.storeItem && !itemDisplay.storeDisplay)
+        {
+            promptDisplay.ShowPrompt();
+            return;
+        }
         if (!itemDisplay.TryReplaceItem(item, out Item takeItem)) return;
         itemInventory.TryRemoveItemInSlot(slot);
         if (takeItem)

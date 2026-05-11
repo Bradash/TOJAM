@@ -17,5 +17,5 @@ MonoBehaviour:
   itemOffset: {x: 0, y: 0, z: 0}
   itemScale: {x: 1.9, y: 1.9, z: 1.9}
   editScale: 1
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 41a85aced70ea4b40af202f1fd6504a2, type: 3}
   itemSpriteColor: {r: 1, g: 1, b: 1, a: 1}

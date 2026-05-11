@@ -88,7 +88,7 @@ public class ItemInventory : MonoBehaviour
         foreach (var slot in slots)
         {
             if (slot.HasItem)
-                weight += 0.5f;
+                weight += 0.25f;
         }
         fpsController.weightCarried = weight;
     }

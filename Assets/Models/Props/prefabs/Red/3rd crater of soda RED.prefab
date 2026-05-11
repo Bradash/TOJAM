@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b40357be40466d8149d571f7d35e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemData: {fileID: 11400000, guid: c513deb3aa9b827429f9fff7602e21a4, type: 2}
+  itemData: {fileID: 11400000, guid: eddbdd80821f5bf47926e2df2b7e1a26, type: 2}
   itemDestination: 
   storeItem: 0
   itemDisplay: {fileID: 0}

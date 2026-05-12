@@ -157,6 +157,10 @@ public class ItemDisplay : MonoBehaviour
         return true;
     }
 
+    public void UpdatLocationText()
+    {
+        locationText.text = location;
+    }
     private void OnValidate()
     {
 #if UNITY_EDITOR

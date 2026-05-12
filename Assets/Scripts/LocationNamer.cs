@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -15,20 +16,36 @@ public class LocationNamer : MonoBehaviour
     [ContextMenu("NameLocations")]
     private void NameLocations()
     {
+        locationNumber = 1;
         foreach (Transform rack in transform)
         {
-            foreach (Transform child in rack)
+
+            ItemDisplay[] items = rack.GetComponentsInChildren<ItemDisplay>();
+            if (items.Length == 0) continue;
+            var displays = SortWithThreshold(items);
+            foreach (var display in displays)
             {
-                if (!child.TryGetComponent(out ItemDisplay display)) continue;
                 display.location = $"{aisle}{locationNumber}";
                 locationNumber++;
+                display.UpdatLocationText();
             }
         }
     }
-
+    public List<ItemDisplay> SortWithThreshold(ItemDisplay[] items, float shelfThreshold = 0.2f)
+    {
+        return items
+            .OrderByDescending(i => Mathf.Round(i.transform.position.y / shelfThreshold))
+            .ThenByDescending(i => i.transform.position.x)
+            .ToList();
+    }
     private void OnValidate()
     {
-       if (string.IsNullOrWhiteSpace(aisle))
-           aisle = name;
+        if (string.IsNullOrWhiteSpace(aisle))
+            aisle = name;
+    }
+
+    private void Reset()
+    {
+        OnValidate();
     }
 }

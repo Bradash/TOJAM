@@ -8,6 +8,7 @@ public class LocationNamer : MonoBehaviour
 {
     public string aisle;
     private int locationNumber = 1;
+    public bool oldStyle = false;
 
     private void Awake()
     {
@@ -17,6 +18,12 @@ public class LocationNamer : MonoBehaviour
     private void NameLocations()
     {
         locationNumber = 1;
+        if (oldStyle)
+        {
+            NameLocationsOldStyle();
+            return;
+        }
+
         foreach (Transform rack in transform)
         {
 
@@ -28,6 +35,18 @@ public class LocationNamer : MonoBehaviour
                 display.location = $"{aisle}{locationNumber}";
                 locationNumber++;
                 display.UpdatLocationText();
+            }
+        }
+    }
+    private void NameLocationsOldStyle()
+    {
+        foreach (Transform rack in transform)
+        {
+            foreach (Transform child in rack)
+            {
+                if (!child.TryGetComponent(out ItemDisplay display)) continue;
+                display.location = $"{aisle}{locationNumber}";
+                locationNumber++;
             }
         }
     }

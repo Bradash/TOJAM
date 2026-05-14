@@ -88,10 +88,13 @@ public class GameManager : MonoBehaviour
 
     void Win()
     {
+        SceneManager.LoadScene("WinCutscene");
+        /* 
         GameOver = true;
         if (winPanel) winPanel.SetActive(true);
         FreezeAndUnlockCursor();
-        OnWin?.Invoke();
+        OnWin?.Invoke() 
+        */
     }
 
     void Lose()

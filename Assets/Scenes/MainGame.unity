@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.050424576, g: 0.047565326, b: 0.23270428, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -3044,6 +3044,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6350663794633794747, guid: c4e93a80f36ee8942b37b20092ae7119, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ff5e46a1b6412fd4790748016ae829f7, type: 3}
     - target: {fileID: 6952524606151504885, guid: c4e93a80f36ee8942b37b20092ae7119, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -3052,43 +3056,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8642141682096429980, guid: c4e93a80f36ee8942b37b20092ae7119, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4252567322069990583, guid: c4e93a80f36ee8942b37b20092ae7119, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 299581767}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4e93a80f36ee8942b37b20092ae7119, type: 3}
---- !u!1 &299581766 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4252567322069990583, guid: c4e93a80f36ee8942b37b20092ae7119, type: 3}
-  m_PrefabInstance: {fileID: 299581765}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &299581767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299581766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7712d4499b74bc24a9190ded42aa22ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
-  pausePanel: {fileID: 299581768}
-  settingsSubPanel: {fileID: 0}
-  pauseKey: 27
---- !u!1 &299581768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8364276586525790379, guid: c4e93a80f36ee8942b37b20092ae7119, type: 3}
-  m_PrefabInstance: {fileID: 299581765}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &309107128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14199,7 +14171,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1573572948
@@ -15613,7 +15585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1754403425
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17809,7 +17781,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -69.511955}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1953299405
@@ -19138,7 +19110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   maxCatches: 3
-  swapsToWin: 6
+  swapsToWin: 1
   winPanel: {fileID: 1754403424}
   losePanel: {fileID: 1043581502}
   catchCounterText: {fileID: 1025701490}
@@ -20244,63 +20216,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1001 &4113239206286410540
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3586102590486745005, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_Name
-      value: Brick_fbx
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219791361368544535, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -28.577852
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219791361368544535, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.49999866
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219791361368544535, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -18.978659
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219791361368544535, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219791361368544535, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219791361368544535, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219791361368544535, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219791361368544535, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219791361368544535, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4219791361368544535, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1ed3dcb1e5a1f684082d1686b76fbeae, type: 3}
 --- !u!114 &6298034726471159201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20483,4 +20398,3 @@ SceneRoots:
   - {fileID: 299581765}
   - {fileID: 1480619964}
   - {fileID: 178076326}
-  - {fileID: 4113239206286410540}

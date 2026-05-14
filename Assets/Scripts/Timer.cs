@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
         textMeshProUGUI.text = "Time:" + timerText;
         if (currentTime <= 0)
         {
-            SceneManager.LoadScene("MainGame");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
     void timerFormat()

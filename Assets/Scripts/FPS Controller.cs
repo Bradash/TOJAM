@@ -22,6 +22,18 @@ public class FPSController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         mainCamera = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
+        ApplySettings();
+        GameSettings.Changed += ApplySettings;
+    }
+
+    private void OnDestroy()
+    {
+        GameSettings.Changed -= ApplySettings;
+    }
+
+    void ApplySettings()
+    {
+        mouseSensitivity = GameSettings.MouseSensitivity;
     }
 
     private void Update()
@@ -58,10 +70,10 @@ public class FPSController : MonoBehaviour
         float mouseXRotation = Input.GetAxis("Mouse X") * mouseSensitivity;
         transform.Rotate(0, mouseXRotation, 0);
 
-        verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        verticalRotation += GameSettings.InvertY ? mouseY : -mouseY;
         verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
         mainCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
-
     }
 }
 

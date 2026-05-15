@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Convenience Store
   m_EditorClassIdentifier: Assembly-CSharp::NewsOutlet
   outletText:
-  - WEIRDO FUCKING REPLACED STORE WITH SELLOUT MERCH?
-  - HE HAS A FUCKING BLUE CAR
+  - WEIRDO REPLACED STORE WITH SELLOUT MERCH?
+  - HE HAS A BLUE CAR
   outletImg:
   - {fileID: 2800000, guid: def0bd7dad6d72f49b27338461d26577, type: 3}
   - {fileID: 2800000, guid: d07e55342d3403c4482000ebd369440f, type: 3}

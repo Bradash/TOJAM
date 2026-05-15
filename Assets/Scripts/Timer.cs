@@ -4,13 +4,12 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] float maxTimeinMinutes = 5f;
     [SerializeField] TextMeshProUGUI textMeshProUGUI;
     float currentTime;
     string timerText;
     private void Start()
     {
-        currentTime = maxTimeinMinutes * 60;
+        currentTime = GameData.timerAmount * 60;
     }
     private void Update()
     {

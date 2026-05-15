@@ -17,11 +17,11 @@ public class GameManager : MonoBehaviour
 
     [Header("Loss Condition")]
     [Tooltip("How many times the player can be caught before they lose.")]
-    public int maxCatches = 3;
+    int maxCatches = 3;
 
     [Header("Win Condition")]
     [Tooltip("How many successful store swaps are needed to win.")]
-    public int swapsToWin = 5;
+    int swapsToWin = 5;
 
     [Header("UI (all optional)")]
     [Tooltip("Panel shown when the player wins. Should start disabled in the scene.")]
@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        setData();
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
     }
@@ -61,6 +62,12 @@ public class GameManager : MonoBehaviour
         if (winPanel)  winPanel.SetActive(false);
         if (losePanel) losePanel.SetActive(false);
         UpdateUI();
+    }
+
+    void setData()
+    {
+        maxCatches = GameData.livesAmount;
+        swapsToWin = GameData.quotaAmount;
     }
 
     void OnDestroy()
@@ -88,6 +95,8 @@ public class GameManager : MonoBehaviour
 
     void Win()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene("WinCutscene");
         /* 
         GameOver = true;

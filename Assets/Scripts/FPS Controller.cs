@@ -104,10 +104,30 @@ public class FPSController : MonoBehaviour
         }
         RagdollCollider.enabled = false;
 
+        ConfigurePlayerCollisionFilter();
+
         _normalState     = new PlayerStateNormal(this);
         _ragdollState    = new PlayerStateRagdoll(this);
         _recoveringState = new PlayerStateRecovering(this);
         _stateMachine    = new PlayerStateMachine();
+    }
+
+    /// <summary>
+    /// Tells the player's colliders to ignore the Projectile layer entirely.
+    /// The CC, ragdoll capsule, and rigidbody all skip projectile collisions —
+    /// so the player walks straight through any ball. The ball, on its own,
+    /// runs an OverlapSphere player-check (Projectile.cs) and pushes itself
+    /// away when the player is in range.
+    /// </summary>
+    void ConfigurePlayerCollisionFilter()
+    {
+        int projectileLayer = LayerMask.NameToLayer("Projectile");
+        if (projectileLayer < 0) return;
+        int mask = 1 << projectileLayer;
+
+        if (CC != null)              CC.excludeLayers              |= mask;
+        if (RagdollCollider != null) RagdollCollider.excludeLayers |= mask;
+        if (RB != null)              RB.excludeLayers              |= mask;
     }
 
     void Start()

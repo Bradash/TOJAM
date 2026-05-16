@@ -55,12 +55,19 @@ public class EnemyThrow : MonoBehaviour
         GameObject prefab = throwPrefabs[Random.Range(0, throwPrefabs.Length)];
         GameObject thrown = Instantiate(prefab, origin, Quaternion.identity);
 
+        // Ensures the ball is on the Projectile layer (so the player ghosts through it)
+        // and runs the self-push check so it rolls away when the player approaches.
+        if (thrown.GetComponent<Projectile>() == null)
+            thrown.AddComponent<Projectile>();
+
         Rigidbody rb = thrown.GetComponent<Rigidbody>();
         if (rb != null)
             rb.linearVelocity = velocity;
         else
             Debug.LogWarning($"[EnemyThrow] Prefab '{prefab.name}' has no Rigidbody — projectile won't fly.");
 
+        // Safety net — Projectile despawns shortly after impact, but if the
+        // ball somehow never collides (clear sky shot) this keeps things clean.
         Destroy(thrown, projectileLifetime);
 
         _canThrow = false;

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3340137498037549430}
   - component: {fileID: 4148818820094181835}
   - component: {fileID: 3738319609400607779}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Baller
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7258847951855029835}
   serializedVersion: 5
-  m_Mass: 0.2
+  m_Mass: 0.1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

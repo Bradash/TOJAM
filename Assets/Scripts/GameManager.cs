@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     [Header("Loss Condition")]
     [Tooltip("How many times the player can be caught before they lose.")]
     int maxCatches = 3;
+    [Tooltip("Minimum seconds between catches that count toward the lose total. Prevents one chase from registering as multiple catches and losing the run instantly.")]
+    [SerializeField] float catchCooldown = 1f;
+
+    float _lastCatchTime = -Mathf.Infinity;
 
     [Header("Win Condition")]
     [Tooltip("How many successful store swaps are needed to win.")]
@@ -80,6 +84,9 @@ public class GameManager : MonoBehaviour
     void HandleCaught()
     {
         if (GameOver) return;
+        if (Time.unscaledTime - _lastCatchTime < catchCooldown) return;
+        _lastCatchTime = Time.unscaledTime;
+
         CatchCount++;
         UpdateUI();
         if (CatchCount >= maxCatches) Lose();

@@ -10,7 +10,14 @@ public class PlayerStateNormal : PlayerState
 {
     public override string StateName => "Normal";
 
+    // Sticks the CC to the floor when grounded — small negative value rather than
+    // 0 so a single-frame airborne blip from walking over a tiny step doesn't drop
+    // isGrounded. Set just deep enough to keep the CC pinned, not so deep that
+    // walking off a real ledge feels delayed.
+    const float GroundStickVelocity = -2f;
+
     float _verticalRotation;
+    float _verticalVelocity;
 
     public PlayerStateNormal(FPSController player) : base(player) { }
 
@@ -56,26 +63,37 @@ public class PlayerStateNormal : PlayerState
     {
         if (Player.CC == null) return;
 
-        float horizontalInput = Input.GetAxis("Horizontal") * Player.WalkSpeed;
-        float verticalInput   = Input.GetAxis("Vertical")   * Player.WalkSpeed;
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput   = Input.GetAxis("Vertical");
+        bool  walking         = horizontalInput != 0f || verticalInput != 0f;
 
         if (Player.FootSteps != null)
         {
-            if (horizontalInput != 0f || verticalInput != 0f)
-            {
-                Player.FootSteps.isWalking = true;
-                Player.FootSteps.footPitch = Player.WeightCarried * 0.1f;
-            }
-            else
-            {
-                Player.FootSteps.isWalking = false;
-            }
+            Player.FootSteps.isWalking = walking;
+            if (walking) Player.FootSteps.footPitch = Player.WeightCarried * 0.1f;
         }
 
-        Vector3 speed = new Vector3(horizontalInput, 0f, verticalInput) * Player.WalkSpeed;
-        speed = PlayerTransform.rotation * speed;
+        // Horizontal velocity from input, rotated by the player's facing.
+        // walkSpeed is multiplied twice to match the legacy feel (the original
+        // code accidentally squared it; preserved so existing inspector values
+        // still feel right).
+        Vector3 inputDir = new Vector3(horizontalInput, 0f, verticalInput);
+        if (inputDir.sqrMagnitude > 1f) inputDir.Normalize();
+        Vector3 horizontalVelocity = PlayerTransform.rotation * inputDir * (Player.WalkSpeed * Player.WalkSpeed);
         float weight = Mathf.Max(0.01f, Player.WeightCarried);
-        Player.CC.SimpleMove(speed / weight);
+        horizontalVelocity /= weight;
+
+        // Manual vertical handling — this is the slide fix.
+        // When grounded we stay pinned (no slide-tangent for gravity to decompose into);
+        // when airborne we accumulate real gravity until we land again.
+        if (Player.CC.isGrounded)
+            _verticalVelocity = GroundStickVelocity;
+        else
+            _verticalVelocity += Physics.gravity.y * Time.deltaTime;
+
+        Vector3 motion = horizontalVelocity;
+        motion.y = _verticalVelocity;
+        Player.CC.Move(motion * Time.deltaTime);
     }
 
     void HandleRotation()

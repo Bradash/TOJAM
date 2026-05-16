@@ -12072,7 +12072,14 @@ MonoBehaviour:
   weightCarried: 0
   footSteps: {fileID: 2124932519}
   ragdollDuration: 3
+  recoveryDuration: 0.45
+  ragdollLinearDamping: 0.4
+  ragdollAngularDamping: 4
+  ragdollMaxAngularVelocity: 9
+  ragdollTorqueScale: 0.15
   debugRagdollKey: 114
+  debugImpulseForward: 2
+  debugImpulseUp: 3
 --- !u!143 &1218581013
 CharacterController:
   m_ObjectHideFlags: 0
@@ -19664,6 +19671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88326db4d76a4c4cb8e078b1f10260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  catchCooldown: 1
   winPanel: {fileID: 1754403424}
   losePanel: {fileID: 1043581502}
   catchCounterText: {fileID: 1025701490}

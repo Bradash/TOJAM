@@ -10589,9 +10589,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1430512121}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 4
+  m_MaxValue: 8
   m_WholeNumbers: 1
-  m_Value: 2
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -21057,7 +21057,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 3c3ec87397e42d04996b20020069071c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d666a2fff5640e14f8586f74f3295d88, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1958034063
 Transform:
@@ -21371,10 +21371,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee34f888568b34458bcb6cdc2a4d3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameDataSetter
-  npcAmount: 0100000001000000010000000200000002000000
-  timerAmount: 140000000a000000050000000500000005000000
-  livesAmount: 140000000a000000030000000100000001000000
-  quotaAmount: 0300000005000000080000000a0000000c000000
+  npcAmount: 0000000001000000010000000100000001000000020000000200000002000000
+  timerAmount: 14000000140000000a0000000500000005000000050000000500000005000000
+  livesAmount: 14000000140000000a0000000300000003000000030000000200000001000000
+  quotaAmount: 0500000003000000050000000800000008000000080000000a0000000c000000
+  deOrganizedAiles: 0000000001010101
   difficultyText: {fileID: 216972949}
   descriptionText: {fileID: 456380930}
   difficultySlider: {fileID: 911604749}

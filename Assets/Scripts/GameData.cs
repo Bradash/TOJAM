@@ -7,4 +7,5 @@ public class GameData : MonoBehaviour
     public static int livesAmount = 3;
     public static int quotaAmount = 1;
     public static int timerAmount = 5;
+    public static bool randomizedLabels = false;
 }

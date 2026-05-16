@@ -70,8 +70,8 @@ public class GameManager : MonoBehaviour
 
     void setData()
     {
-        maxCatches = GameData.livesAmount;
-        swapsToWin = GameData.quotaAmount;
+        maxCatches = GameData.difficulty.livesAmount;
+        swapsToWin = GameData.difficulty.quotaAmount;
     }
 
     void OnDestroy()

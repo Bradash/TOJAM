@@ -4649,7 +4649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &387109861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4657,7 +4657,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387109860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 365125c6415af304d8aa507004109d9e, type: 3}
   m_Name: 
@@ -16339,7 +16339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1513340154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21371,6 +21371,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee34f888568b34458bcb6cdc2a4d3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameDataSetter
+  _difficulties:
+  - name: Peaceful
+    npcAmount: 0
+    timerAmount: 20
+    livesAmount: 20
+    quotaAmount: 5
+    disOrganizedAisles: 0
+    lableType: 0
+  - name: Peaceful Oldstyle
+    npcAmount: 0
+    timerAmount: 20
+    livesAmount: 20
+    quotaAmount: 5
+    disOrganizedAisles: 0
+    lableType: 1
+  - name: Peaceful EasyRandom
+    npcAmount: 0
+    timerAmount: 20
+    livesAmount: 20
+    quotaAmount: 5
+    disOrganizedAisles: 0
+    lableType: 2
+  - name: Peaceful HardRandom
+    npcAmount: 0
+    timerAmount: 20
+    livesAmount: 20
+    quotaAmount: 5
+    disOrganizedAisles: 0
+    lableType: 3
+  - name: Very Easy
+    npcAmount: 1
+    timerAmount: 20
+    livesAmount: 20
+    quotaAmount: 3
+    disOrganizedAisles: 0
+    lableType: 0
+  - name: Easy
+    npcAmount: 1
+    timerAmount: 10
+    livesAmount: 10
+    quotaAmount: 5
+    disOrganizedAisles: 0
+    lableType: 0
+  - name: Normal
+    npcAmount: 1
+    timerAmount: 5
+    livesAmount: 3
+    quotaAmount: 8
+    disOrganizedAisles: 0
+    lableType: 0
+  - name: Spicy Normal
+    npcAmount: 1
+    timerAmount: 5
+    livesAmount: 3
+    quotaAmount: 8
+    disOrganizedAisles: 1
+    lableType: 1
+  - name: Spicier Normal
+    npcAmount: 2
+    timerAmount: 5
+    livesAmount: 3
+    quotaAmount: 8
+    disOrganizedAisles: 1
+    lableType: 2
+  - name: Hard
+    npcAmount: 2
+    timerAmount: 5
+    livesAmount: 2
+    quotaAmount: 10
+    disOrganizedAisles: 1
+    lableType: 2
+  - name: Impossible
+    npcAmount: 2
+    timerAmount: 5
+    livesAmount: 1
+    quotaAmount: 12
+    disOrganizedAisles: 1
+    lableType: 3
   npcAmount: 0000000001000000010000000100000001000000020000000200000002000000
   timerAmount: 14000000140000000a0000000500000005000000050000000500000005000000
   livesAmount: 14000000140000000a0000000300000003000000030000000200000001000000

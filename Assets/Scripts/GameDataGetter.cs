@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[DefaultExecutionOrder(-27)]
 public class GameDataGetter : MonoBehaviour
 {
     [SerializeField] GameObject[] quotaItems;
@@ -8,20 +9,13 @@ public class GameDataGetter : MonoBehaviour
     private void Start()
     {
         ailes = FindObjectsOfType<LocationNamer>();
-        for (int i = 0; i < GameData.quotaAmount; i++)
+        for (int i = 0; i < GameData.difficulty.quotaAmount; i++)
         {
             quotaItems[i].SetActive(true);
         }
-        for (int i = 0; i < GameData.npcAmount; i++)
+        for (int i = 0; i < npcs.Length; i++)
         {
-            npcs[i].SetActive(true);
-        }
-        for (int i = 0; i < ailes.Length; i++)
-        {
-            if (i < GameData.currentLevel)
-            {
-                ailes[i].gameObject.SetActive(GameData.randomizedLabels);
-            }
+            npcs[i].SetActive(i < GameData.difficulty.npcAmount);
         }
     }
 }

@@ -2,70 +2,44 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[DefaultExecutionOrder(-27)]
 public class GameDataSetter : MonoBehaviour
 {
-    [SerializeField] int[] npcAmount;
-    [SerializeField] int[] timerAmount;
-    [SerializeField] int[] livesAmount;
-    [SerializeField] int[] quotaAmount;
-    [SerializeField] bool[] deOrganizedAiles;
+    [SerializeField] Difficulty[] _difficulties;
+    [SerializeField,HideInInspector] int[] npcAmount;
+    [SerializeField,HideInInspector] int[] timerAmount;
+    [SerializeField,HideInInspector] int[] livesAmount;
+    [SerializeField,HideInInspector] int[] quotaAmount;
+    [SerializeField,HideInInspector] bool[] deOrganizedAiles;
     [SerializeField] TextMeshProUGUI difficultyText;
     [SerializeField] TextMeshProUGUI descriptionText;
     [SerializeField] Slider difficultySlider;
-    int difficulty;
-
+    int diffIndex;
+    
 
     private void Start()
     {
+        difficultySlider.maxValue = _difficulties.Length-1;
         SetDifficulty();
     }
     public void SetDifficulty()
     {
-        difficulty = (int)difficultySlider.value;
-        GameData.npcAmount = npcAmount[difficulty];
-        GameData.timerAmount = timerAmount[difficulty];
-        GameData.livesAmount = livesAmount[difficulty];
-        GameData.quotaAmount = quotaAmount[difficulty];
-        GameData.randomizedLabels = deOrganizedAiles[difficulty];
-        switch (difficultySlider.value)
-        {
-            case 0:
-                setText();
-                difficultyText.text = "Difficulty:Peaceful";
-                break;
-            case 1:
-                setText();
-                difficultyText.text = "Difficulty:Very Easy";
-                break;
-            case 2:
-                setText();
-                difficultyText.text = "Difficulty:Easy";
-                break;
-            case 3:
-                setText();
-                difficultyText.text = "Difficulty:Normal";
-                break;
-            case 4:
-                setText();
-                difficultyText.text = "Difficulty:Spicy Normal";
-                break;
-            case 5:
-                setText();
-                difficultyText.text = "Difficulty:Spicier Normal";
-                break;
-            case 6:
-                setText();
-                difficultyText.text = "Difficulty:Hard";
-                break;
-            case 7:
-                setText();
-                difficultyText.text = "Difficulty:Impossible";
-                break;
-        }
+        diffIndex = (int)difficultySlider.value;
+        Difficulty difficulty = _difficulties[diffIndex];
+        GameData.difficulty  = difficulty;
+        // GameData.npcAmount = npcAmount[diffIndex];
+        // GameData.timerAmount = timerAmount[diffIndex];
+        // GameData.livesAmount = livesAmount[diffIndex];
+        // GameData.quotaAmount = quotaAmount[diffIndex];
+        // GameData.randomizedLabels = deOrganizedAiles[diffIndex];
+        
+        SetText(difficulty);
+        difficultyText.text = $"Difficulty:{difficulty.name}";
+        
     }
-    void setText()
+    void SetText(Difficulty difficulty)
     {
-        descriptionText.text = "NPCS:" + npcAmount[difficulty].ToString() + " Timer:" + timerAmount[difficulty].ToString() + " Lives:" + livesAmount[difficulty].ToString() + " Quota:" + quotaAmount[difficulty].ToString() + " Deorganized Ailes: " + deOrganizedAiles[difficulty].ToString();
+        descriptionText.text = $"NPCs: {difficulty.npcAmount,2} | Timer: {difficulty.timerAmount,2} | Lives: {difficulty.livesAmount,2} | Quota: {difficulty.quotaAmount,2} | Aisle Labels: {difficulty.lableType.ToString()}";
     }
 
 }

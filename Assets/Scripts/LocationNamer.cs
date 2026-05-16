@@ -9,28 +9,40 @@ public class LocationNamer : MonoBehaviour
     public string aisle;
     private int locationNumber = 1;
     public bool oldStyle = false;
-
+    
     private void Awake()
     {
-        NameLocations();
+        //NameLocations();
+        //oldStyle = GameData.difficulty.disOrganizedAisles;
+        locationNumber = 1;
+        switch (GameData.difficulty.lableType)
+        {
+            case LableType.RandomEasy:
+                NameLocationsRandomEasy();
+                break;
+            case LableType.RandomHard:
+                NameLocationsRandomHard();
+                break;
+            case LableType.OldStyle:
+                NameLocationsOldStyle();
+                break;
+            case LableType.Organized:
+            default:
+                NameLocations();
+                break;
+        }
+        
     }
     [ContextMenu("NameLocations")]
     private void NameLocations()
     {
-        locationNumber = 1;
-        if (oldStyle)
-        {
-            NameLocationsOldStyle();
-            return;
-        }
-
         foreach (Transform rack in transform)
         {
 
             ItemDisplay[] items = rack.GetComponentsInChildren<ItemDisplay>();
             if (items.Length == 0) continue;
-            var displays = SortWithThreshold(items);
-            foreach (var display in displays)
+            List<ItemDisplay> displays = SortWithThreshold(items);
+            foreach (ItemDisplay display in displays)
             {
                 display.location = $"{aisle}{locationNumber}";
                 locationNumber++;
@@ -49,6 +61,38 @@ public class LocationNamer : MonoBehaviour
                 locationNumber++;
             }
         }
+    }
+    private void NameLocationsRandomEasy()
+    {
+        foreach (Transform rack in transform)
+        {
+            ItemDisplay[] items = rack.GetComponentsInChildren<ItemDisplay>();
+            if (items.Length == 0) continue;
+            
+            List<ItemDisplay> displays = items.ToList();
+            displays.Shuffle();
+            foreach (ItemDisplay display in displays)
+            {
+                display.location = $"{aisle}{locationNumber}";
+                locationNumber++;
+                display.UpdatLocationText();
+            }
+        }
+    }
+    private void NameLocationsRandomHard()
+    {
+
+            ItemDisplay[] items = transform.GetComponentsInChildren<ItemDisplay>();
+            if (items.Length == 0) return;
+            
+            List<ItemDisplay> displays = items.ToList();
+            displays.Shuffle();
+            foreach (ItemDisplay display in displays)
+            {
+                display.location = $"{aisle}{locationNumber}";
+                locationNumber++;
+                display.UpdatLocationText();
+            }
     }
     public List<ItemDisplay> SortWithThreshold(ItemDisplay[] items, float shelfThreshold = 0.2f)
     {

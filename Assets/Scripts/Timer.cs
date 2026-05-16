@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     string timerText;
     private void Start()
     {
-        currentTime = GameData.timerAmount * 60;
+        currentTime = GameData.difficulty.timerAmount * 60;
     }
     private void Update()
     {

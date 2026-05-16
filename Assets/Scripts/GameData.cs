@@ -13,6 +13,7 @@ public class GameData : MonoBehaviour
     //public static bool randomizedLabels = false;
 }
 
+
 public enum LableType
 {
     Organized,

@@ -9,7 +9,6 @@ public class NewsManager : MonoBehaviour
     [Header("News Outlets")]
     [SerializeField] NewsOutlet[] newsOutlets;
     [Header("Settings")]
-    public int currentLevel;
     [SerializeField] Animator newsAnim;
     [SerializeField] TextMeshProUGUI[] newsTexts;
     [SerializeField] RawImage[] newsImages;
@@ -34,15 +33,15 @@ public class NewsManager : MonoBehaviour
     }
     void setNews()
     {
-        newsAnim.SetInteger("currentLevel", currentLevel);
+        newsAnim.SetInteger("currentLevel", GameData.currentLevel);
 
-        newsAudio.clip = newsOutlets[currentLevel].dialogueAudio[0];
-        radioAudio.clip = newsOutlets[currentLevel].dialogueAudio[1];
+        newsAudio.clip = newsOutlets[GameData.currentLevel].dialogueAudio[0];
+        radioAudio.clip = newsOutlets[GameData.currentLevel].dialogueAudio[1];
 
-        newsTexts[0].text = newsOutlets[currentLevel].outletText[0];
-        newsTexts[1].text = newsOutlets[currentLevel].outletText[1];
+        newsTexts[0].text = newsOutlets[GameData.currentLevel].outletText[0];
+        newsTexts[1].text = newsOutlets[GameData.currentLevel].outletText[1];
 
-        newsImages[0].texture = newsOutlets[currentLevel].outletImg[0];
-        newsImages[1].texture = newsOutlets[currentLevel].outletImg[1];
+        newsImages[0].texture = newsOutlets[GameData.currentLevel].outletImg[0];
+        newsImages[1].texture = newsOutlets[GameData.currentLevel].outletImg[1];
     }
 }

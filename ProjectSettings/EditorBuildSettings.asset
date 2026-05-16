@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainGame.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/GarageSale.unity
+    guid: d4b38f8379120f24985fa029d25732ab
+  - enabled: 1
     path: Assets/Scenes/WinCutscene.unity
     guid: 0a4e59293e34caa4baf6d2c05e2c52bb
   - enabled: 1

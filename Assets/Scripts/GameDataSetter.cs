@@ -15,7 +15,9 @@ public class GameDataSetter : MonoBehaviour
     [SerializeField] TextMeshProUGUI descriptionText;
     [SerializeField] Slider difficultySlider;
     int diffIndex;
-    
+
+    [SerializeField] GameObject[] selectedLevel;
+
 
     private void Start()
     {
@@ -27,11 +29,6 @@ public class GameDataSetter : MonoBehaviour
         diffIndex = (int)difficultySlider.value;
         Difficulty difficulty = _difficulties[diffIndex];
         GameData.difficulty  = difficulty;
-        // GameData.npcAmount = npcAmount[diffIndex];
-        // GameData.timerAmount = timerAmount[diffIndex];
-        // GameData.livesAmount = livesAmount[diffIndex];
-        // GameData.quotaAmount = quotaAmount[diffIndex];
-        // GameData.randomizedLabels = deOrganizedAiles[diffIndex];
         
         SetText(difficulty);
         difficultyText.text = $"Difficulty:{difficulty.name}";
@@ -40,6 +37,21 @@ public class GameDataSetter : MonoBehaviour
     void SetText(Difficulty difficulty)
     {
         descriptionText.text = $"NPCs: {difficulty.npcAmount,2} | Timer: {difficulty.timerAmount,2} | Lives: {difficulty.livesAmount,2} | Quota: {difficulty.quotaAmount,2} | Aisle Labels: {difficulty.lableType.ToString()}";
+    }
+    public void level(int level) 
+    { 
+        GameData.currentLevel = level;
+        for (int i = 0; i < selectedLevel.Length; i++)
+        {
+            if (i == level)
+            {
+                selectedLevel[i].SetActive(true);
+            }
+            else
+            {
+                selectedLevel[i].SetActive(false);
+            }
+        }
     }
 
 }

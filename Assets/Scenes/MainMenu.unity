@@ -23258,7 +23258,7 @@ MonoBehaviour:
     npcAmount: 0
     timerAmount: 20
     livesAmount: 20
-    quotaAmount: 0
+    quotaAmount: 1
     disOrganizedAisles: 0
     lableType: 0
   - name: Very Easy

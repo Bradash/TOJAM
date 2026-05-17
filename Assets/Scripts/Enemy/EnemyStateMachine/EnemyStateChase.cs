@@ -37,6 +37,18 @@ public class EnemyStateChase : EnemyState
 
     public override void Tick()
     {
+        // ── Disengage if another NPC is already handling the player ──
+        // Prevents this clerk from converging on a target that's already being
+        // dragged / ragdolled / recovering. The catch check below still gates
+        // the penalty itself, but bailing here also avoids the weird visual of
+        // two clerks running to the same dragged player.
+        if (IsPlayerAlreadyHandled())
+        {
+            Enemy.CurrentChaseSpeed = Enemy.chaseBaseSpeed;
+            Enemy.GoToWander();
+            return;
+        }
+
         // ── Catch check ──
         float distSqr = (Enemy.target.position - EnemyTransform.position).sqrMagnitude;
         if (distSqr <= Enemy.catchRadius * Enemy.catchRadius)
@@ -87,14 +99,48 @@ public class EnemyStateChase : EnemyState
 
     void CatchPlayer()
     {
-        // Trigger the respawn on the player
-        if (_playerRespawn != null)
-            _playerRespawn.Respawn();
-        else
-            Debug.LogWarning("[EnemyStateChase] Player caught but no PlayerRespawn component found on target.");
-
-        // Reset the enemy's speed and return to wandering
         Enemy.CurrentChaseSpeed = Enemy.chaseBaseSpeed;
-        Enemy.GoToWander();
+
+        // Belt-and-suspenders: even if Tick missed it, abort the catch (no
+        // penalty, no second drag) if the player is already being handled.
+        if (IsPlayerAlreadyHandled())
+        {
+            Enemy.GoToWander();
+            return;
+        }
+
+        // If the clerk has a door + desk wired, drag the player to the door,
+        // kick them out (ragdoll), then walk back. Otherwise fall back to the
+        // original instant-respawn behavior.
+        bool hasDragSetup = Enemy.frontDoor != null && Enemy.deskReturn != null;
+
+        if (hasDragSetup)
+        {
+            // The catch still counts toward the lose total — fire the event
+            // without performing the teleport, since the grab flow handles relocation.
+            if (_playerRespawn != null) _playerRespawn.NotifyCaught();
+            Enemy.GoToGrabbing();
+        }
+        else
+        {
+            if (_playerRespawn != null) _playerRespawn.Respawn();
+            else Debug.LogWarning("[EnemyStateChase] Player caught but no PlayerRespawn component found on target.");
+            Enemy.GoToWander();
+        }
+    }
+
+    /// <summary>
+    /// True when the player is already in a "caught" sequence — being dragged by
+    /// another NPC (ExternallyDriven), tumbling from a kick (Ragdoll), or getting
+    /// up (Recovering). In any of those, this clerk should not catch them again.
+    /// </summary>
+    bool IsPlayerAlreadyHandled()
+    {
+        if (Enemy.target == null) return false;
+        FPSController fps = Enemy.target.GetComponent<FPSController>();
+        if (fps == null) return false;
+        if (fps.ExternallyDriven) return true;
+        string state = fps.CurrentStateName;
+        return state != "Normal" && state != "None";
     }
 }

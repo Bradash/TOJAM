@@ -6400,6 +6400,50 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1669908190242208640, guid: 42160b1ea08f9e34d92ff86f7754f028, type: 3}
   m_PrefabInstance: {fileID: 8274339604123929256}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &745582926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 745582928}
+  - component: {fileID: 745582927}
+  m_Layer: 0
+  m_Name: ReturnToDeskPoint 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &745582927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745582926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8bf7ca00829ea34cb4e61cdd0181d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeskReturnSpot
+--- !u!4 &745582928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745582926}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 11.488, y: 0.003, z: 22.143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &758245467
 GameObject:
   m_ObjectHideFlags: 0
@@ -6874,6 +6918,16 @@ MonoBehaviour:
   searchDuration: 4
   searchWaypointInterval: 2
   searchLookSpeed: 180
+  frontDoor: {fileID: 927236629}
+  deskReturn: {fileID: 1389195323}
+  grabSpeed: 4.5
+  returnSpeed: 3
+  kickArrivalRadius: 1.5
+  kickPlantDistance: 1
+  kickForwardImpulse: 6
+  kickUpImpulse: 4
+  dragOffsetForward: 0.6
+  dragOffsetUp: 0
   LastKnownPlayerPosition: {x: -5.95164, y: 1.04, z: 0.20968997}
   CurrentChaseSpeed: 6.5
   PlayerVisible: 0
@@ -7648,6 +7702,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7906824197136149448, guid: ddac309052819634d9f01b4d038c9b0d, type: 3}
   m_PrefabInstance: {fileID: 662276238}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &927236627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927236629}
+  - component: {fileID: 927236628}
+  m_Layer: 0
+  m_Name: KickOutSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &927236628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927236627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ae6c8e8eb7b0e4d953e3900164cf02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KickOutSpot
+--- !u!4 &927236629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927236627}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9916421, z: -0, w: -0.12901917}
+  m_LocalPosition: {x: 0.576, y: 0.076, z: 11.246}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 194.826, z: 0}
 --- !u!4 &933590774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7697825981483232997, guid: 61341f18c5fa3ec488e11d879c0b0924, type: 3}
@@ -11036,6 +11134,50 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 34.000015, y: 26.000006, z: 0.000006198884}
   m_Center: {x: 5.0000024, y: 0, z: 0}
+--- !u!1 &1389195321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1389195323}
+  - component: {fileID: 1389195322}
+  m_Layer: 0
+  m_Name: ReturnToDeskPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1389195322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389195321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8bf7ca00829ea34cb4e61cdd0181d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeskReturnSpot
+--- !u!4 &1389195323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389195321}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.5606262, z: -0, w: 0.828069}
+  m_LocalPosition: {x: -11.405, y: 0.003, z: 12.669}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 68.198, z: 0}
 --- !u!1001 &1391254883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11702,6 +11844,16 @@ MonoBehaviour:
   searchDuration: 4
   searchWaypointInterval: 2
   searchLookSpeed: 180
+  frontDoor: {fileID: 927236629}
+  deskReturn: {fileID: 745582928}
+  grabSpeed: 4.5
+  returnSpeed: 3
+  kickArrivalRadius: 1.5
+  kickPlantDistance: 1
+  kickForwardImpulse: 6
+  kickUpImpulse: 4
+  dragOffsetForward: 0.6
+  dragOffsetUp: 0
   LastKnownPlayerPosition: {x: -5.95164, y: 1.04, z: 0.20968997}
   CurrentChaseSpeed: 6.5
   PlayerVisible: 0
@@ -17387,6 +17539,9 @@ SceneRoots:
   - {fileID: 387109862}
   - {fileID: 1218581014}
   - {fileID: 1277078406}
+  - {fileID: 927236629}
+  - {fileID: 1389195323}
+  - {fileID: 745582928}
   - {fileID: 836189527}
   - {fileID: 1482019624}
   - {fileID: 211851333}

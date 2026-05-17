@@ -62,6 +62,10 @@ public class PlayerStateNormal : PlayerState
     void HandleMovement()
     {
         if (Player.CC == null) return;
+        // While being dragged by an enemy etc., the controller doesn't drive
+        // its own position — but HandleRotation still runs so the player can
+        // look around during the grab.
+        if (Player.ExternallyDriven) return;
 
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput   = Input.GetAxis("Vertical");

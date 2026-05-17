@@ -181,8 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BootLoader
   nextScene: MainMenu
   minSplashTime: 1.5
-  autoAdvance: 0
-  maxSplashTime: 4
+  autoAdvance: 1
+  maxSplashTime: 0
   splashGroup: {fileID: 1768353567}
   fadeInDuration: 0.7
   fadeOutDuration: 0.5

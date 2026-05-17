@@ -68,6 +68,24 @@ public class FPSController : MonoBehaviour
     /// <summary>Yaw the player was facing when they ragdolled. Recovering reads this to restore heading.</summary>
     public float PreRagdollYaw { get; set; }
 
+    /// <summary>
+    /// When true, the player controller stops driving its own movement so an external
+    /// system (e.g. an enemy dragging them to the door) can set transform.position directly.
+    /// Mouse look still works — head turning during a grab is fine.
+    /// Use <see cref="SetExternallyDriven"/> to flip; it also disables the CharacterController
+    /// so direct transform writes don't fight the CC's collision response.
+    /// </summary>
+    public bool ExternallyDriven { get; private set; }
+
+    public void SetExternallyDriven(bool driven)
+    {
+        ExternallyDriven = driven;
+        if (driven && CC != null) CC.enabled = false;
+        // We don't auto-re-enable CC when releasing — the next player state
+        // (typically Ragdoll, started by whoever released us) re-enables / re-disables
+        // it correctly on Enter.
+    }
+
     public CharacterController CC               { get; private set; }
     public Rigidbody           RB               { get; private set; }
     public CapsuleCollider     RagdollCollider  { get; private set; }

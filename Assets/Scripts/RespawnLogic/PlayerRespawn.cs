@@ -51,6 +51,16 @@ public class PlayerRespawn : MonoBehaviour
     }
 
     /// <summary>
+    /// Fires the <see cref="OnRespawn"/> event without doing the teleport. Used when
+    /// the player is caught but the enemy is handling the relocation itself
+    /// (e.g. the drag-to-door grab flow). Lets the catch counter still tick.
+    /// </summary>
+    public void NotifyCaught()
+    {
+        OnRespawn?.Invoke();
+    }
+
+    /// <summary>
     /// Teleports the player to the current respawn point.
     /// Called by EnemyStateChase (or any other system) when the player is caught.
     /// </summary>

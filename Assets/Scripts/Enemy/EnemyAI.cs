@@ -35,6 +35,28 @@ public class EnemyAI : MonoBehaviour
     public float searchWaypointInterval = 2f;
     public float searchLookSpeed        = 55f;
 
+    [Header("Grab → Door → Desk")]
+    [Tooltip("Where the clerk drags the player and kicks them out. Forward of this transform = the 'outside' direction.")]
+    public Transform frontDoor;
+    [Tooltip("Where the clerk returns to after kicking the player out. Forward of this transform = the direction the clerk faces when resuming wander.")]
+    public Transform deskReturn;
+    [Tooltip("Speed at which the clerk drags the player to the door.")]
+    public float grabSpeed         = 4.5f;
+    [Tooltip("Speed at which the clerk walks back to the desk (no chasing during this).")]
+    public float returnSpeed       = 3f;
+    [Tooltip("Distance from the door at which the clerk performs the kick.")]
+    public float kickArrivalRadius = 1.5f;
+    [Tooltip("How far past the door to teleport the player before applying the kick impulse.")]
+    public float kickPlantDistance = 1.0f;
+    [Tooltip("Outward kick force (along frontDoor.forward).")]
+    public float kickForwardImpulse = 6f;
+    [Tooltip("Upward kick force.")]
+    public float kickUpImpulse      = 4f;
+    [Tooltip("How far in front of the clerk the dragged player is held.")]
+    public float dragOffsetForward  = 0.6f;
+    [Tooltip("Vertical offset for the dragged player position. 0 keeps them at the clerk's feet height.")]
+    public float dragOffsetUp       = 0f;
+
     // Shared Blackboard
     [HideInInspector] public Vector3 LastKnownPlayerPosition;
     [HideInInspector] public float   CurrentChaseSpeed;
@@ -45,10 +67,12 @@ public class EnemyAI : MonoBehaviour
     public EnemyVision  Vision { get; private set; }
 
     // State Machine
-    EnemyStateMachine _stateMachine;
-    EnemyStateWander  _wanderState;
-    EnemyStateChase   _chaseState;
-    EnemyStateSearch  _searchState;
+    EnemyStateMachine    _stateMachine;
+    EnemyStateWander     _wanderState;
+    EnemyStateChase      _chaseState;
+    EnemyStateSearch     _searchState;
+    EnemyStateGrabbing   _grabbingState;
+    EnemyStateReturning  _returningState;
 
     //Sound
     public EnemySound enemySound { get; private set; }
@@ -60,9 +84,11 @@ public class EnemyAI : MonoBehaviour
 
         enemySound = GetComponent<EnemySound>();
 
-        _wanderState = new EnemyStateWander(this);
-        _chaseState  = new EnemyStateChase(this);
-        _searchState = new EnemyStateSearch(this);
+        _wanderState     = new EnemyStateWander(this);
+        _chaseState      = new EnemyStateChase(this);
+        _searchState     = new EnemyStateSearch(this);
+        _grabbingState   = new EnemyStateGrabbing(this);
+        _returningState  = new EnemyStateReturning(this);
 
         _stateMachine = new EnemyStateMachine();
         _stateMachine.OnStateTransition += (from, to) =>
@@ -96,9 +122,16 @@ public class EnemyAI : MonoBehaviour
     }
 
     // Transition Helpers (called by state classes)
-    public void GoToWander() => _stateMachine.TransitionTo(_wanderState);
-    public void GoToChase()  => _stateMachine.TransitionTo(_chaseState);
-    public void GoToSearch() => _stateMachine.TransitionTo(_searchState);
+    public void GoToWander()    => _stateMachine.TransitionTo(_wanderState);
+    public void GoToChase()     => _stateMachine.TransitionTo(_chaseState);
+    public void GoToSearch()    => _stateMachine.TransitionTo(_searchState);
+    public void GoToGrabbing()  => _stateMachine.TransitionTo(_grabbingState);
+    public void GoToReturning() => _stateMachine.TransitionTo(_returningState);
+
+    /// <summary>True while the clerk is dragging the player or walking back to the desk.</summary>
+    public bool IsHandlingCaught =>
+        _stateMachine != null &&
+        (_stateMachine.CurrentState == _grabbingState || _stateMachine.CurrentState == _returningState);
 
 #if UNITY_EDITOR
     void OnDrawGizmosSelected()
@@ -138,7 +171,18 @@ public class EnemyAI : MonoBehaviour
                 Gizmos.color = new Color(1f, 0f, 0f, 0.15f);
                 Gizmos.DrawWireSphere(LastKnownPlayerPosition, searchRadius);
             }
+
+            // Live path indicator while the clerk is handling a catch.
+            if (IsHandlingCaught && Agent != null && Agent.hasPath)
+            {
+                Gizmos.color = new Color(1f, 0.55f, 0f, 0.7f);
+                Gizmos.DrawLine(transform.position, Agent.destination);
+            }
         }
+
+        // The frontDoor and deskReturn gizmos live on the marker GameObjects
+        // themselves (KickOutSpot / DeskReturnSpot), so they're visible without
+        // having to select this enemy.
     }
 #endif
 }

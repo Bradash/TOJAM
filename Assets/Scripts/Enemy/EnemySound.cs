@@ -3,8 +3,12 @@ using UnityEngine;
 public class EnemySound : MonoBehaviour
 {
     private AudioSource audioSource;
+    [SerializeField] AudioSource playerAudioSource;
     [SerializeField] private AudioClip[] foundClips;
     [SerializeField] private AudioClip[] pickupClips;
+    [SerializeField] private AudioClip grabSFX;
+    [SerializeField] private AudioClip[] throwClips;
+    [SerializeField] private AudioClip ThrowSFX;
     [SerializeField] private AudioClip[] suspiciousClips;
 
     private void Awake()
@@ -30,6 +34,7 @@ public class EnemySound : MonoBehaviour
         }
         int randomIndex = Random.Range(0, pickupClips.Length);
         audioSource.PlayOneShot(pickupClips[randomIndex]);
+        playerAudioSource.PlayOneShot(grabSFX);
     }
     public void suspiciousSound()
     {
@@ -40,5 +45,16 @@ public class EnemySound : MonoBehaviour
         }
         int randomIndex = Random.Range(0, suspiciousClips.Length);
         audioSource.PlayOneShot(suspiciousClips[randomIndex]);
+    }
+    public void throwSound()
+    {
+        if (throwClips.Length == 0)
+        {
+            Debug.LogWarning("No suspicious clips assigned.");
+            return;
+        }
+        int randomIndex = Random.Range(0, throwClips.Length);
+        audioSource.PlayOneShot(throwClips[randomIndex]);
+        playerAudioSource.PlayOneShot(ThrowSFX);
     }
 }

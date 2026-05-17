@@ -9,23 +9,15 @@ public class NewsManager : MonoBehaviour
     [Header("News Outlets")]
     [SerializeField] NewsOutlet[] newsOutlets;
     [Header("Settings")]
-    [SerializeField] Animator newsAnim;
+    Animator newsAnim;
     [SerializeField] TextMeshProUGUI[] newsTexts;
     [SerializeField] RawImage[] newsImages;
     [SerializeField] AudioSource newsAudio;
     [SerializeField] AudioSource radioAudio;
     private void Start()
     {
+        newsAnim = GetComponent<Animator>();
         setNews();
-    }
-    private void Update()
-    {
-        AnimatorStateInfo animStateInfo = newsAnim.GetCurrentAnimatorStateInfo(0);
-        float NTime = animStateInfo.normalizedTime;
-        if (NTime >= 0.99f)
-        {
-            endNews();
-        }
     }
     public void endNews()
     {

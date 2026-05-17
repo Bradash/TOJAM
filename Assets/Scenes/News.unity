@@ -412,62 +412,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55285252}
   m_CullTransparentMesh: 1
---- !u!1 &62251056
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 62251057}
-  - component: {fileID: 62251058}
-  m_Layer: 0
-  m_Name: News Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &62251057
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62251056}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &62251058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62251056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8d11bd8c06bb6b46912bda9366cd42d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewsManager
-  newsOutlets:
-  - {fileID: 11400000, guid: 1de1c3a80a1fdb547af310c9a305a40e, type: 2}
-  - {fileID: 11400000, guid: 33640cb3884ff5c4983fe3d6eadabfe4, type: 2}
-  newsAnim: {fileID: 308139808}
-  newsTexts:
-  - {fileID: 2107050496}
-  - {fileID: 1284617248}
-  newsImages:
-  - {fileID: 1080062336}
-  - {fileID: 1966174828}
-  newsAudio: {fileID: 1088679059}
-  radioAudio: {fileID: 1231010462}
 --- !u!1 &73701544
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 308139809}
   - component: {fileID: 308139808}
+  - component: {fileID: 308139810}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -708,6 +653,29 @@ Transform:
   - {fileID: 1534547272}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308139810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308139807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d11bd8c06bb6b46912bda9366cd42d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewsManager
+  newsOutlets:
+  - {fileID: 11400000, guid: 1de1c3a80a1fdb547af310c9a305a40e, type: 2}
+  - {fileID: 11400000, guid: 33640cb3884ff5c4983fe3d6eadabfe4, type: 2}
+  newsTexts:
+  - {fileID: 2107050496}
+  - {fileID: 1284617248}
+  newsImages:
+  - {fileID: 1080062336}
+  - {fileID: 1966174828}
+  newsAudio: {fileID: 1088679059}
+  radioAudio: {fileID: 1231010462}
 --- !u!1 &345144098
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +935,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 458125298}
-  - component: {fileID: 458125297}
   m_Layer: 0
   m_Name: NewsDebugger
   m_TagString: Untagged
@@ -975,19 +942,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &458125297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458125296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88fe6791593a7234889a522a06e6c426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewsDebugger
-  currentLevel: 1
 --- !u!4 &458125298
 Transform:
   m_ObjectHideFlags: 0
@@ -2368,7 +2322,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 62251058}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NewsManager, Assembly-CSharp
         m_MethodName: endNews
         m_Mode: 1
@@ -2838,5 +2792,4 @@ SceneRoots:
   - {fileID: 44363425}
   - {fileID: 179389614}
   - {fileID: 308139809}
-  - {fileID: 62251057}
   - {fileID: 73701547}

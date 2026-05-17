@@ -31,7 +31,6 @@ public class EnemyStateSearch : EnemyState
         _reachedLastKnown = false;
 
         Agent.SetDestination(Enemy.LastKnownPlayerPosition);
-        Enemy.enemySound.suspiciousSound();
     }
 
     public override void Tick()
@@ -46,6 +45,7 @@ public class EnemyStateSearch : EnemyState
         if (Time.time >= _searchEndTime)
         {
             Enemy.GoToWander();
+            Enemy.enemySound.suspiciousSound();
             return;
         }
 

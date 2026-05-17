@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Garage Sale
   m_EditorClassIdentifier: Assembly-CSharp::NewsOutlet
   outletText:
-  - WEIRDO REPLACED STORE WITH SELLOUT MERCH?
-  - HE HAS A BLUE CAR
+  - WEIRDO REPLACED GARAGE SALE WITH SELLOUT MERCH?
+  - HE STILL HAS A BLUE CAR
   outletImg:
   - {fileID: 2800000, guid: 058d42cb24d25c842be303550f9fd695, type: 3}
   - {fileID: 2800000, guid: d07e55342d3403c4482000ebd369440f, type: 3}
   dialogueAudio:
   - {fileID: 8300000, guid: 16830962cb069a843894922f8a09b99e, type: 3}
-  - {fileID: 8300000, guid: 3a6af0909772d06458d0cec864dcc1b5, type: 3}
+  - {fileID: 8300000, guid: 7ed5add460019a54d8a47db1507cf862, type: 3}

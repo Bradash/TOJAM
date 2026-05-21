@@ -12490,6 +12490,7 @@ GameObject:
   - component: {fileID: 1024133802}
   - component: {fileID: 1024133804}
   - component: {fileID: 1024133803}
+  - component: {fileID: 1024133805}
   m_Layer: 0
   m_Name: Sounds (1)
   m_TagString: Untagged
@@ -12632,6 +12633,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 91626f5b84ad2c14f9c1b201e267d3a1, type: 3}
   isWalking: 1
   footPitch: 0
+--- !u!114 &1024133805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024133801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1e21e31f0ffe84e9a55062df3b333f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MixedAudioSource
+  category: 0
 --- !u!1 &1025510877
 GameObject:
   m_ObjectHideFlags: 0
@@ -21336,7 +21350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1841696415
@@ -22789,7 +22803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1950990834
@@ -23258,7 +23272,7 @@ MonoBehaviour:
     npcAmount: 0
     timerAmount: 20
     livesAmount: 20
-    quotaAmount: 1
+    quotaAmount: 5
     disOrganizedAisles: 0
     lableType: 0
   - name: Very Easy
@@ -23307,7 +23321,7 @@ MonoBehaviour:
     npcAmount: 2
     timerAmount: 5
     livesAmount: 1
-    quotaAmount: 10
+    quotaAmount: 12
     disOrganizedAisles: 1
     lableType: 3
   npcAmount: 0000000001000000010000000100000001000000020000000200000002000000

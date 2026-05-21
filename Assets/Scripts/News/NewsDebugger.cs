@@ -3,9 +3,8 @@ using UnityEngine;
 public class NewsDebugger : MonoBehaviour
 {
     [SerializeField] int currentLevel;
-    void Start()
+    private void Awake()
     {
         GameData.currentLevel = currentLevel;
     }
-
 }

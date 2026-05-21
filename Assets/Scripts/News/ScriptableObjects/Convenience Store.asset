@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Convenience Store
   m_EditorClassIdentifier: Assembly-CSharp::NewsOutlet
   outletText:
-  - WEIRDO REPLACED STORE WITH SELLOUT MERCH?
+  - MAN REPLACED STORE WITH SELLOUT MERCH?
   - HE HAS A BLUE CAR
   outletImg:
   - {fileID: 2800000, guid: def0bd7dad6d72f49b27338461d26577, type: 3}

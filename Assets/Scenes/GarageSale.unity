@@ -6752,7 +6752,7 @@ MonoBehaviour:
   searchLookSpeed: 180
   frontDoor: {fileID: 927236629}
   deskReturn: {fileID: 1389195323}
-  grabSpeed: 4.5
+  grabSpeed: 10
   returnSpeed: 3
   kickArrivalRadius: 1.5
   kickPlantDistance: 1
@@ -6840,33 +6840,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySound
   playerAudioSource: {fileID: 1992249801}
   foundClips:
-  - {fileID: 8300000, guid: a7d0463be23aedb44bda460f230564e0, type: 3}
-  - {fileID: 8300000, guid: f6dcb85bc59020849a86b3271d9dfd4c, type: 3}
-  - {fileID: 8300000, guid: 5ce9035ad0f7d834b8241dd8c4ade184, type: 3}
-  - {fileID: 8300000, guid: f9f005d74421cf34391c0bc50a9c2dc6, type: 3}
-  - {fileID: 8300000, guid: ed0bff8154d70a74bacacafa7499212c, type: 3}
-  - {fileID: 8300000, guid: 84e3cd3017021c04eaa54f7232a921ea, type: 3}
-  - {fileID: 8300000, guid: 35fbf73d1d5363448a0fc54fa7bde65f, type: 3}
+  - {fileID: 8300000, guid: 48806f7589375ff4d9b0f20ceb061cdb, type: 3}
+  - {fileID: 8300000, guid: cbd3ed0d7101e2e40942618bf2fbb7bc, type: 3}
+  - {fileID: 8300000, guid: 4d2bb66641b2f894ea20ea6add125299, type: 3}
+  - {fileID: 8300000, guid: 41b931482c932c047b5d1e7f3f79167c, type: 3}
+  - {fileID: 8300000, guid: 313438d53e56a9848b4a1e3b0ac5508e, type: 3}
   pickupClips:
-  - {fileID: 8300000, guid: e4e77d33d3f35e84683546885037e4e9, type: 3}
-  - {fileID: 8300000, guid: 7e3ca289f05d7984b81f30a887a3758c, type: 3}
-  - {fileID: 8300000, guid: 548d308209ee749489cd2e56816a1934, type: 3}
+  - {fileID: 8300000, guid: c6515288bea54874e84df2c090dd81a8, type: 3}
+  - {fileID: 8300000, guid: 0d1d1e178d8de484eb37e7f8f09fbd6d, type: 3}
+  - {fileID: 8300000, guid: 9beba3b26d3a5374d8ee92a053f09f16, type: 3}
+  - {fileID: 8300000, guid: c9fdc30b52ef14e4fb41f1b66fde6572, type: 3}
+  - {fileID: 8300000, guid: 67f075f04e5811b43bca85b4366feac2, type: 3}
   grabSFX: {fileID: 8300000, guid: 80aa14bd4eb499a479fa551a88760872, type: 3}
   throwClips:
-  - {fileID: 8300000, guid: d64128a55f187f74b9121280b538adfa, type: 3}
-  - {fileID: 8300000, guid: b232836a5404e1c44b855c7ceec6daea, type: 3}
-  - {fileID: 8300000, guid: 577fb2f140623a84faa1f26ef20c6a21, type: 3}
-  - {fileID: 8300000, guid: fbcb59ec32090984fa19b4dfea2a2a7a, type: 3}
-  - {fileID: 8300000, guid: 189257a96db8b154795ca9090a76328d, type: 3}
+  - {fileID: 8300000, guid: bb6bd694773ca2f4d97153cca06536b3, type: 3}
+  - {fileID: 8300000, guid: a5ac59fd50270c5459859082756d8dfa, type: 3}
   ThrowSFX: {fileID: 8300000, guid: c8c9fb980bdb69a4c80571ec575424ff, type: 3}
   suspiciousClips:
-  - {fileID: 8300000, guid: 4df4e89530f6f0e4ca4a6e6c0c58eaee, type: 3}
-  - {fileID: 8300000, guid: bc66f8663a60d484aae2a4f224e012ce, type: 3}
-  - {fileID: 8300000, guid: 9860adcd4e9d1ce42a996038866168ba, type: 3}
-  - {fileID: 8300000, guid: 1ab39847bb18e9c47a84ff8c778dd3f7, type: 3}
-  - {fileID: 8300000, guid: 237371789ff9604418fb755a59376f1c, type: 3}
-  - {fileID: 8300000, guid: 730d3eeeced747e4e8e4f3433eae5745, type: 3}
-  - {fileID: 8300000, guid: a4c4e032f033f034db2c11f72124ad65, type: 3}
+  - {fileID: 8300000, guid: 24b355f79cc7c8641ba45cd06dde8966, type: 3}
+  - {fileID: 8300000, guid: 63ff5bfb8d5e2f74281ccc5191556939, type: 3}
+  - {fileID: 8300000, guid: e76dec11bf34c814a8cee00da00bbd1b, type: 3}
+  - {fileID: 8300000, guid: c4eeba704447fb14686f17e20032c3ad, type: 3}
 --- !u!82 &836189533
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12264,30 +12258,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e221dafc0df654884ee704f5cbbe35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySound
-  playerAudioSource: {fileID: 0}
+  playerAudioSource: {fileID: 1992249801}
   foundClips:
-  - {fileID: 8300000, guid: a7d0463be23aedb44bda460f230564e0, type: 3}
-  - {fileID: 8300000, guid: f6dcb85bc59020849a86b3271d9dfd4c, type: 3}
-  - {fileID: 8300000, guid: 5ce9035ad0f7d834b8241dd8c4ade184, type: 3}
-  - {fileID: 8300000, guid: f9f005d74421cf34391c0bc50a9c2dc6, type: 3}
-  - {fileID: 8300000, guid: ed0bff8154d70a74bacacafa7499212c, type: 3}
-  - {fileID: 8300000, guid: 84e3cd3017021c04eaa54f7232a921ea, type: 3}
-  - {fileID: 8300000, guid: 35fbf73d1d5363448a0fc54fa7bde65f, type: 3}
-  - {fileID: 8300000, guid: c9b638d6a7306004eb91399200d86df8, type: 3}
+  - {fileID: 8300000, guid: 48806f7589375ff4d9b0f20ceb061cdb, type: 3}
+  - {fileID: 8300000, guid: cbd3ed0d7101e2e40942618bf2fbb7bc, type: 3}
+  - {fileID: 8300000, guid: 4d2bb66641b2f894ea20ea6add125299, type: 3}
+  - {fileID: 8300000, guid: 41b931482c932c047b5d1e7f3f79167c, type: 3}
+  - {fileID: 8300000, guid: 313438d53e56a9848b4a1e3b0ac5508e, type: 3}
   pickupClips:
-  - {fileID: 8300000, guid: e9b29cb011c9f72478cda4ab65f905d4, type: 3}
-  - {fileID: 8300000, guid: dc8183688c5381d48b9641466d902e0b, type: 3}
-  grabSFX: {fileID: 0}
-  throwClips: []
-  ThrowSFX: {fileID: 0}
+  - {fileID: 8300000, guid: c6515288bea54874e84df2c090dd81a8, type: 3}
+  - {fileID: 8300000, guid: 0d1d1e178d8de484eb37e7f8f09fbd6d, type: 3}
+  - {fileID: 8300000, guid: 9beba3b26d3a5374d8ee92a053f09f16, type: 3}
+  - {fileID: 8300000, guid: c9fdc30b52ef14e4fb41f1b66fde6572, type: 3}
+  - {fileID: 8300000, guid: 67f075f04e5811b43bca85b4366feac2, type: 3}
+  grabSFX: {fileID: 8300000, guid: 80aa14bd4eb499a479fa551a88760872, type: 3}
+  throwClips:
+  - {fileID: 8300000, guid: bb6bd694773ca2f4d97153cca06536b3, type: 3}
+  - {fileID: 8300000, guid: a5ac59fd50270c5459859082756d8dfa, type: 3}
+  ThrowSFX: {fileID: 8300000, guid: c8c9fb980bdb69a4c80571ec575424ff, type: 3}
   suspiciousClips:
-  - {fileID: 8300000, guid: 4df4e89530f6f0e4ca4a6e6c0c58eaee, type: 3}
-  - {fileID: 8300000, guid: bc66f8663a60d484aae2a4f224e012ce, type: 3}
-  - {fileID: 8300000, guid: 9860adcd4e9d1ce42a996038866168ba, type: 3}
-  - {fileID: 8300000, guid: 1ab39847bb18e9c47a84ff8c778dd3f7, type: 3}
-  - {fileID: 8300000, guid: 237371789ff9604418fb755a59376f1c, type: 3}
-  - {fileID: 8300000, guid: 730d3eeeced747e4e8e4f3433eae5745, type: 3}
-  - {fileID: 8300000, guid: a4c4e032f033f034db2c11f72124ad65, type: 3}
+  - {fileID: 8300000, guid: 24b355f79cc7c8641ba45cd06dde8966, type: 3}
+  - {fileID: 8300000, guid: 63ff5bfb8d5e2f74281ccc5191556939, type: 3}
+  - {fileID: 8300000, guid: e76dec11bf34c814a8cee00da00bbd1b, type: 3}
+  - {fileID: 8300000, guid: c4eeba704447fb14686f17e20032c3ad, type: 3}
 --- !u!114 &1482019619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12337,7 +12330,7 @@ MonoBehaviour:
   searchLookSpeed: 180
   frontDoor: {fileID: 927236629}
   deskReturn: {fileID: 745582928}
-  grabSpeed: 4.5
+  grabSpeed: 10
   returnSpeed: 3
   kickArrivalRadius: 1.5
   kickPlantDistance: 1

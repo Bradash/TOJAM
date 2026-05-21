@@ -19,8 +19,8 @@ public static class WebGLPostBuild
 
         // Define paths
         string defaultBuildFolder = Path.Combine(pathToBuiltProject, "Build");
-        string targetParentFolder = Path.Combine(pathToBuiltProject, "public");
-        string targetBuildFolder = Path.Combine(targetParentFolder, "build");
+        string targetParentFolder = Path.Combine(pathToBuiltProject, "Public");
+        string targetBuildFolder = Path.Combine(targetParentFolder, "Build");
 
         // 1. Check if the old build directory exists, and delete it if it does
         if (Directory.Exists(targetBuildFolder))

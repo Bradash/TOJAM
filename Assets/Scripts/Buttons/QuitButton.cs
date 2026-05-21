@@ -10,7 +10,11 @@ public class QuitButton : MonoBehaviour
 {
     void Awake()
     {
+#if WEB_PLATFORM
+        gameObject.SetActive(false);
+#else
         GetComponent<Button>().onClick.AddListener(Quit);
+#endif
     }
 
     public void Quit()

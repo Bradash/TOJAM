@@ -35,7 +35,24 @@ public class ItemInteraction : MonoBehaviour
             else
                 itemInventory.SelectPrevSlot();
         }
-        if (Input.GetMouseButtonDown(0))
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            itemInventory.SelectSlot(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            itemInventory.SelectSlot(2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            itemInventory.SelectSlot(3);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            itemInventory.SelectSlot(4);
+        }
+        if (Input.GetButtonDown("Fire1"))
         {
             Ray ray = mainCamera.ViewportPointToRay(pos);
             RaycastHit hit;

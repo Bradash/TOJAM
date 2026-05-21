@@ -10,7 +10,8 @@ public class ItemInventory : MonoBehaviour
     public int selectedItemSlot = 0;
     public TMP_Text destText;
     private Item selectedItem;
-    [SerializeField] FPSController fpsController;
+    [SerializeField] private FPSController fpsController;
+    [SerializeField] private Scouter scouter;
     public Color emptyColor;
     private void Start()
     {
@@ -39,14 +40,29 @@ public class ItemInventory : MonoBehaviour
 
     private void UpdateDest()
     {
-        (selectedItem,_) = GetSelectedItem();
+        (selectedItem, _) = GetSelectedItem();
         if (!destText) return;
+
+        ItemDisplay displayToTrack = null;
+
         if (selectedItem)
         {
             destText.text = selectedItem.storeItem ? "Car" : selectedItem.itemDestination;
+            
+            if (scouter && scouter.scouterOnline && !selectedItem.storeItem)
+            {
+                displayToTrack = ItemSystem.Instance.GetDisplay(selectedItem.itemDestination);
+            }
         }
         else
+        {
             destText.text = "";
+        }
+        
+        if (scouter)
+        {
+            scouter.SetLocation(displayToTrack);
+        }
     }
 
     public bool SetItem(Item item)

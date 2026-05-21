@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Car
   - Projectile
+  - Scouter
   layers:
   - Default
   - TransparentFX

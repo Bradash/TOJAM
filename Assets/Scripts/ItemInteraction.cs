@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class ItemInteraction : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class ItemInteraction : MonoBehaviour
     public ItemInventory  itemInventory;
     public static event Action OnStoreSwapCompleted;
     public PromptDisplay promptDisplay;
-
+    [SerializeField] private Scouter scouter;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -52,34 +53,52 @@ public class ItemInteraction : MonoBehaviour
         {
             itemInventory.SelectSlot(4);
         }
-        if (Input.GetButtonDown("Fire1"))
+
+        if (!Input.GetButtonDown("Fire1")) return;
+        Ray ray = mainCamera.ViewportPointToRay(pos);
+        if (!Physics.Raycast(ray, out RaycastHit hit, interactionDistance, layerMask, queryTriggerInteraction)) return;
+
+        if (hit.collider.CompareTag("Car"))
         {
-            Ray ray = mainCamera.ViewportPointToRay(pos);
-            RaycastHit hit;
-            if (!Physics.Raycast(ray, out hit, interactionDistance, layerMask, queryTriggerInteraction)) return;
-            if (hit.collider.CompareTag("Car"))
+            if (itemInventory.TryRemoveSelectedStoreItem())
             {
-                if (itemInventory.TryRemoveSelectedStoreItem())
-                {
-                    OnStoreSwapCompleted?.Invoke();
-                }   
+                OnStoreSwapCompleted?.Invoke();
             }
-            ItemDisplay itemDisplay;
-            if (hit.collider.TryGetComponent<ItemDisplay>(out itemDisplay))
-            {
-                ReplaceItemInInventory(itemDisplay);
-                return;
-            }
-
-            if (!hit.collider.TryGetComponent<Item>(out Item item)) return;
-            if (item.TryGetItemDisplay(out itemDisplay))
-            {
-                ReplaceItemInInventory(itemDisplay);
-                return;
-            }
-
-            itemInventory.SetItem(item);
+            return;
         }
+
+        if (hit.collider.CompareTag("Scouter"))
+        {
+            if (!scouter)
+            {
+                scouter = FindFirstObjectByType<Scouter>();
+            }
+            if (scouter)
+            {
+                scouter.scouterOnline = true;
+                hit.collider.gameObject.SetActive(false);
+            }
+            else
+            {
+                Debug.LogWarning($"Interacted with a Scouter item, but the 'scouter' reference is missing on {gameObject.name}!", this);
+            }
+            return;
+        }
+
+        if (hit.collider.TryGetComponent<ItemDisplay>(out ItemDisplay itemDisplay))
+        {
+            ReplaceItemInInventory(itemDisplay);
+            return;
+        }
+
+        if (!hit.collider.TryGetComponent<Item>(out Item item)) return;
+        if (item.TryGetItemDisplay(out itemDisplay))
+        {
+            ReplaceItemInInventory(itemDisplay);
+            return;
+        }
+
+        itemInventory.SetItem(item);
     }
 
     private void ReplaceItemInInventory(ItemDisplay itemDisplay)

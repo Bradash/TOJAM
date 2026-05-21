@@ -6,8 +6,8 @@ using UnityEngine;
 public class ItemSystem : MonoBehaviour
 {
     public static ItemSystem Instance { get; private set; }
-    Dictionary<string, ItemDisplay> storeDisplays = new Dictionary<string, ItemDisplay>();
-    List<string> availableDisplays = new List<string>();
+    private readonly Dictionary<string, ItemDisplay> storeDisplays = new Dictionary<string, ItemDisplay>();
+    private readonly List<string> availableDisplays = new List<string>();
     public List<ItemData> storeItems = new List<ItemData>();
     public List<ItemData> swappedItems = new List<ItemData>();
     
@@ -76,6 +76,10 @@ public class ItemSystem : MonoBehaviour
         return item;
     }
 
+    public ItemDisplay GetDisplay(string location)
+    {
+        return storeDisplays.GetValueOrDefault(location);
+    }
     public void AddAsAvailableDisplay(string location)
     { 
         availableDisplays.Add(location);

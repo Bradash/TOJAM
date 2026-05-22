@@ -39,19 +39,19 @@ public class ItemInteraction : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            itemInventory.SelectSlot(1);
+            itemInventory.SelectSlot(0);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            itemInventory.SelectSlot(2);
+            itemInventory.SelectSlot(1);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            itemInventory.SelectSlot(3);
+            itemInventory.SelectSlot(2);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            itemInventory.SelectSlot(4);
+            itemInventory.SelectSlot(3);
         }
 
         if (!Input.GetButtonDown("Fire1")) return;

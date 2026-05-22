@@ -3155,6 +3155,7 @@ MonoBehaviour:
   queryTriggerInteraction: 0
   itemInventory: {fileID: 1513340154}
   promptDisplay: {fileID: 1315007495}
+  scouter: {fileID: 0}
 --- !u!4 &387109862
 Transform:
   m_ObjectHideFlags: 0
@@ -12608,13 +12609,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     itemUI:
       emptyColor: {r: 0, g: 0, b: 0, a: 0}
-      itemImage: {fileID: 1705868550}
-      SelectedUIObject: {fileID: 745531535}
-  - item: {fileID: 0}
-    itemUI:
-      emptyColor: {r: 0, g: 0, b: 0, a: 0}
-      itemImage: {fileID: 1412954400}
-      SelectedUIObject: {fileID: 1235028121}
+      itemImage: {fileID: 1962383099}
+      SelectedUIObject: {fileID: 690280353}
   - item: {fileID: 0}
     itemUI:
       emptyColor: {r: 0, g: 0, b: 0, a: 0}
@@ -12623,11 +12619,17 @@ MonoBehaviour:
   - item: {fileID: 0}
     itemUI:
       emptyColor: {r: 0, g: 0, b: 0, a: 0}
-      itemImage: {fileID: 1962383099}
-      SelectedUIObject: {fileID: 690280353}
+      itemImage: {fileID: 1412954400}
+      SelectedUIObject: {fileID: 1235028121}
+  - item: {fileID: 0}
+    itemUI:
+      emptyColor: {r: 0, g: 0, b: 0, a: 0}
+      itemImage: {fileID: 1705868550}
+      SelectedUIObject: {fileID: 745531535}
   selectedItemSlot: 0
   destText: {fileID: 297210370}
   fpsController: {fileID: 1218581012}
+  scouter: {fileID: 0}
   emptyColor: {r: 0, g: 0, b: 0, a: 0.5882353}
 --- !u!4 &1513340155
 Transform:

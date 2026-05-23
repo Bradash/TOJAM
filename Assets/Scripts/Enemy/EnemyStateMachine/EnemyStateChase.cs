@@ -12,6 +12,7 @@ public class EnemyStateChase : EnemyState
 {
     public override string StateName => "Chase";
 
+    bool           soundPlayed;
     float          _lastSightTime;
     PlayerRespawn  _playerRespawn;
     EnemyThrow     _thrower;
@@ -32,7 +33,11 @@ public class EnemyStateChase : EnemyState
             _thrower = Enemy.GetComponent<EnemyThrow>();
 
         Agent.SetDestination(Enemy.target.position);
-        Enemy.enemySound.foundSound();
+        if (!soundPlayed)
+        {
+            Enemy.enemySound.foundSound();
+            soundPlayed = true;
+        }
     }
 
     public override void Tick()
@@ -95,7 +100,7 @@ public class EnemyStateChase : EnemyState
         _thrower?.TryThrow();
     }
 
-    public override void Exit() { }
+    public override void Exit() { soundPlayed = false; }
 
     void CatchPlayer()
     {

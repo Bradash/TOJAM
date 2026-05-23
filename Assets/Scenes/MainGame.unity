@@ -14939,33 +14939,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySound
   playerAudioSource: {fileID: 1397726218}
   foundClips:
-  - {fileID: 8300000, guid: a7d0463be23aedb44bda460f230564e0, type: 3}
-  - {fileID: 8300000, guid: f6dcb85bc59020849a86b3271d9dfd4c, type: 3}
-  - {fileID: 8300000, guid: 5ce9035ad0f7d834b8241dd8c4ade184, type: 3}
-  - {fileID: 8300000, guid: f9f005d74421cf34391c0bc50a9c2dc6, type: 3}
-  - {fileID: 8300000, guid: ed0bff8154d70a74bacacafa7499212c, type: 3}
-  - {fileID: 8300000, guid: 84e3cd3017021c04eaa54f7232a921ea, type: 3}
-  - {fileID: 8300000, guid: 35fbf73d1d5363448a0fc54fa7bde65f, type: 3}
+  - {fileID: 8300000, guid: bfeef28f6e2f3c14194591ed7ae9eb6b, type: 3}
+  - {fileID: 8300000, guid: 8ae931e2787c3dc4fb66dbc99e7e3f23, type: 3}
+  - {fileID: 8300000, guid: 100ed2d60a5b90347a5a0ffc32055b20, type: 3}
+  - {fileID: 8300000, guid: 2e6e7980b3b4f9e459f131b76a784fa6, type: 3}
+  - {fileID: 8300000, guid: e85dcf48179047545b43ecf208b79ca2, type: 3}
+  - {fileID: 8300000, guid: 00a14e3e76a3bcf4f99d07337048b01b, type: 3}
+  - {fileID: 8300000, guid: 786e4bb54c066be428777e83adbaa606, type: 3}
   pickupClips:
-  - {fileID: 8300000, guid: e4e77d33d3f35e84683546885037e4e9, type: 3}
-  - {fileID: 8300000, guid: 7e3ca289f05d7984b81f30a887a3758c, type: 3}
-  - {fileID: 8300000, guid: 548d308209ee749489cd2e56816a1934, type: 3}
+  - {fileID: 8300000, guid: a10531bca203a7e4a9d14ca108671e1b, type: 3}
+  - {fileID: 8300000, guid: b04aafd2ddeafdf41ba3a4bf667c0c2b, type: 3}
+  - {fileID: 8300000, guid: 8c7123cb53a421a429c7d79954dbba90, type: 3}
+  - {fileID: 8300000, guid: 3dba33418cb1f604991d3b620f5c7a6f, type: 3}
+  - {fileID: 8300000, guid: da6e3990f2b63e04dbefadb8313d8dcd, type: 3}
   grabSFX: {fileID: 8300000, guid: 80aa14bd4eb499a479fa551a88760872, type: 3}
   throwClips:
-  - {fileID: 8300000, guid: d64128a55f187f74b9121280b538adfa, type: 3}
-  - {fileID: 8300000, guid: b232836a5404e1c44b855c7ceec6daea, type: 3}
-  - {fileID: 8300000, guid: 577fb2f140623a84faa1f26ef20c6a21, type: 3}
-  - {fileID: 8300000, guid: fbcb59ec32090984fa19b4dfea2a2a7a, type: 3}
-  - {fileID: 8300000, guid: 189257a96db8b154795ca9090a76328d, type: 3}
+  - {fileID: 8300000, guid: f074287e26215b94689b1364797f3460, type: 3}
+  - {fileID: 8300000, guid: dcd638855ecc43548ab0ba406067947b, type: 3}
+  - {fileID: 8300000, guid: 265330ceccb243b479f0a4c50357266e, type: 3}
+  - {fileID: 8300000, guid: 5836af61061c5a74c974dfc8fe033a6c, type: 3}
+  - {fileID: 8300000, guid: 44e9c42fe00ddd843b6b36e561bc7093, type: 3}
+  - {fileID: 8300000, guid: 9ceecd2597bf934489dc0674224d6f75, type: 3}
   ThrowSFX: {fileID: 8300000, guid: c8c9fb980bdb69a4c80571ec575424ff, type: 3}
   suspiciousClips:
-  - {fileID: 8300000, guid: 4df4e89530f6f0e4ca4a6e6c0c58eaee, type: 3}
-  - {fileID: 8300000, guid: bc66f8663a60d484aae2a4f224e012ce, type: 3}
-  - {fileID: 8300000, guid: 9860adcd4e9d1ce42a996038866168ba, type: 3}
-  - {fileID: 8300000, guid: 1ab39847bb18e9c47a84ff8c778dd3f7, type: 3}
-  - {fileID: 8300000, guid: 237371789ff9604418fb755a59376f1c, type: 3}
-  - {fileID: 8300000, guid: 730d3eeeced747e4e8e4f3433eae5745, type: 3}
-  - {fileID: 8300000, guid: a4c4e032f033f034db2c11f72124ad65, type: 3}
+  - {fileID: 8300000, guid: 07e731b34f1f5a84b89b924748d39368, type: 3}
+  - {fileID: 8300000, guid: 7f2cfc7fcf26c18449c354ecf1d1e077, type: 3}
+  - {fileID: 8300000, guid: 1dee6f787941d4f48bb8801523988bee, type: 3}
+  - {fileID: 8300000, guid: 48c07317c591720488167b5174522cf0, type: 3}
+  - {fileID: 8300000, guid: e9fbfab209d70b24c8836075acc5691a, type: 3}
 --- !u!114 &1482019619
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -33,11 +33,7 @@ public class EnemyStateChase : EnemyState
             _thrower = Enemy.GetComponent<EnemyThrow>();
 
         Agent.SetDestination(Enemy.target.position);
-        if (!soundPlayed)
-        {
-            Enemy.enemySound.foundSound();
-            soundPlayed = true;
-        }
+        Enemy.enemySound.foundSound();
     }
 
     public override void Tick()
@@ -100,7 +96,7 @@ public class EnemyStateChase : EnemyState
         _thrower?.TryThrow();
     }
 
-    public override void Exit() { soundPlayed = false; }
+    public override void Exit() { }
 
     void CatchPlayer()
     {

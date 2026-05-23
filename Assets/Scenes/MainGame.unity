@@ -8775,7 +8775,7 @@ MonoBehaviour:
   catchRadius: 1.2
   searchSpeed: 5
   searchRadius: 5
-  searchDuration: 4
+  searchDuration: 1
   searchWaypointInterval: 2
   searchLookSpeed: 180
   frontDoor: {fileID: 893711257}
@@ -15011,7 +15011,7 @@ MonoBehaviour:
   catchRadius: 1.2
   searchSpeed: 5
   searchRadius: 5
-  searchDuration: 4
+  searchDuration: 1
   searchWaypointInterval: 2
   searchLookSpeed: 180
   frontDoor: {fileID: 893711257}
@@ -20898,6 +20898,14 @@ MonoBehaviour:
   npcs:
   - {fileID: 836189523}
   - {fileID: 1482019614}
+  difficulty:
+    name: Debug
+    npcAmount: 2
+    timerAmount: 50
+    livesAmount: 50
+    quotaAmount: 1
+    disOrganizedAisles: 0
+    lableType: 1
 --- !u!1001 &2082512170
 PrefabInstance:
   m_ObjectHideFlags: 0

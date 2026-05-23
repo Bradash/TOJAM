@@ -23,7 +23,10 @@ public class EnemySound : MonoBehaviour
             return;
         }
         int randomIndex = Random.Range(0, foundClips.Length);
-        audioSource.PlayOneShot(foundClips[randomIndex]);
+        if(!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(foundClips[randomIndex]);
+        }
     }
     public void pickupSound()
     {

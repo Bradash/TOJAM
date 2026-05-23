@@ -48,13 +48,13 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        setData();
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
     }
 
     void Start()
     {
+        setData();
         _playerRespawn = FindAnyObjectByType<PlayerRespawn>();
         if (_playerRespawn != null)
             _playerRespawn.OnRespawn += HandleCaught;

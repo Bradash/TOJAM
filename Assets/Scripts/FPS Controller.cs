@@ -101,7 +101,6 @@ public class FPSController : MonoBehaviour
     void Awake()
     {
         CC           = GetComponent<CharacterController>();
-        PlayerCamera = Camera.main;
 
         RB = GetComponent<Rigidbody>();
         if (RB == null) RB = gameObject.AddComponent<Rigidbody>();
@@ -150,6 +149,7 @@ public class FPSController : MonoBehaviour
 
     void Start()
     {
+        PlayerCamera = Camera.main;
         if (weightCarried <= 0f) weightCarried = 1f;
         Cursor.lockState = CursorLockMode.Locked;
 

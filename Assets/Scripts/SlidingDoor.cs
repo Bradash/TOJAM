@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class SlidingDoor : MonoBehaviour
 {
-    [SerializeField] Transform playerPos;
+    Transform playerPos;
     [SerializeField] float openDistance = 3f;
     [SerializeField] Animator animator;
     AudioSource audioSource;
     [SerializeField] AudioClip[] doorSounds;
     [SerializeField] AudioClip[] closeSounds;
     bool isSet = false;
-    private void Awake()
+    private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
     private void Update()
     {

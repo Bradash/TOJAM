@@ -22,7 +22,7 @@ public enum LableType
     RandomHard
 }
 [System.Serializable]
-public struct Difficulty
+public class Difficulty
 {
     public string name;
     public int npcAmount;

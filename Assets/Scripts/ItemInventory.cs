@@ -10,11 +10,12 @@ public class ItemInventory : MonoBehaviour
     public int selectedItemSlot = 0;
     public TMP_Text destText;
     private Item selectedItem;
-    [SerializeField] private FPSController fpsController;
+    private FPSController fpsController;
     [SerializeField] private Scouter scouter;
     public Color emptyColor;
     private void Start()
     {
+        fpsController = FindFirstObjectByType<FPSController>();
         SelectSlot(selectedItemSlot);
         foreach (var slot in slots)
         {

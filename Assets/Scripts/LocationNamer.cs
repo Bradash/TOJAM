@@ -14,18 +14,18 @@ public class LocationNamer : MonoBehaviour
         //NameLocations();
         //oldStyle = GameData.difficulty.disOrganizedAisles;
         locationNumber = 1;
-        switch (GameData.difficulty.lableType)
+        switch (GameData.difficulty.labelType)
         {
-            case LableType.RandomEasy:
+            case LabelType.RandomEasy:
                 NameLocationsRandomEasy();
                 break;
-            case LableType.RandomHard:
+            case LabelType.RandomHard:
                 NameLocationsRandomHard();
                 break;
-            case LableType.OldStyle:
+            case LabelType.OldStyle:
                 NameLocationsOldStyle();
                 break;
-            case LableType.Organized:
+            case LabelType.Organized:
             default:
                 NameLocations();
                 break;

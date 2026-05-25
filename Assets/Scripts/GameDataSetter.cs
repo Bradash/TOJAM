@@ -36,7 +36,7 @@ public class GameDataSetter : MonoBehaviour
     }
     void SetText(Difficulty difficulty)
     {
-        descriptionText.text = $"NPCs: {difficulty.npcAmount,2} | Timer: {difficulty.timerAmount,2} | Lives: {difficulty.livesAmount,2} | Quota: {difficulty.quotaAmount,2} | Aisle Labels: {difficulty.lableType.ToString()}";
+        descriptionText.text = $"NPCs: {difficulty.npcAmount,2} | Timer: {difficulty.timerAmount,2} | Lives: {difficulty.livesAmount,2} | Quota: {difficulty.quotaAmount,2} | Aisle Labels: {difficulty.labelType.ToString()}";
     }
     public void level(int level) 
     { 

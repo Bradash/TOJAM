@@ -14,7 +14,7 @@ public class GameData : MonoBehaviour
 }
 
 
-public enum LableType
+public enum LabelType
 {
     Organized,
     OldStyle,
@@ -25,11 +25,11 @@ public enum LableType
 public class Difficulty
 {
     public string name;
+    [Min(0)]
     public int npcAmount;
-    public int timerAmount;
-    public int livesAmount;
-    public int quotaAmount;
-    [FormerlySerializedAs("deOrganizedAiles")] public bool disOrganizedAisles;
-    public LableType lableType;
+    [Min(1)] public int timerAmount;
+    [Min(1)] public int livesAmount;
+    [Min(1)] public int quotaAmount;
+    [FormerlySerializedAs("lableType")] public LabelType labelType;
 
 }

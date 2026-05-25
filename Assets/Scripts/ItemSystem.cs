@@ -19,15 +19,17 @@ public class ItemSystem : MonoBehaviour
             return;
         }
         Instance = this;
-        var displays = FindObjectsByType<ItemDisplay>(FindObjectsInactive.Include,FindObjectsSortMode.None);
-        foreach (var display in displays)
+    }
+
+    internal void Setup()
+    {
+        ItemDisplay[] displays = FindObjectsByType<ItemDisplay>(FindObjectsInactive.Include,FindObjectsSortMode.None);
+        foreach (ItemDisplay display in displays)
         {
-            if (display.storeDisplay)
+            if (!display.storeDisplay) continue;
+            if (storeDisplays.TryAdd(display.location, display))
             {
-                if (storeDisplays.TryAdd(display.location, display))
-                {
-                    availableDisplays.Add(display.location);
-                }
+                availableDisplays.Add(display.location);
             }
         }
     }

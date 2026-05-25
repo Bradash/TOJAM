@@ -6,14 +6,11 @@ public class GameDataGetter : MonoBehaviour
     [SerializeField] GameObject[] quotaItems;
     [SerializeField] GameObject[] npcs;
     [SerializeField] Difficulty difficulty;
-    LocationNamer[] ailes;
+    private LocationNamer[] ailes;
     private void Start()
     {
-        if (GameData.difficulty == null)
-        {
-            GameData.difficulty = difficulty;
-        }
-        ailes = FindObjectsOfType<LocationNamer>();
+        GameData.difficulty ??= difficulty;
+        ailes = FindObjectsByType<LocationNamer>(FindObjectsSortMode.None);
         for (int i = 0; i < GameData.difficulty.quotaAmount; i++)
         {
             quotaItems[i].SetActive(true);
@@ -22,5 +19,11 @@ public class GameDataGetter : MonoBehaviour
         {
             npcs[i].SetActive(i < GameData.difficulty.npcAmount);
         }
+
+        foreach (LocationNamer locationNamer in ailes)
+        {
+            locationNamer.Init();
+        }
+        ItemSystem.Instance.Setup();
     }
 }

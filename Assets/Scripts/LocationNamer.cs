@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[DefaultExecutionOrder(-25)]
 public class LocationNamer : MonoBehaviour
 {
     public string aisle;
     private int locationNumber = 1;
     public bool oldStyle = false;
-    
-    private void Awake()
+
+    internal void Init()
     {
         //NameLocations();
         //oldStyle = GameData.difficulty.disOrganizedAisles;
@@ -31,7 +30,6 @@ public class LocationNamer : MonoBehaviour
                 NameLocations();
                 break;
         }
-        
     }
     [ContextMenu("NameLocations")]
     private void NameLocations()

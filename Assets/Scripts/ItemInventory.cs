@@ -36,6 +36,7 @@ public class ItemInventory : MonoBehaviour
             }
             slots[i].itemUI.SelectedUIObject.SetActive(slot == i);
         }
+        selectedItemSlot = slot;
         UpdateDest();
     }
 

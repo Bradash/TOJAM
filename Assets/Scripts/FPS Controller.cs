@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Player controller and blackboard for the PlayerStateMachine.
@@ -16,9 +17,11 @@ using UnityEngine;
 public class FPSController : MonoBehaviour
 {
     [Header("Movement")]
+    [SerializeField] private InputActionReference moveAction;
     [SerializeField] private float walkSpeed = 3f;
 
     [Header("Look")]
+    [SerializeField] private InputActionReference lookAction;
     [SerializeField] private float mouseSensitivity = 2f;
     [SerializeField] private float upDownRange      = 80f;
 
@@ -64,6 +67,8 @@ public class FPSController : MonoBehaviour
     public float RagdollMaxAngularVelocity  => ragdollMaxAngularVelocity;
     public float RagdollTorqueScale         => ragdollTorqueScale;
     public FootSteps FootSteps              => footSteps;
+    public InputAction MoveAction => moveAction?.ToInputAction();
+    public InputAction LookAction => lookAction?.ToInputAction();
 
     /// <summary>Yaw the player was facing when they ragdolled. Recovering reads this to restore heading.</summary>
     public float PreRagdollYaw { get; set; }
@@ -157,6 +162,7 @@ public class FPSController : MonoBehaviour
         GameSettings.Changed += ApplySettings;
 
         _stateMachine.Initialize(_normalState);
+        //MoveAction.ToInputAction();
     }
 
     void OnDestroy()

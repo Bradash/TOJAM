@@ -13,7 +13,7 @@ using UnityEngine;
 public static class GameSettings
 {
     // ── PlayerPrefs keys ──
-    const string KEY_MOUSE_SENSITIVITY = "settings.mouseSensitivity";
+    const string KEY_MOUSE_SENSITIVITY = "settings.mouseSensitivityNew";
     const string KEY_MASTER_VOLUME     = "settings.masterVolume";
     const string KEY_MUSIC_VOLUME      = "settings.musicVolume";
     const string KEY_SFX_VOLUME        = "settings.sfxVolume";
@@ -23,7 +23,7 @@ public static class GameSettings
     const string KEY_RES_HEIGHT        = "settings.resHeight";
 
     // ── Defaults ──
-    public const float DefaultMouseSensitivity = 2f;
+    public const float DefaultMouseSensitivity = 0.2f;
     public const float DefaultMasterVolume     = 1f;
     public const float DefaultMusicVolume      = 1f;
     public const float DefaultSfxVolume        = 1f;
@@ -32,7 +32,7 @@ public static class GameSettings
 
     // ── Ranges ──
     public const float MinMouseSensitivity = 0.1f;
-    public const float MaxMouseSensitivity = 10f;
+    public const float MaxMouseSensitivity = 1f;
 
     /// <summary>Fires after any setting value is written. Listeners should refresh from getters.</summary>
     public static event Action Changed;

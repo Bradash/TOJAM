@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Default playable state: CharacterController-driven walking + mouse look.
-/// Reads movement axes, drives footstep audio, applies weight-based slowdown.
+/// Reads movement axes via Input Actions, drives footstep audio, applies weight-based slowdown.
 ///
 /// Transitions to:  Ragdoll — when FPSController.GoToRagdoll is invoked.
 /// </summary>
@@ -18,6 +19,15 @@ public class PlayerStateNormal : PlayerState
 
     float _verticalRotation;
     float _verticalVelocity;
+
+    // We cache references to the actions to avoid querying them every frame.
+    // Ensure your FPSController exposes these actions!
+    // Example fields to add to FPSController:
+    //      public InputAction MoveAction;
+    //      public InputAction LookAction;
+    // Don't forget to configure, assign, and enable them in your FPSController.
+    InputAction _moveAction;
+    InputAction _lookAction;
 
     public PlayerStateNormal(FPSController player) : base(player) { }
 
@@ -39,8 +49,17 @@ public class PlayerStateNormal : PlayerState
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible   = false;
 
+        // Fetch input actions from the player controller
+        // (Make sure these are declared and assigned in your FPSController script)
+        _moveAction = Player.MoveAction;
+        _lookAction = Player.LookAction;
+
+        // Safely enable the actions if they aren't already enabled globally
+        _moveAction?.Enable();
+        _lookAction?.Enable();
+
         // Sync the local vertical-look from whatever angle the camera is at.
-        if (Player.PlayerCamera != null)
+        if (Player.PlayerCamera)
         {
             float x = Player.PlayerCamera.transform.localEulerAngles.x;
             _verticalRotation = x > 180f ? x - 360f : x;
@@ -57,6 +76,10 @@ public class PlayerStateNormal : PlayerState
     public override void Exit()
     {
         if (Player.FootSteps != null) Player.FootSteps.isWalking = false;
+
+        // If you want to disable inputs while in Ragdoll or other states:
+        _moveAction?.Disable();
+        _lookAction?.Disable();
     }
 
     void HandleMovement()
@@ -67,10 +90,13 @@ public class PlayerStateNormal : PlayerState
         // look around during the grab.
         if (Player.ExternallyDriven) return;
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput   = Input.GetAxis("Vertical");
-        bool  walking         = horizontalInput != 0f || verticalInput != 0f;
+        // Read Vector2 movement input from our input action (X = Horizontal, Y = Vertical)
+        Vector2 inputVec = _moveAction != null ? _moveAction.ReadValue<Vector2>() : Vector2.zero;
+        float horizontalInput = inputVec.x;
+        float verticalInput   = inputVec.y;
 
+        bool walking = horizontalInput != 0f || verticalInput != 0f;
+        
         if (Player.FootSteps != null)
         {
             Player.FootSteps.isWalking = walking;
@@ -104,10 +130,17 @@ public class PlayerStateNormal : PlayerState
     {
         if (Player.PlayerCamera == null) return;
 
-        float mouseXRotation = Input.GetAxis("Mouse X") * Player.MouseSensitivity;
+        // Read Vector2 look input from our input action (X = Horizontal Delta, Y = Vertical Delta)
+        Vector2 lookVec = _lookAction != null ? _lookAction.ReadValue<Vector2>() : Vector2.zero;
+
+        // NOTE: The legacy Input.GetAxis("Mouse X") returns scaled, frame-rate independent values. 
+        // In the new Input System, "Mouse/Delta" returns raw pixel deltas. 
+        // If your mouse looking feels way too fast or slow after this change, you can adjust 
+        // your Player.MouseSensitivity value, or apply a scale modifier here (e.g., lookVec * 0.1f).
+        float mouseXRotation = lookVec.x * Player.MouseSensitivity;
         PlayerTransform.Rotate(0f, mouseXRotation, 0f);
 
-        float mouseY = Input.GetAxis("Mouse Y") * Player.MouseSensitivity;
+        float mouseY = lookVec.y * Player.MouseSensitivity;
         _verticalRotation += GameSettings.InvertY ? mouseY : -mouseY;
         _verticalRotation = Mathf.Clamp(_verticalRotation, -Player.UpDownRange, Player.UpDownRange);
         Player.PlayerCamera.transform.localRotation = Quaternion.Euler(_verticalRotation, 0f, 0f);

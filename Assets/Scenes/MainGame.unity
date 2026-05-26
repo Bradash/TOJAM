@@ -2979,6 +2979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 4394106266053956697, guid: c4e93a80f36ee8942b37b20092ae7119, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4627724057430797180, guid: c4e93a80f36ee8942b37b20092ae7119, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -11831,7 +11835,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cca0b57f38c264195146c0956499bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FPSController
+  moveAction: {fileID: 3073917862106051197, guid: d7528a346b34d6841bfbe6ba4ddef2ba, type: 3}
   walkSpeed: 3
+  lookAction: {fileID: -8648326018129710206, guid: d7528a346b34d6841bfbe6ba4ddef2ba, type: 3}
   mouseSensitivity: 2
   upDownRange: 80
   weightCarried: 0

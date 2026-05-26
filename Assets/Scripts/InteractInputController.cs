@@ -33,53 +33,25 @@ public class InteractInputController : MonoBehaviour
     private void OnEnable()
     {
         // Safely enable actions and subscribe to their execution events
-        RegisterAction(interactAction, OnInteract);
-        RegisterAction(previousAction, OnPrevious);
-        RegisterAction(nextAction, OnNext);
-        RegisterAction(select1Action, OnSelect1);
-        RegisterAction(select2Action, OnSelect2);
-        RegisterAction(select3Action, OnSelect3);
-        RegisterAction(select4Action, OnSelect4);
+        InputActions.RegisterAction(interactAction, OnInteract);
+        InputActions.RegisterAction(previousAction, OnPrevious);
+        InputActions.RegisterAction(nextAction, OnNext);
+        InputActions.RegisterAction(select1Action, OnSelect1);
+        InputActions.RegisterAction(select2Action, OnSelect2);
+        InputActions.RegisterAction(select3Action, OnSelect3);
+        InputActions.RegisterAction(select4Action, OnSelect4);
     }
 
     private void OnDisable()
     {
         // Unsubscribe from callbacks to prevent memory leaks and disable input checking
-        UnregisterAction(interactAction, OnInteract);
-        UnregisterAction(previousAction, OnPrevious);
-        UnregisterAction(nextAction, OnNext);
-        UnregisterAction(select1Action, OnSelect1);
-        UnregisterAction(select2Action, OnSelect2);
-        UnregisterAction(select3Action, OnSelect3);
-        UnregisterAction(select4Action, OnSelect4);
-    }
-
-    /// <summary>
-    /// Helper to enable and subscribe a callback method to an InputActionReference.
-    /// </summary>
-    private void RegisterAction(InputActionReference actionRef, System.Action<InputAction.CallbackContext> callback)
-    {
-        if (actionRef != null && actionRef.action != null)
-        {
-            actionRef.action.Enable();
-            actionRef.action.performed += callback;
-        }
-        else
-        {
-            Debug.LogWarning($"An action reference on {gameObject.name} is missing or not assigned in the Inspector!");
-        }
-    }
-
-    /// <summary>
-    /// Helper to unsubscribe and clean up an InputActionReference callback.
-    /// </summary>
-    private void UnregisterAction(InputActionReference actionRef, System.Action<InputAction.CallbackContext> callback)
-    {
-        if (actionRef != null && actionRef.action != null)
-        {
-            actionRef.action.performed -= callback;
-            actionRef.action.Disable();
-        }
+        InputActions.UnregisterAction(interactAction, OnInteract);
+        InputActions.UnregisterAction(previousAction, OnPrevious);
+        InputActions.UnregisterAction(nextAction, OnNext);
+        InputActions.UnregisterAction(select1Action, OnSelect1);
+        InputActions.UnregisterAction(select2Action, OnSelect2);
+        InputActions.UnregisterAction(select3Action, OnSelect3);
+        InputActions.UnregisterAction(select4Action, OnSelect4);
     }
 
     // ==========================================

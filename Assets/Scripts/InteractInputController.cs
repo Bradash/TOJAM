@@ -10,24 +10,31 @@ public class InteractInputController : MonoBehaviour
     [SerializeField] private ItemInteraction interaction;
     [Header("Action References")]
     [Tooltip("Drag the 'Interact' action reference from your Input Action asset here.")]
+    [InputActionDropdown(InputActionType.Button)]
     [SerializeField] private InputActionReference interactAction;
 
     [Tooltip("Drag the 'Previous' action reference from your Input Action asset here.")]
+    [InputActionDropdown(InputActionType.Button)]
     [SerializeField] private InputActionReference previousAction;
 
     [Tooltip("Drag the 'Next' action reference from your Input Action asset here.")]
+    [InputActionDropdown(InputActionType.Button)]
     [SerializeField] private InputActionReference nextAction;
 
     [Tooltip("Drag the 'Select1' action reference from your Input Action asset here.")]
+    [InputActionDropdown(InputActionType.Button)]
     [SerializeField] private InputActionReference select1Action;
 
     [Tooltip("Drag the 'Select2' action reference from your Input Action asset here.")]
+    [InputActionDropdown(InputActionType.Button)]
     [SerializeField] private InputActionReference select2Action;
 
     [Tooltip("Drag the 'Select3' action reference from your Input Action asset here.")]
+    [InputActionDropdown(InputActionType.Button)]
     [SerializeField] private InputActionReference select3Action;
 
     [Tooltip("Drag the 'Select4' action reference from your Input Action asset here.")]
+    [InputActionDropdown(InputActionType.Button)]
     [SerializeField] private InputActionReference select4Action;
 
     private void OnEnable()

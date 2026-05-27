@@ -17,10 +17,12 @@ using UnityEngine.InputSystem;
 public class FPSController : MonoBehaviour
 {
     [Header("Movement")]
+    [InputActionDropdown(InputActionControlType.Vector2)]
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private float walkSpeed = 3f;
 
     [Header("Look")]
+    [InputActionDropdown(InputActionControlType.Vector2)]
     [SerializeField] private InputActionReference lookAction;
     [SerializeField] private float mouseSensitivity = 2f;
     [SerializeField] private float upDownRange      = 80f;

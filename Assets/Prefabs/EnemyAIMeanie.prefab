@@ -376,7 +376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FootSteps
   audioClips:
-  - {fileID: 8300000, guid: 0181b8dd204874f45af3c303878a903c, type: 3}
   - {fileID: 8300000, guid: db73cc828ac991a42a6e02058146f475, type: 3}
   - {fileID: 8300000, guid: cd8801e3e58eee04aa15074dee007d18, type: 3}
   - {fileID: 8300000, guid: c03bf991981bd7048892a26671b303ce, type: 3}
@@ -384,8 +383,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ca348ac184011e34e80aa552d8907946, type: 3}
   - {fileID: 8300000, guid: adfc208fe92c0fe4eb4bf522a3fb95b6, type: 3}
   - {fileID: 8300000, guid: 91626f5b84ad2c14f9c1b201e267d3a1, type: 3}
+  - {fileID: 8300000, guid: 0181b8dd204874f45af3c303878a903c, type: 3}
   isWalking: 1
-  footPitch: 0
+  footPitch: -0.1
 --- !u!82 &6757108743890265582
 AudioSource:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -407,10 +407,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 2
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

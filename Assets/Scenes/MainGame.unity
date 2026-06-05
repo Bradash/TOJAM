@@ -2869,6 +2869,156 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7988122406454237657, guid: f65318b15bd9c4142afa53d206b133ed, type: 3}
   m_PrefabInstance: {fileID: 881853761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &349544596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349544597}
+  - component: {fileID: 349544599}
+  - component: {fileID: 349544598}
+  - component: {fileID: 349544600}
+  m_Layer: 5
+  m_Name: Subtitles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &349544597
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349544596}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 424116805}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.00036621094, y: 0.00012207031}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &349544598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349544596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: e3d7651e50b62ae44918394cacdccc00, type: 2}
+  m_sharedMaterial: {fileID: -32363718784353430, guid: e3d7651e50b62ae44918394cacdccc00, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 1
+  m_colorMode: 2
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 0.85848266, b: 0, a: 1}
+    topRight: {r: 1, g: 0.85848266, b: 0, a: 1}
+    bottomLeft: {r: 1, g: 0.5590484, b: 0, a: 1}
+    bottomRight: {r: 1, g: 0.5590484, b: 0, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 42.8
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 50
+  m_fontStyle: 17
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 1024
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &349544599
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349544596}
+  m_CullTransparentMesh: 1
+--- !u!114 &349544600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349544596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e48aa779d68e9545a2fe8909d66134a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Subtitles
 --- !u!1001 &359392366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3838,6 +3988,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8374227725759344993, guid: a00e0ab35355a7e48917457e8590c412, type: 3}
   m_PrefabInstance: {fileID: 420476987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &424116805 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2249793086475910268, guid: 7e970ddd477a76c4a971879713b28db3, type: 3}
+  m_PrefabInstance: {fileID: 8674996127990846670}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &426914561
 PrefabInstance:
@@ -15566,7 +15721,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 3c3ec87397e42d04996b20020069071c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 3fee67d1dee798b439f2e64e8ed030ce, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1958034063
 Transform:
@@ -17751,6 +17906,202 @@ PrefabInstance:
       propertyPath: playerAudioSource
       value: 
       objectReference: {fileID: 1397726218}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: VoiceLines.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineGrab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineGrab.Array.data[0].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: e4e77d33d3f35e84683546885037e4e9, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineGrab.Array.data[1].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e3ca289f05d7984b81f30a887a3758c, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineGrab.Array.data[2].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 548d308209ee749489cd2e56816a1934, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[0].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: a7d0463be23aedb44bda460f230564e0, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[1].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: f6dcb85bc59020849a86b3271d9dfd4c, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[2].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ce9035ad0f7d834b8241dd8c4ade184, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[3].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: f9f005d74421cf34391c0bc50a9c2dc6, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[4].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: ed0bff8154d70a74bacacafa7499212c, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[5].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 84e3cd3017021c04eaa54f7232a921ea, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[6].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 35fbf73d1d5363448a0fc54fa7bde65f, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.data[0].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: d64128a55f187f74b9121280b538adfa, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.data[1].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: b232836a5404e1c44b855c7ceec6daea, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.data[2].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 577fb2f140623a84faa1f26ef20c6a21, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.data[3].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: fbcb59ec32090984fa19b4dfea2a2a7a, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.data[4].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 189257a96db8b154795ca9090a76328d, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[0].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 4df4e89530f6f0e4ca4a6e6c0c58eaee, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[1].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: bc66f8663a60d484aae2a4f224e012ce, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[2].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 9860adcd4e9d1ce42a996038866168ba, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[3].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ab39847bb18e9c47a84ff8c778dd3f7, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[4].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 237371789ff9604418fb755a59376f1c, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[5].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 730d3eeeced747e4e8e4f3433eae5745, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[6].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: a4c4e032f033f034db2c11f72124ad65, type: 3}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineGrab.Array.data[0].subtitleSet
+      value: HEY
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineGrab.Array.data[1].subtitleSet
+      value: GOT YOU
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineGrab.Array.data[2].subtitleSet
+      value: YOU
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[0].subtitleSet
+      value: HEY, GET OUT OF MY STORE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[1].subtitleSet
+      value: GET THAT OUT OF HERE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[2].subtitleSet
+      value: I FOUND YOU
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[3].subtitleSet
+      value: LEAVE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[4].subtitleSet
+      value: LEEAVE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[5].subtitleSet
+      value: LEAVE THIS PLACE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineChase.Array.data[6].subtitleSet
+      value: GET THAT MERCHANDICE AWAY!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.data[0].subtitleSet
+      value: STAY OUT!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.data[1].subtitleSet
+      value: AND NEVER COME BACK!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.data[2].subtitleSet
+      value: I'LL CALL THE COPS NEXT TIME!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.data[3].subtitleSet
+      value: AND NEVER COME BACK!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineThrow.Array.data[4].subtitleSet
+      value: YOU'RE NOT WELCOME!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[0].subtitleSet
+      value: Something feels wrong.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[1].subtitleSet
+      value: I don't remember that being red.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[2].subtitleSet
+      value: Something doesn't look right.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[3].subtitleSet
+      value: I got a bad feeling about this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[4].subtitleSet
+      value: I know that person is coming around!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[5].subtitleSet
+      value: I know that person's hiding!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: voiceLineWander.Array.data[6].subtitleSet
+      value: WHERE ARE YOU I KNOW YOU ARE AROUND.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17905,6 +18256,206 @@ PrefabInstance:
       propertyPath: playerAudioSource
       value: 
       objectReference: {fileID: 1397726218}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.data[0].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: a10531bca203a7e4a9d14ca108671e1b, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.data[1].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: b04aafd2ddeafdf41ba3a4bf667c0c2b, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.data[2].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c7123cb53a421a429c7d79954dbba90, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.data[3].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 3dba33418cb1f604991d3b620f5c7a6f, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.data[4].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: da6e3990f2b63e04dbefadb8313d8dcd, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[0].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: bfeef28f6e2f3c14194591ed7ae9eb6b, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[1].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ae931e2787c3dc4fb66dbc99e7e3f23, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[2].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 100ed2d60a5b90347a5a0ffc32055b20, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[3].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e6e7980b3b4f9e459f131b76a784fa6, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[4].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: e85dcf48179047545b43ecf208b79ca2, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[5].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 00a14e3e76a3bcf4f99d07337048b01b, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[6].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 786e4bb54c066be428777e83adbaa606, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[0].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: f074287e26215b94689b1364797f3460, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[1].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: dcd638855ecc43548ab0ba406067947b, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[2].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 265330ceccb243b479f0a4c50357266e, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[3].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 5836af61061c5a74c974dfc8fe033a6c, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[4].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 44e9c42fe00ddd843b6b36e561bc7093, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[5].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ceecd2597bf934489dc0674224d6f75, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.data[0].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 07e731b34f1f5a84b89b924748d39368, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.data[1].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f2cfc7fcf26c18449c354ecf1d1e077, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.data[2].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 1dee6f787941d4f48bb8801523988bee, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.data[3].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: 48c07317c591720488167b5174522cf0, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.data[4].voiceSet
+      value: 
+      objectReference: {fileID: 8300000, guid: e9fbfab209d70b24c8836075acc5691a, type: 3}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.data[0].subtitleSet
+      value: YOU GOT SOFT ARMS
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.data[1].subtitleSet
+      value: C'MERE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.data[2].subtitleSet
+      value: OH NO YOU DON'T YOU COMING WITH ME!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.data[3].subtitleSet
+      value: WE GOT A LIVE ONE BOSS!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineGrab.Array.data[4].subtitleSet
+      value: NICE TRY BUCKAROO
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[0].subtitleSet
+      value: WHAT IN TARNATION?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[1].subtitleSet
+      value: IFOUNDYOUNOWYOU!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[2].subtitleSet
+      value: GET OUT OF HERE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[3].subtitleSet
+      value: ooOOOHHH!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[4].subtitleSet
+      value: WHO THE HECK ARE YOU!?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[5].subtitleSet
+      value: GET YOUR GRUBBY HANDS OFF THAT!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineChase.Array.data[6].subtitleSet
+      value: LOOKS LIKE IT'S OVERTIME!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[0].subtitleSet
+      value: AND OFF WITH YA!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[1].subtitleSet
+      value: NEXT TIME YOU'RE GETTING A 5 FINGER DISCOUNT
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[2].subtitleSet
+      value: LOWER THE DIFFICULTY NEXT TIME!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[3].subtitleSet
+      value: GOT LICK SOME PAVEMENT
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[4].subtitleSet
+      value: AND NEVER COME BACK!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineThrow.Array.data[5].subtitleSet
+      value: NEXT TIME EAT A SALAD!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.data[0].subtitleSet
+      value: I always hate monday!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.data[1].subtitleSet
+      value: WHERE ARE YOU I GOT LOLLIPOP OR SOMETHING!?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.data[2].subtitleSet
+      value: JUST WAIT TILL I GET MY HANDS ON YOU!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.data[3].subtitleSet
+      value: OH! A FLY WAS THERE
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
+      propertyPath: voiceLineWander.Array.data[4].subtitleSet
+      value: SHOPLIFTERS SAYS WHAT!?
+      objectReference: {fileID: 0}
     - target: {fileID: 5225439882929765016, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
       propertyPath: m_Name
       value: EnemyAIMeanie 2
@@ -18053,7 +18604,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2249793086475910268, guid: 7e970ddd477a76c4a971879713b28db3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 349544597}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e970ddd477a76c4a971879713b28db3, type: 3}
 --- !u!1660057539 &9223372036854775807

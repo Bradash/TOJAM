@@ -182,34 +182,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySound
   playerAudioSource: {fileID: 0}
-  foundClips:
-  - {fileID: 8300000, guid: a7d0463be23aedb44bda460f230564e0, type: 3}
-  - {fileID: 8300000, guid: f6dcb85bc59020849a86b3271d9dfd4c, type: 3}
-  - {fileID: 8300000, guid: 5ce9035ad0f7d834b8241dd8c4ade184, type: 3}
-  - {fileID: 8300000, guid: f9f005d74421cf34391c0bc50a9c2dc6, type: 3}
-  - {fileID: 8300000, guid: ed0bff8154d70a74bacacafa7499212c, type: 3}
-  - {fileID: 8300000, guid: 84e3cd3017021c04eaa54f7232a921ea, type: 3}
-  - {fileID: 8300000, guid: 35fbf73d1d5363448a0fc54fa7bde65f, type: 3}
-  pickupClips:
-  - {fileID: 8300000, guid: e4e77d33d3f35e84683546885037e4e9, type: 3}
-  - {fileID: 8300000, guid: 7e3ca289f05d7984b81f30a887a3758c, type: 3}
-  - {fileID: 8300000, guid: 548d308209ee749489cd2e56816a1934, type: 3}
+  voiceLineChase:
+  - subtitleSet: HEY, GET OUT OF MY STORE
+    voiceSet: {fileID: 8300000, guid: a7d0463be23aedb44bda460f230564e0, type: 3}
+  - subtitleSet: GET THAT OUT OF HERE
+    voiceSet: {fileID: 8300000, guid: f6dcb85bc59020849a86b3271d9dfd4c, type: 3}
+  - subtitleSet: I FOUND YOU
+    voiceSet: {fileID: 8300000, guid: 5ce9035ad0f7d834b8241dd8c4ade184, type: 3}
+  - subtitleSet: LEAVE!
+    voiceSet: {fileID: 8300000, guid: f9f005d74421cf34391c0bc50a9c2dc6, type: 3}
+  - subtitleSet: LEEAVE!
+    voiceSet: {fileID: 8300000, guid: ed0bff8154d70a74bacacafa7499212c, type: 3}
+  - subtitleSet: LEAVE THIS PLACE!
+    voiceSet: {fileID: 8300000, guid: 84e3cd3017021c04eaa54f7232a921ea, type: 3}
+  - subtitleSet: GET THAT MERCHANDICE AWAY!
+    voiceSet: {fileID: 8300000, guid: 35fbf73d1d5363448a0fc54fa7bde65f, type: 3}
+  voiceLineWander:
+  - subtitleSet: Something feels wrong.
+    voiceSet: {fileID: 8300000, guid: 4df4e89530f6f0e4ca4a6e6c0c58eaee, type: 3}
+  - subtitleSet: I don't remember that being red.
+    voiceSet: {fileID: 8300000, guid: bc66f8663a60d484aae2a4f224e012ce, type: 3}
+  - subtitleSet: Something doesn't look right.
+    voiceSet: {fileID: 8300000, guid: 9860adcd4e9d1ce42a996038866168ba, type: 3}
+  - subtitleSet: I got a bad feeling about this.
+    voiceSet: {fileID: 8300000, guid: 1ab39847bb18e9c47a84ff8c778dd3f7, type: 3}
+  - subtitleSet: I know that person is coming around!
+    voiceSet: {fileID: 8300000, guid: 237371789ff9604418fb755a59376f1c, type: 3}
+  - subtitleSet: I know that person's hiding!
+    voiceSet: {fileID: 8300000, guid: 730d3eeeced747e4e8e4f3433eae5745, type: 3}
+  - subtitleSet: WHERE ARE YOU I KNOW YOU ARE AROUND.
+    voiceSet: {fileID: 8300000, guid: a4c4e032f033f034db2c11f72124ad65, type: 3}
+  voiceLineGrab:
+  - subtitleSet: HEY
+    voiceSet: {fileID: 8300000, guid: e4e77d33d3f35e84683546885037e4e9, type: 3}
+  - subtitleSet: GOT YOU
+    voiceSet: {fileID: 8300000, guid: 7e3ca289f05d7984b81f30a887a3758c, type: 3}
+  - subtitleSet: YOU
+    voiceSet: {fileID: 8300000, guid: 548d308209ee749489cd2e56816a1934, type: 3}
+  voiceLineThrow:
+  - subtitleSet: STAY OUT!
+    voiceSet: {fileID: 8300000, guid: d64128a55f187f74b9121280b538adfa, type: 3}
+  - subtitleSet: AND NEVER COME BACK!
+    voiceSet: {fileID: 8300000, guid: b232836a5404e1c44b855c7ceec6daea, type: 3}
+  - subtitleSet: I'LL CALL THE COPS NEXT TIME!
+    voiceSet: {fileID: 8300000, guid: 577fb2f140623a84faa1f26ef20c6a21, type: 3}
+  - subtitleSet: AND NEVER COME BACK!
+    voiceSet: {fileID: 8300000, guid: fbcb59ec32090984fa19b4dfea2a2a7a, type: 3}
+  - subtitleSet: YOU'RE NOT WELCOME!
+    voiceSet: {fileID: 8300000, guid: 189257a96db8b154795ca9090a76328d, type: 3}
   grabSFX: {fileID: 8300000, guid: 80aa14bd4eb499a479fa551a88760872, type: 3}
-  throwClips:
-  - {fileID: 8300000, guid: d64128a55f187f74b9121280b538adfa, type: 3}
-  - {fileID: 8300000, guid: b232836a5404e1c44b855c7ceec6daea, type: 3}
-  - {fileID: 8300000, guid: 577fb2f140623a84faa1f26ef20c6a21, type: 3}
-  - {fileID: 8300000, guid: fbcb59ec32090984fa19b4dfea2a2a7a, type: 3}
-  - {fileID: 8300000, guid: 189257a96db8b154795ca9090a76328d, type: 3}
   ThrowSFX: {fileID: 8300000, guid: c8c9fb980bdb69a4c80571ec575424ff, type: 3}
-  suspiciousClips:
-  - {fileID: 8300000, guid: 4df4e89530f6f0e4ca4a6e6c0c58eaee, type: 3}
-  - {fileID: 8300000, guid: bc66f8663a60d484aae2a4f224e012ce, type: 3}
-  - {fileID: 8300000, guid: 9860adcd4e9d1ce42a996038866168ba, type: 3}
-  - {fileID: 8300000, guid: 1ab39847bb18e9c47a84ff8c778dd3f7, type: 3}
-  - {fileID: 8300000, guid: 237371789ff9604418fb755a59376f1c, type: 3}
-  - {fileID: 8300000, guid: 730d3eeeced747e4e8e4f3433eae5745, type: 3}
-  - {fileID: 8300000, guid: a4c4e032f033f034db2c11f72124ad65, type: 3}
 --- !u!82 &4722902769252930214
 AudioSource:
   m_ObjectHideFlags: 0

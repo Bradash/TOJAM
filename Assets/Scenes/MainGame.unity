@@ -2929,15 +2929,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e3d7651e50b62ae44918394cacdccc00, type: 2}
-  m_sharedMaterial: {fileID: -32363718784353430, guid: e3d7651e50b62ae44918394cacdccc00, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 26e8a615273799a48b9a20d3244c78ff, type: 2}
+  m_sharedMaterial: {fileID: -32363718784353430, guid: 26e8a615273799a48b9a20d3244c78ff, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 3674210303
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.85490197}
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
@@ -18450,7 +18450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
       propertyPath: voiceLineWander.Array.data[3].subtitleSet
-      value: OH! A FLY WAS THERE
+      value: OH! MY FLY WAS DOWN.
       objectReference: {fileID: 0}
     - target: {fileID: 4387427022819270950, guid: 9d30023996881da4497b91e9c417d01d, type: 3}
       propertyPath: voiceLineWander.Array.data[4].subtitleSet

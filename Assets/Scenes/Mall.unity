@@ -14281,6 +14281,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1001 &1639374956
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7120623985899787737, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120623985899787737, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120623985899787737, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120623985899787737, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999726
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120623985899787737, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120623985899787737, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0023439003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120623985899787737, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120623985899787737, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120623985899787737, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.269
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120623985899787737, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609492811798187875, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
+      propertyPath: m_Name
+      value: vending machine (vending machine) 2 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 12fcc41724aea934a9a7541fef52e0c6, type: 3}
 --- !u!1 &1649848526
 GameObject:
   m_ObjectHideFlags: 0
@@ -19487,3 +19544,4 @@ SceneRoots:
   - {fileID: 501287530}
   - {fileID: 850512379}
   - {fileID: 475649030}
+  - {fileID: 1639374956}

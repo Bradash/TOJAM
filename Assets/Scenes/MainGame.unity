@@ -18051,6 +18051,14 @@ PrefabInstance:
       propertyPath: fpsController
       value: 
       objectReference: {fileID: 1218581012}
+    - target: {fileID: 4937989705131140611, guid: 7e970ddd477a76c4a971879713b28db3, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937989705131140611, guid: 7e970ddd477a76c4a971879713b28db3, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 9151969023589019386, guid: 7e970ddd477a76c4a971879713b28db3, type: 3}
       propertyPath: m_Name
       value: Inventory

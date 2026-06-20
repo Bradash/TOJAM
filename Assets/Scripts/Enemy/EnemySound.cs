@@ -31,11 +31,11 @@ public class EnemySound : MonoBehaviour
 
     public void playVoiceLine(AudioSet set)
     {
-        if(audioSource.isPlaying || (playerAudioSource != null && playerAudioSource.isPlaying)) return;
         VoiceLine voiceLine = null;
 switch (set)
         {
             case AudioSet.Chase:
+                if (audioSource.isPlaying) return;
                 voiceLine = voiceLineChase[Random.Range(0, voiceLineChase.Length)];
                 break;
             case AudioSet.Wander:
@@ -50,7 +50,7 @@ switch (set)
                 playerAudioSource.PlayOneShot(ThrowSFX);
                 break;
         }
-        if(voiceLine != null)
+        if (voiceLine != null)
         {
             audioSource.PlayOneShot(voiceLine.voiceSet);
             subtitles.SetSubtitle(voiceLine.subtitleSet);

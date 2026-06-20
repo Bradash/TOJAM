@@ -7,9 +7,14 @@ public class Subtitles : MonoBehaviour
     private void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
+        text.text = null;
     }
     public void SetSubtitle(string subtitle)
     {
-        text.text = subtitle;
+        if(GameSettings.subtitle) text.text = subtitle;
+    }
+    private void Update()
+    {
+        if(!GameSettings.subtitle && text.text != null) text.text = null;
     }
 }

@@ -18,6 +18,7 @@ public static class GameSettings
     const string KEY_MUSIC_VOLUME      = "settings.musicVolume";
     const string KEY_SFX_VOLUME        = "settings.sfxVolume";
     const string KEY_INVERT_Y          = "settings.invertY";
+    const string KEY_SUBTITLES = "settings.subtitles";
     const string KEY_FULLSCREEN        = "settings.fullscreen";
     const string KEY_RES_WIDTH         = "settings.resWidth";
     const string KEY_RES_HEIGHT        = "settings.resHeight";
@@ -28,6 +29,7 @@ public static class GameSettings
     public const float DefaultMusicVolume      = 1f;
     public const float DefaultSfxVolume        = 1f;
     public const bool  DefaultInvertY          = false;
+    public const bool  DefaultSubtitles        = true;
     public const bool  DefaultFullscreen       = true;
 
     // ── Ranges ──
@@ -67,11 +69,16 @@ public static class GameSettings
         get => PlayerPrefs.GetFloat(KEY_SFX_VOLUME, DefaultSfxVolume);
         set => SetFloat(KEY_SFX_VOLUME, Mathf.Clamp01(value));
     }
-
     public static bool InvertY
     {
         get => PlayerPrefs.GetInt(KEY_INVERT_Y, DefaultInvertY ? 1 : 0) != 0;
         set => SetInt(KEY_INVERT_Y, value ? 1 : 0);
+    }
+
+    public static bool subtitle
+    {
+        get => PlayerPrefs.GetInt(KEY_SUBTITLES, DefaultSubtitles ? 1 : 0) != 0;
+        set => SetInt(KEY_SUBTITLES, value ? 1 : 0);
     }
 
     public static bool Fullscreen
@@ -158,7 +165,7 @@ public static class GameSettings
         Screen.SetResolution(res.x, res.y, mode);
     }
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     static void ApplyAtStartup()
     {
         AudioListener.volume = MasterVolume;

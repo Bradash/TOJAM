@@ -15566,7 +15566,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 3c3ec87397e42d04996b20020069071c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 3fee67d1dee798b439f2e64e8ed030ce, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1958034063
 Transform:
@@ -17751,6 +17751,10 @@ PrefabInstance:
       propertyPath: playerAudioSource
       value: 
       objectReference: {fileID: 1397726218}
+    - target: {fileID: 8779687716670600721, guid: 8d17786f1573bb24895b2e0735f52c78, type: 3}
+      propertyPath: VoiceLines.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18047,6 +18051,14 @@ PrefabInstance:
       propertyPath: fpsController
       value: 
       objectReference: {fileID: 1218581012}
+    - target: {fileID: 4937989705131140611, guid: 7e970ddd477a76c4a971879713b28db3, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937989705131140611, guid: 7e970ddd477a76c4a971879713b28db3, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 9151969023589019386, guid: 7e970ddd477a76c4a971879713b28db3, type: 3}
       propertyPath: m_Name
       value: Inventory

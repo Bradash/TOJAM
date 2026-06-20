@@ -1,63 +1,71 @@
 using UnityEngine;
-
+public enum AudioSet { Chase, Wander, Grab, Throw }
 public class EnemySound : MonoBehaviour
 {
     private AudioSource audioSource;
     [SerializeField] AudioSource playerAudioSource;
-    [SerializeField] private AudioClip[] foundClips;
-    [SerializeField] private AudioClip[] pickupClips;
+    [SerializeField] VoiceLine[] voiceLineChase;
+    [SerializeField] VoiceLine[] voiceLineWander;
+    [SerializeField] VoiceLine[] voiceLineGrab;
+    [SerializeField] VoiceLine[] voiceLineThrow;
+
+    bool isPlayed;
+
     [SerializeField] private AudioClip grabSFX;
-    [SerializeField] private AudioClip[] throwClips;
     [SerializeField] private AudioClip ThrowSFX;
-    [SerializeField] private AudioClip[] suspiciousClips;
+
+    Subtitles subtitles;
+
+    [System.Serializable] public class VoiceLine
+    {
+        public string subtitleSet;
+        public AudioClip voiceSet;
+    }
+
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        subtitles = FindFirstObjectByType<Subtitles>();
     }
-    public void foundSound()
+
+    public void playVoiceLine(AudioSet set)
     {
-        if (foundClips.Length == 0)
+        VoiceLine voiceLine = null;
+switch (set)
         {
-            Debug.LogWarning("No enemy clips assigned.");
-            return;
+            case AudioSet.Chase:
+                if (audioSource.isPlaying) return;
+                voiceLine = voiceLineChase[Random.Range(0, voiceLineChase.Length)];
+                break;
+            case AudioSet.Wander:
+                voiceLine = voiceLineWander[Random.Range(0, voiceLineWander.Length)];
+                break;
+            case AudioSet.Grab:
+                voiceLine = voiceLineGrab[Random.Range(0, voiceLineGrab.Length)];
+                playerAudioSource.PlayOneShot(grabSFX);
+                break;
+            case AudioSet.Throw:
+                voiceLine = voiceLineThrow[Random.Range(0, voiceLineThrow.Length)];
+                playerAudioSource.PlayOneShot(ThrowSFX);
+                break;
         }
-        int randomIndex = Random.Range(0, foundClips.Length);
-        if(!audioSource.isPlaying)
+        if (voiceLine != null)
         {
-            audioSource.PlayOneShot(foundClips[randomIndex]);
+            audioSource.PlayOneShot(voiceLine.voiceSet);
+            subtitles.SetSubtitle(voiceLine.subtitleSet);
+            isPlayed = true;
         }
     }
-    public void pickupSound()
+    private void Update()
     {
-        if (pickupClips.Length == 0)
+        if (isPlayed)
         {
-            Debug.LogWarning("No pickup clips assigned.");
-            return;
+            if(!audioSource.isPlaying && (playerAudioSource == null || !playerAudioSource.isPlaying))
+            {
+                subtitles.SetSubtitle("");
+                isPlayed = false;
+            }  
         }
-        int randomIndex = Random.Range(0, pickupClips.Length);
-        audioSource.PlayOneShot(pickupClips[randomIndex]);
-        playerAudioSource.PlayOneShot(grabSFX);
-    }
-    public void suspiciousSound()
-    {
-        if (suspiciousClips.Length == 0)
-        {
-            Debug.LogWarning("No suspicious clips assigned.");
-            return;
-        }
-        int randomIndex = Random.Range(0, suspiciousClips.Length);
-        audioSource.PlayOneShot(suspiciousClips[randomIndex]);
-    }
-    public void throwSound()
-    {
-        if (throwClips.Length == 0)
-        {
-            Debug.LogWarning("No suspicious clips assigned.");
-            return;
-        }
-        int randomIndex = Random.Range(0, throwClips.Length);
-        audioSource.PlayOneShot(throwClips[randomIndex]);
-        playerAudioSource.PlayOneShot(ThrowSFX);
     }
 }

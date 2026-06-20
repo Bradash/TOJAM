@@ -33,7 +33,7 @@ public class EnemyStateGrabbing : EnemyState
 
         if (Enemy.frontDoor != null)
             Agent.SetDestination(Enemy.frontDoor.position);
-        Enemy.enemySound.pickupSound();
+        Enemy.enemySound.playVoiceLine(AudioSet.Grab);
     }
 
     public override void Tick()
@@ -81,6 +81,6 @@ public class EnemyStateGrabbing : EnemyState
         Vector3 kickImpulse = Enemy.frontDoor.forward * Enemy.kickForwardImpulse
                             + Vector3.up           * Enemy.kickUpImpulse;
         _playerFPS.GoToRagdoll(kickImpulse);
-        Enemy.enemySound.throwSound();
+        Enemy.enemySound.playVoiceLine(AudioSet.Throw);
     }
 }

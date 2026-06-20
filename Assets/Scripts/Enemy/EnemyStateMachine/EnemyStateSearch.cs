@@ -45,7 +45,7 @@ public class EnemyStateSearch : EnemyState
         if (Time.time >= _searchEndTime)
         {
             Enemy.GoToWander();
-            Enemy.enemySound.suspiciousSound();
+            Enemy.enemySound.playVoiceLine(AudioSet.Wander);
             return;
         }
 

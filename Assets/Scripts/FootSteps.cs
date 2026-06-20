@@ -9,7 +9,6 @@ public class FootSteps : MonoBehaviour
     private void Awake()
     {
        audioSource = GetComponent<AudioSource>();
-        footPitch = 0f;
     }
 
     private void Update()
@@ -19,8 +18,7 @@ public class FootSteps : MonoBehaviour
             if (!audioSource.isPlaying)
             {
                 audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
-                audioSource.pitch = Random.Range(0.8f, 1.2f);
-                audioSource.pitch = Random.Range(0.8f - footPitch, 1.2f - footPitch);
+                audioSource.pitch = Random.Range(0.8f + footPitch, 1.2f + footPitch);
                 audioSource.Play();
             }
         }

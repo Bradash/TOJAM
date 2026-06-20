@@ -182,35 +182,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySound
   playerAudioSource: {fileID: 0}
-  foundClips:
-  - {fileID: 8300000, guid: bfeef28f6e2f3c14194591ed7ae9eb6b, type: 3}
-  - {fileID: 8300000, guid: 8ae931e2787c3dc4fb66dbc99e7e3f23, type: 3}
-  - {fileID: 8300000, guid: 100ed2d60a5b90347a5a0ffc32055b20, type: 3}
-  - {fileID: 8300000, guid: 2e6e7980b3b4f9e459f131b76a784fa6, type: 3}
-  - {fileID: 8300000, guid: e85dcf48179047545b43ecf208b79ca2, type: 3}
-  - {fileID: 8300000, guid: 00a14e3e76a3bcf4f99d07337048b01b, type: 3}
-  - {fileID: 8300000, guid: 786e4bb54c066be428777e83adbaa606, type: 3}
-  pickupClips:
-  - {fileID: 8300000, guid: a10531bca203a7e4a9d14ca108671e1b, type: 3}
-  - {fileID: 8300000, guid: b04aafd2ddeafdf41ba3a4bf667c0c2b, type: 3}
-  - {fileID: 8300000, guid: 8c7123cb53a421a429c7d79954dbba90, type: 3}
-  - {fileID: 8300000, guid: 3dba33418cb1f604991d3b620f5c7a6f, type: 3}
-  - {fileID: 8300000, guid: da6e3990f2b63e04dbefadb8313d8dcd, type: 3}
+  voiceLineChase:
+  - subtitleSet: WHAT IN TARNATION?
+    voiceSet: {fileID: 8300000, guid: bfeef28f6e2f3c14194591ed7ae9eb6b, type: 3}
+  - subtitleSet: IFOUNDYANOWYOU!
+    voiceSet: {fileID: 8300000, guid: 8ae931e2787c3dc4fb66dbc99e7e3f23, type: 3}
+  - subtitleSet: GET OUT OF HERE!
+    voiceSet: {fileID: 8300000, guid: 100ed2d60a5b90347a5a0ffc32055b20, type: 3}
+  - subtitleSet: hooOOOHHH!
+    voiceSet: {fileID: 8300000, guid: 2e6e7980b3b4f9e459f131b76a784fa6, type: 3}
+  - subtitleSet: WHO THE HECK ARE YOU!?
+    voiceSet: {fileID: 8300000, guid: e85dcf48179047545b43ecf208b79ca2, type: 3}
+  - subtitleSet: GET YOUR GRUBBY HANDS OFF THAT!
+    voiceSet: {fileID: 8300000, guid: 00a14e3e76a3bcf4f99d07337048b01b, type: 3}
+  - subtitleSet: LOOKS LIKE IT'S OVERTIME!
+    voiceSet: {fileID: 8300000, guid: 786e4bb54c066be428777e83adbaa606, type: 3}
+  voiceLineWander:
+  - subtitleSet: I always hate monday!
+    voiceSet: {fileID: 8300000, guid: 07e731b34f1f5a84b89b924748d39368, type: 3}
+  - subtitleSet: WHERE ARE YOU I GOT A LOLLIPOP OR SOMETHING!?
+    voiceSet: {fileID: 8300000, guid: 7f2cfc7fcf26c18449c354ecf1d1e077, type: 3}
+  - subtitleSet: JUST WAIT TILL I GET MY HANDS ON YOU!
+    voiceSet: {fileID: 8300000, guid: 1dee6f787941d4f48bb8801523988bee, type: 3}
+  - subtitleSet: OH! MY FLY WAS DOWN.
+    voiceSet: {fileID: 8300000, guid: 48c07317c591720488167b5174522cf0, type: 3}
+  - subtitleSet: SHOPLIFTER SAYS WHAT!?
+    voiceSet: {fileID: 8300000, guid: e9fbfab209d70b24c8836075acc5691a, type: 3}
+  voiceLineGrab:
+  - subtitleSet: YOU GOT SOFT ARMS
+    voiceSet: {fileID: 8300000, guid: a10531bca203a7e4a9d14ca108671e1b, type: 3}
+  - subtitleSet: C'MERE!
+    voiceSet: {fileID: 8300000, guid: b04aafd2ddeafdf41ba3a4bf667c0c2b, type: 3}
+  - subtitleSet: OH NO YOU DON'T YOU'RE COMING WITH ME!
+    voiceSet: {fileID: 8300000, guid: 8c7123cb53a421a429c7d79954dbba90, type: 3}
+  - subtitleSet: WE GOT A LIVE ONE BOSS!
+    voiceSet: {fileID: 8300000, guid: 3dba33418cb1f604991d3b620f5c7a6f, type: 3}
+  - subtitleSet: NICE TRY BUCKAROO
+    voiceSet: {fileID: 8300000, guid: da6e3990f2b63e04dbefadb8313d8dcd, type: 3}
+  voiceLineThrow:
+  - subtitleSet: AND OFF WITH YA!
+    voiceSet: {fileID: 8300000, guid: f074287e26215b94689b1364797f3460, type: 3}
+  - subtitleSet: NEXT TIME YOU'RE GETTING A 5 FINGER DISCOUNT
+    voiceSet: {fileID: 8300000, guid: dcd638855ecc43548ab0ba406067947b, type: 3}
+  - subtitleSet: LOWER THE DIFFICULTY NEXT TIME!
+    voiceSet: {fileID: 8300000, guid: 265330ceccb243b479f0a4c50357266e, type: 3}
+  - subtitleSet: GOT LICK SOME PAVEMENT
+    voiceSet: {fileID: 8300000, guid: 5836af61061c5a74c974dfc8fe033a6c, type: 3}
+  - subtitleSet: AND NEVER COME BACK!
+    voiceSet: {fileID: 8300000, guid: 44e9c42fe00ddd843b6b36e561bc7093, type: 3}
+  - subtitleSet: NEXT TIME EAT A SALAD!
+    voiceSet: {fileID: 8300000, guid: 9ceecd2597bf934489dc0674224d6f75, type: 3}
   grabSFX: {fileID: 8300000, guid: 80aa14bd4eb499a479fa551a88760872, type: 3}
-  throwClips:
-  - {fileID: 8300000, guid: f074287e26215b94689b1364797f3460, type: 3}
-  - {fileID: 8300000, guid: dcd638855ecc43548ab0ba406067947b, type: 3}
-  - {fileID: 8300000, guid: 265330ceccb243b479f0a4c50357266e, type: 3}
-  - {fileID: 8300000, guid: 5836af61061c5a74c974dfc8fe033a6c, type: 3}
-  - {fileID: 8300000, guid: 44e9c42fe00ddd843b6b36e561bc7093, type: 3}
-  - {fileID: 8300000, guid: 9ceecd2597bf934489dc0674224d6f75, type: 3}
   ThrowSFX: {fileID: 8300000, guid: c8c9fb980bdb69a4c80571ec575424ff, type: 3}
-  suspiciousClips:
-  - {fileID: 8300000, guid: 07e731b34f1f5a84b89b924748d39368, type: 3}
-  - {fileID: 8300000, guid: 7f2cfc7fcf26c18449c354ecf1d1e077, type: 3}
-  - {fileID: 8300000, guid: 1dee6f787941d4f48bb8801523988bee, type: 3}
-  - {fileID: 8300000, guid: 48c07317c591720488167b5174522cf0, type: 3}
-  - {fileID: 8300000, guid: e9fbfab209d70b24c8836075acc5691a, type: 3}
 --- !u!82 &2219465040229047412
 AudioSource:
   m_ObjectHideFlags: 0
@@ -418,7 +441,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: adfc208fe92c0fe4eb4bf522a3fb95b6, type: 3}
   - {fileID: 8300000, guid: 91626f5b84ad2c14f9c1b201e267d3a1, type: 3}
   isWalking: 1
-  footPitch: 0
+  footPitch: -0.15
 --- !u!82 &4504793601992698285
 AudioSource:
   m_ObjectHideFlags: 0
@@ -432,7 +455,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -440,10 +463,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 2
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

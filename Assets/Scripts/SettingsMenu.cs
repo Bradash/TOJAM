@@ -23,6 +23,7 @@ public class SettingsMenu : MonoBehaviour
     public TMP_Text musicVolumeValueText;
     public Slider   sfxVolumeSlider;
     public TMP_Text sfxVolumeValueText;
+    public Toggle subtitlesToggle;
 
     [Header("Display")]
     public Toggle        fullscreenToggle;
@@ -40,6 +41,7 @@ public class SettingsMenu : MonoBehaviour
         BindVolume(masterVolumeSlider, masterVolumeValueText, () => GameSettings.MasterVolume, v => GameSettings.MasterVolume = v);
         BindVolume(musicVolumeSlider,  musicVolumeValueText,  () => GameSettings.MusicVolume,  v => GameSettings.MusicVolume  = v);
         BindVolume(sfxVolumeSlider,    sfxVolumeValueText,    () => GameSettings.SfxVolume,    v => GameSettings.SfxVolume    = v);
+        subtitles();
         BindFullscreen();
         BindResolution();
         BindReset();
@@ -51,7 +53,8 @@ public class SettingsMenu : MonoBehaviour
         if (invertYToggle      != null) invertYToggle.onValueChanged.RemoveListener(OnInvertYChanged);
         if (masterVolumeSlider != null) masterVolumeSlider.onValueChanged.RemoveAllListeners();
         if (musicVolumeSlider  != null) musicVolumeSlider.onValueChanged.RemoveAllListeners();
-        if (sfxVolumeSlider    != null) sfxVolumeSlider.onValueChanged.RemoveAllListeners();
+        if (subtitlesToggle != null) subtitlesToggle.onValueChanged.RemoveListener(OnSubtitlesChanged);
+        if (invertYToggle != null) invertYToggle.onValueChanged.RemoveListener(OnInvertYChanged);
         if (fullscreenToggle   != null) fullscreenToggle.onValueChanged.RemoveListener(OnFullscreenChanged);
         if (resolutionDropdown != null) resolutionDropdown.onValueChanged.RemoveListener(OnResolutionChanged);
         if (resetButton        != null) resetButton.onClick.RemoveListener(OnResetClicked);
@@ -83,7 +86,14 @@ public class SettingsMenu : MonoBehaviour
         invertYToggle.SetIsOnWithoutNotify(GameSettings.InvertY);
         invertYToggle.onValueChanged.AddListener(OnInvertYChanged);
     }
+    void subtitles()
+    {
+        if (subtitlesToggle == null) return;
+        subtitlesToggle.SetIsOnWithoutNotify(GameSettings.subtitle);
+        subtitlesToggle.onValueChanged.AddListener(OnSubtitlesChanged);
+    }
 
+    void OnSubtitlesChanged(bool v) => GameSettings.subtitle = v;
     void OnInvertYChanged(bool v) => GameSettings.InvertY = v;
 
     // ── Volume (generic) ──

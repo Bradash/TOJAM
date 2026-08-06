@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2337069045351062900
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.508
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.53
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.4642847
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7678227015000778414, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_Name
+      value: stand
+      objectReference: {fileID: 0}
+    - target: {fileID: -5365949894285169726, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_Name
+      value: beard
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_Name
+      value: magical potatoe statue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319648730747250577, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_Name
+      value: hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869004960016252962, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_Name
+      value: stick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762468722729179845, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_Name
+      value: potatoe
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164975102187080078, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_Name
+      value: pole
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670986931548730015, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -106
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5404d9f7ba86c6941ab9a2ddec6c2513, type: 3}

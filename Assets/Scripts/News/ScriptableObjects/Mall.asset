@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecaa5cff89a86e4cbbc03724194e635, type: 3}
+  m_Name: Mall
+  m_EditorClassIdentifier: Assembly-CSharp::NewsOutlet
+  outletText:
+  - TAYLOR SWIFT
+  - BABY BABY BABY OH
+  outletImg:
+  - {fileID: 2800000, guid: 1bf7309fcb5f25b4f98b4164c1871300, type: 3}
+  - {fileID: 2800000, guid: d81fd7cb7e77ee6418a65628e3ed6a7b, type: 3}
+  dialogueAudio:
+  - {fileID: 8300000, guid: 550b38f8e00748740956bbc4bef6fd4b, type: 3}
+  - {fileID: 8300000, guid: 7ed5add460019a54d8a47db1507cf862, type: 3}

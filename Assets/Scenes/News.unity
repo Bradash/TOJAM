@@ -668,6 +668,7 @@ MonoBehaviour:
   newsOutlets:
   - {fileID: 11400000, guid: 1de1c3a80a1fdb547af310c9a305a40e, type: 2}
   - {fileID: 11400000, guid: 33640cb3884ff5c4983fe3d6eadabfe4, type: 2}
+  - {fileID: 11400000, guid: 7a1d4fc9388f43d459ad8a9a528cf7f8, type: 2}
   newsTexts:
   - {fileID: 2107050496}
   - {fileID: 1284617248}

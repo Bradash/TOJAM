@@ -6789,7 +6789,7 @@ MonoBehaviour:
     voiceSet: {fileID: 8300000, guid: 24b355f79cc7c8641ba45cd06dde8966, type: 3}
   - subtitleSet: I think I hear a noise this way!
     voiceSet: {fileID: 8300000, guid: 63ff5bfb8d5e2f74281ccc5191556939, type: 3}
-  - subtitleSet: I hear a stray cat over yonder!
+  - subtitleSet: I hear a stray cat I wonder!
     voiceSet: {fileID: 8300000, guid: e76dec11bf34c814a8cee00da00bbd1b, type: 3}
   - subtitleSet: Hiding is for babies.
     voiceSet: {fileID: 8300000, guid: c4eeba704447fb14686f17e20032c3ad, type: 3}
@@ -6800,7 +6800,7 @@ MonoBehaviour:
       flight.
     voiceSet: {fileID: 8300000, guid: 0d1d1e178d8de484eb37e7f8f09fbd6d, type: 3}
   - subtitleSet: If you wanted some help maybe call let me solo her guy from that
-      famous game from some train some ring
+      famous game from some tree and a ring.
     voiceSet: {fileID: 8300000, guid: 9beba3b26d3a5374d8ee92a053f09f16, type: 3}
   - subtitleSet: 'It is important to outthink your enemy then to fight them, you
       failed in both those standards. '

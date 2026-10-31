@@ -8,8 +8,8 @@ public class ItemSystem : MonoBehaviour
     public static ItemSystem Instance { get; private set; }
     private readonly Dictionary<string, ItemDisplay> storeDisplays = new Dictionary<string, ItemDisplay>();
     private readonly List<string> availableDisplays = new List<string>();
-    public List<ItemData> storeItems = new List<ItemData>();
-    public List<ItemData> swappedItems = new List<ItemData>();
+    public ItemSet storeItems;
+    public ItemSet swappedItems;
     
     private void Awake()
     {
@@ -56,26 +56,14 @@ public class ItemSystem : MonoBehaviour
 
     public ItemData GetRandomItem(bool store)
     {
-        ItemData item = null;
-        if (store)
+        ItemSet itemSet = store ? storeItems : swappedItems;
+        if (itemSet == null || itemSet.items == null || itemSet.items.Count == 0)
         {
-            if (storeItems.Count == 0)
-            {
-                Debug.LogError("Store items not found");
-                return null;
-            } 
-            item = storeItems[Random.Range(0, swappedItems.Count)];
+            Debug.LogError(store ? "Store items not found" : "Swapped items not found");
+            return null;
         }
-        else
-        {
-            if (swappedItems.Count == 0)
-            {
-                Debug.LogError("Swapped items not found");
-                return null;
-            }
-            item = swappedItems[Random.Range(0, swappedItems.Count)];
-        }
-        return item;
+
+        return itemSet.items[Random.Range(0, itemSet.items.Count)];
     }
 
     public ItemDisplay GetDisplay(string location)

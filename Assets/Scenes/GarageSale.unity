@@ -15300,36 +15300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c487dddaecee2243834602c1a6ffbfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSystem
-  storeItems:
-  - {fileID: 11400000, guid: c513deb3aa9b827429f9fff7602e21a4, type: 2}
-  - {fileID: 11400000, guid: 4dec4bf90ce899b46bfa8d96abf4f931, type: 2}
-  - {fileID: 11400000, guid: a38cdc52308e9ee48bd2b6a6dc81711c, type: 2}
-  - {fileID: 11400000, guid: b2eaf6c5014c2c6408ec9605c4854c84, type: 2}
-  - {fileID: 11400000, guid: 1e1154bd0c5d145408e1060bdec3f485, type: 2}
-  - {fileID: 11400000, guid: ba69569ad459b724c84e4d19dfe76001, type: 2}
-  - {fileID: 11400000, guid: 721516ee4529f99438b154da4d07feba, type: 2}
-  - {fileID: 11400000, guid: a6f9f2ff00233cc4aa0e9b721801c9ae, type: 2}
-  - {fileID: 11400000, guid: adca85be57ed44147bd723feae18660d, type: 2}
-  - {fileID: 11400000, guid: eaaea221ebec8494bac3c9dbe49e5527, type: 2}
-  - {fileID: 11400000, guid: e4013d33a430eaf41b92ad42b154921f, type: 2}
-  - {fileID: 11400000, guid: 9730b15f10942154490ec799b85a078f, type: 2}
-  - {fileID: 11400000, guid: 74bb5712c202d0f4ca92ab8f8052116a, type: 2}
-  - {fileID: 11400000, guid: 1cb49d0473d6733438282de7f1009660, type: 2}
-  swappedItems:
-  - {fileID: 11400000, guid: eddbdd80821f5bf47926e2df2b7e1a26, type: 2}
-  - {fileID: 11400000, guid: 7b407b79c0d93174283f5c09c2c11e11, type: 2}
-  - {fileID: 11400000, guid: 0731b559f2845034088cd12149d7186e, type: 2}
-  - {fileID: 11400000, guid: 377966e29c835dc4fa5f482ed296bcd3, type: 2}
-  - {fileID: 11400000, guid: 7145b818de8bfcb40bdad7223dd53871, type: 2}
-  - {fileID: 11400000, guid: a014133dfed1400439a466cb3bdcb77c, type: 2}
-  - {fileID: 11400000, guid: c5d405bbb3fa807429a9832569bc4dbe, type: 2}
-  - {fileID: 11400000, guid: f182dc233ababd94a9bfbc39e20142ec, type: 2}
-  - {fileID: 11400000, guid: a72832ab3587fda42a04a34356bffe29, type: 2}
-  - {fileID: 11400000, guid: 604568cda99b02b4fa50d96e9ab60408, type: 2}
-  - {fileID: 11400000, guid: 55bed785c5a076a48883a7decc1de635, type: 2}
-  - {fileID: 11400000, guid: 9763d4e8121b8ca4a939c3e4225c4d7a, type: 2}
-  - {fileID: 11400000, guid: 54f30e2d97c53d74da7c51e1ae4984ef, type: 2}
-  - {fileID: 11400000, guid: 1915ffdb80e9fc143a304943a4ed6c01, type: 2}
+  storeItems: {fileID: 11400000, guid: 4583a915f737485c88239b7c8a5f6f21, type: 2}
+  swappedItems: {fileID: 11400000, guid: 9892e9a2973042c297171ddade5dcf47, type: 2}
 --- !u!4 &1919480997
 Transform:
   m_ObjectHideFlags: 0

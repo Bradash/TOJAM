@@ -15308,16 +15308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c487dddaecee2243834602c1a6ffbfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSystem
-  storeItems:
-  - {fileID: 11400000, guid: 1cb49d0473d6733438282de7f1009660, type: 2}
-  - {fileID: 11400000, guid: 721516ee4529f99438b154da4d07feba, type: 2}
-  - {fileID: 11400000, guid: 9730b15f10942154490ec799b85a078f, type: 2}
-  - {fileID: 11400000, guid: b2eaf6c5014c2c6408ec9605c4854c84, type: 2}
-  swappedItems:
-  - {fileID: 11400000, guid: eaaea221ebec8494bac3c9dbe49e5527, type: 2}
-  - {fileID: 11400000, guid: a6f9f2ff00233cc4aa0e9b721801c9ae, type: 2}
-  - {fileID: 11400000, guid: 4dec4bf90ce899b46bfa8d96abf4f931, type: 2}
-  - {fileID: 11400000, guid: ba69569ad459b724c84e4d19dfe76001, type: 2}
+  storeItems: {fileID: 11400000, guid: 746c2b01e0344834846de8bd31b78ce8, type: 2}
+  swappedItems: {fileID: 11400000, guid: 03125957f1de4b219acad9505e008d35, type: 2}
 --- !u!4 &1919480997
 Transform:
   m_ObjectHideFlags: 0

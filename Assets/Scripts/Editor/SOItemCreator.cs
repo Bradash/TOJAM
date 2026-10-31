@@ -18,6 +18,7 @@ public class SOItemCreator : EditorWindow
     [SerializeField] private bool regenerateExistingIcons;
     [SerializeField] private DefaultAsset searchFolder;
     [SerializeField] private bool onlyItemPrefabs = true;
+    [SerializeField] private bool alignBottomCenter;
 
     private ReorderableList prefabList;
     private Vector2 scroll;
@@ -40,7 +41,7 @@ public class SOItemCreator : EditorWindow
         internal string path;
         internal ItemData data;
         internal string status;
-        internal bool valid, skip, addComponent;
+        internal bool valid, skip, addComponent, repairPrefab;
     }
 
     [MenuItem("Tools/SO Item Creator")]
@@ -104,6 +105,8 @@ public class SOItemCreator : EditorWindow
             EditorGUI.BeginChangeCheck();
             targetFolder = (DefaultAsset)EditorGUILayout.ObjectField("Output Folder", targetFolder, typeof(DefaultAsset), false);
             mode = (CreationMode)EditorGUILayout.EnumPopup("Mode", mode);
+            alignBottomCenter = EditorGUILayout.Toggle(new GUIContent("Bottom-Center Pivot",
+                "Move the prefab's children so the visible bounds sit at the root origin, then fit its root BoxCollider."), alignBottomCenter);
             generatePreviewSprites = EditorGUILayout.Toggle("Generate Preview Sprites", generatePreviewSprites);
             if (mode == CreationMode.CreateOrUpdate && generatePreviewSprites)
                 regenerateExistingIcons = EditorGUILayout.Toggle("Regenerate Existing Icons", regenerateExistingIcons);
@@ -113,6 +116,7 @@ public class SOItemCreator : EditorWindow
             EditorGUILayout.LabelField("New assets go to", folder);
             if (!validFolder) EditorGUILayout.HelpBox(folderError, MessageType.Error);
             EditorGUILayout.HelpBox("Existing item names, transforms, and swap lists are preserved. Sprites are kept unless regeneration is selected. Missing root Item components are added automatically.", MessageType.Info);
+            EditorGUILayout.LabelField("Meshes belong on children; Item and BoxCollider stay on the root.", EditorStyles.wordWrappedMiniLabel);
 
             EditorGUILayout.Space();
             EditorGUILayout.BeginHorizontal();
@@ -242,11 +246,15 @@ public class SOItemCreator : EditorWindow
             return entry;
         }
         entry.valid = true;
+        entry.repairPrefab = ItemPrefabEditorUtils.NeedsRepair(prefab);
         entry.skip = mode == CreationMode.CreateMissingOnly && entry.data != null
-            && component != null && component.itemData == entry.data && entry.data.itemPrefab == prefab;
+            && component != null && component.itemData == entry.data && entry.data.itemPrefab == prefab
+            && !entry.repairPrefab && !alignBottomCenter;
         entry.status = entry.skip ? "Already linked; skipped."
             : entry.data == null ? "Create ItemData." : "Reuse existing ItemData.";
         if (entry.addComponent) entry.status += " Add root Item.";
+        if (entry.repairPrefab) entry.status += " Repair mesh/collider setup.";
+        if (alignBottomCenter) entry.status += " Align bottom-center pivot.";
         return entry;
     }
 
@@ -428,6 +436,7 @@ public class SOItemCreator : EditorWindow
             EditorUtility.SetDirty(data);
             PrefabUtility.SavePrefabAsset(entry.prefab, out bool saved);
             if (!saved) throw new IOException("Could not save the prefab.");
+            ItemPrefabEditorUtils.Prepare(entry.prefab, alignBottomCenter);
             AssetDatabase.SaveAssetIfDirty(data);
             Undo.FlushUndoRecordObjects();
             Undo.CollapseUndoOperations(group);

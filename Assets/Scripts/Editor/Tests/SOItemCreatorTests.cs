@@ -64,6 +64,126 @@ public class SOItemCreatorTests
         Assert.That(Get<int>("failed"), Is.Zero, Get<string>("summary"));
     }
 
+    private GameObject MeshPrefab(string name, bool meshOnRoot = true)
+    {
+        GameObject source = EditorUtility.CreateGameObjectWithHideFlags(name, HideFlags.HideAndDontSave);
+        SceneManager.MoveGameObjectToScene(source, previewScene);
+        source.hideFlags = HideFlags.None;
+        source.transform.SetPositionAndRotation(new Vector3(4, 5, 6), Quaternion.Euler(13, 37, 9));
+        source.transform.localScale = new Vector3(-2, 3, 0.5f);
+        source.AddComponent<Item>();
+        BoxCollider box = source.AddComponent<BoxCollider>();
+        box.isTrigger = true;
+        box.center = new Vector3(3, 5, 7);
+        box.size = new Vector3(6, 7, 8);
+        GameObject model = source;
+        if (!meshOnRoot)
+        {
+            model = new GameObject("Model");
+            model.transform.SetParent(source.transform, false);
+            model.transform.localPosition = new Vector3(2, -3, 5);
+            model.transform.localScale = new Vector3(2, 4, 6);
+        }
+        model.AddComponent<MeshFilter>().sharedMesh = Resources.GetBuiltinResource<Mesh>("Cube.fbx");
+        model.AddComponent<MeshRenderer>().sharedMaterial = AssetDatabase.GetBuiltinExtraResource<Material>("Default-Material.mat");
+        try { return PrefabUtility.SaveAsPrefabAsset(source, folder + "/" + name + ".prefab"); }
+        finally { Object.DestroyImmediate(source); }
+    }
+
+    private static void CloseTo(Vector3 actual, Vector3 expected)
+    {
+        Assert.That(Vector3.Distance(actual, expected), Is.LessThan(0.0001f));
+    }
+
+    [Test]
+    public void MovesRootMeshToChildAndKeepsItemAndColliderOnRoot()
+    {
+        GameObject prefab = MeshPrefab("Root mesh");
+        Mesh mesh = prefab.GetComponent<MeshFilter>().sharedMesh;
+        Material material = prefab.GetComponent<MeshRenderer>().sharedMaterial;
+        window.prefabsToConvert.Add(prefab);
+        RunBatch();
+        Assert.That(prefab.GetComponent<MeshFilter>(), Is.Null);
+        Assert.That(prefab.GetComponent<MeshRenderer>(), Is.Null);
+        Assert.That(prefab.GetComponent<Item>(), Is.Not.Null);
+        Assert.That(prefab.GetComponents<BoxCollider>().Length, Is.EqualTo(1));
+        Assert.That(prefab.GetComponent<BoxCollider>().isTrigger, Is.True);
+        Assert.That(prefab.transform.childCount, Is.EqualTo(1));
+        GameObject child = prefab.transform.GetChild(0).gameObject;
+        Assert.That(child.GetComponent<MeshFilter>().sharedMesh, Is.SameAs(mesh));
+        Assert.That(child.GetComponent<MeshRenderer>().sharedMaterial, Is.SameAs(material));
+        Assert.That(child.GetComponent<Item>(), Is.Null);
+        Assert.That(child.GetComponent<BoxCollider>(), Is.Null);
+        CloseTo(child.transform.localPosition, Vector3.zero);
+        CloseTo(prefab.GetComponent<BoxCollider>().center, Vector3.zero);
+        CloseTo(prefab.GetComponent<BoxCollider>().size, Vector3.one);
+        RunBatch();
+        Assert.That(Get<int>("skipped"), Is.EqualTo(1));
+        Assert.That(prefab.transform.childCount, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void BottomCenterAlignmentPreservesRootTransformAndIsIdempotent()
+    {
+        GameObject prefab = MeshPrefab("Pivot", false);
+        Vector3 position = prefab.transform.position;
+        Quaternion rotation = prefab.transform.rotation;
+        Vector3 scale = prefab.transform.localScale;
+        Set("alignBottomCenter", true);
+        window.prefabsToConvert.Add(prefab);
+        RunBatch();
+        Assert.That(BoxColliderEditorUtils.TryGetLocalBounds(prefab, out Bounds bounds), Is.True);
+        CloseTo(new Vector3(bounds.center.x, bounds.min.y, bounds.center.z), Vector3.zero);
+        CloseTo(prefab.GetComponent<BoxCollider>().center, bounds.center);
+        CloseTo(prefab.GetComponent<BoxCollider>().size, bounds.size);
+        CloseTo(prefab.transform.position, position);
+        CloseTo(prefab.transform.localScale, scale);
+        Assert.That(Quaternion.Angle(prefab.transform.rotation, rotation), Is.LessThan(0.001f));
+        Vector3 modelPosition = prefab.transform.GetChild(0).localPosition;
+        RunBatch();
+        Assert.That(prefab.transform.childCount, Is.EqualTo(1));
+        CloseTo(prefab.transform.GetChild(0).localPosition, modelPosition);
+    }
+
+    [Test]
+    public void ColliderFitHandlesRotatedMirroredRootsAndInactiveChildren()
+    {
+        GameObject prefab = MeshPrefab("Fit", false);
+        GameObject contents = PrefabUtility.LoadPrefabContents(AssetDatabase.GetAssetPath(prefab));
+        try
+        {
+            contents.transform.GetChild(0).gameObject.SetActive(false);
+            BoxCollider box = contents.GetComponent<BoxCollider>();
+            Assert.That(BoxColliderEditorUtils.FitToChildren(box, false), Is.True);
+            CloseTo(box.center, new Vector3(2, -3, 5));
+            CloseTo(box.size, new Vector3(2, 4, 6));
+        }
+        finally { PrefabUtility.UnloadPrefabContents(contents); }
+    }
+
+    [Test]
+    public void StructuralRepairSupportsUndoRedo()
+    {
+        GameObject prefab = MeshPrefab("Undo structure");
+        window.prefabsToConvert.Add(prefab);
+        Set("alignBottomCenter", true);
+        RunBatch();
+        Assert.That(prefab.GetComponent<MeshFilter>(), Is.Null);
+        Assert.That(prefab.transform.childCount, Is.EqualTo(1));
+        Undo.PerformUndo();
+        Assert.That(prefab.GetComponent<MeshFilter>(), Is.Not.Null);
+        Assert.That(prefab.GetComponent<MeshRenderer>(), Is.Not.Null);
+        Assert.That(prefab.transform.childCount, Is.Zero);
+        CloseTo(prefab.GetComponent<BoxCollider>().center, new Vector3(3, 5, 7));
+        CloseTo(prefab.GetComponent<BoxCollider>().size, new Vector3(6, 7, 8));
+        Undo.PerformRedo();
+        Assert.That(prefab.GetComponent<MeshFilter>(), Is.Null);
+        Assert.That(prefab.transform.childCount, Is.EqualTo(1));
+        Assert.That(prefab.GetComponent<Item>().itemData, Is.Not.Null);
+        Assert.That(BoxColliderEditorUtils.TryGetLocalBounds(prefab, out Bounds bounds), Is.True);
+        CloseTo(new Vector3(bounds.center.x, bounds.min.y, bounds.center.z), Vector3.zero);
+    }
+
     private object Entry(GameObject prefab)
     {
         window.prefabsToConvert.Clear();

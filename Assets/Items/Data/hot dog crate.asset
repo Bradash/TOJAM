@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: hot dog crate
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: hot dog crate
+  swappableItems:
+  - {fileID: 11400000, guid: 9763d4e8121b8ca4a939c3e4225c4d7a, type: 2}
   itemPrefab: {fileID: 6172007369845961082, guid: b3f66df7069df2446b8a272e7389981c, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
   itemScale: {x: 2, y: 2, z: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SwashSwappedItems
   m_EditorClassIdentifier: Assembly-CSharp::ItemSet
   items:
-  - {fileID: 11400000, guid: eaaea221ebec8494bac3c9dbe49e5527, type: 2}
-  - {fileID: 11400000, guid: a6f9f2ff00233cc4aa0e9b721801c9ae, type: 2}
-  - {fileID: 11400000, guid: 4dec4bf90ce899b46bfa8d96abf4f931, type: 2}
-  - {fileID: 11400000, guid: ba69569ad459b724c84e4d19dfe76001, type: 2}
+  - {fileID: 11400000, guid: 1915ffdb80e9fc143a304943a4ed6c01, type: 2}
+  - {fileID: 11400000, guid: c5d405bbb3fa807429a9832569bc4dbe, type: 2}
+  - {fileID: 11400000, guid: 9763d4e8121b8ca4a939c3e4225c4d7a, type: 2}
+  - {fileID: 11400000, guid: 377966e29c835dc4fa5f482ed296bcd3, type: 2}

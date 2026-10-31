@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 
 public class ItemDisplay : MonoBehaviour
@@ -37,45 +36,51 @@ public class ItemDisplay : MonoBehaviour
         if(!itemPosition)
             itemPosition = itemParent;
 
-        if (generateRandom)
-        {
-            itemData = itemSystem.GetRandomItem(storeDisplay);
-        }
-
-        if (itemData)
-        {
-            CreateItem();
-        }
+        CreateItem();
         Display();
     }
 
     [ContextMenu("TestItemDisplay")]
     private void TestItemDisplay()
     {
-        itemSystem = FindAnyObjectByType<ItemSystem>();
-        if (generateRandom)
-        {
-            itemData = itemSystem.GetRandomItem(storeDisplay);
-        }
-
-        if (itemData)
-        {
-            CreateItem();
-        }
-        else
-        {
-            Debug.LogWarning("TestItemDisplay: No item found");
-        }
+        CreateItem();
         Display();
     }
     public void CreateItem()
     {
+        itemSystem = Application.isPlaying ? ItemSystem.Instance : FindAnyObjectByType<ItemSystem>();
         string destination = location;
-        if (!storeDisplay)
-            destination = itemSystem.GetRandomAvailableDisplay();
- 
+        if (Application.isPlaying && itemSystem == null)
+        {
+            Debug.LogError("ItemDisplay needs an ItemSystem to prepare its item.", this);
+            return;
+        }
+        if (Application.isPlaying && itemSystem.HasSetup)
+        {
+            if (!itemSystem.TryGetSpawn(this, out ItemData preparedItem, out destination)) return;
+            if (generateRandom) itemData = preparedItem;
+        }
+        else
+        {
+            // Inspector previews and display-only scenes (without Setup) do not reserve destinations.
+            if (generateRandom && itemSystem != null) itemData = itemSystem.GetRandomItem(storeDisplay);
+            if (!storeDisplay) destination = Application.isPlaying ? "NA" : "Test 1";
+        }
+
+        if (itemData == null) return;
+        if (itemData.itemPrefab == null || !itemData.itemPrefab.TryGetComponent<Item>(out _))
+        {
+            Debug.LogError($"Item '{itemData.name}' needs a prefab with an Item component.", this);
+            return;
+        }
+        if (itemObject != null)
+        {
+            if (Application.isPlaying) Destroy(itemObject);
+            else DestroyImmediate(itemObject);
+        }
         itemObject = Instantiate(itemData.itemPrefab);
         item = itemObject.GetComponent<Item>();
+        item.itemData = itemData;
         item.itemDestination  = destination;
         item.storeItem = storeDisplay;
         item.itemDisplay = this;

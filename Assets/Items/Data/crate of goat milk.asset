@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: crate of goat milk
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: crate of goat milk
+  swappableItems:
+  - {fileID: 11400000, guid: c5d405bbb3fa807429a9832569bc4dbe, type: 2}
   itemPrefab: {fileID: 4187058031444417467, guid: d72e9eb1336507248afcb3ba40a17380, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
   itemScale: {x: 1.9, y: 1.9, z: 1.9}

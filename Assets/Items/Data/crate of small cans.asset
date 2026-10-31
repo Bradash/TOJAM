@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: crate of small cans
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: crate of small cans
+  swappableItems:
+  - {fileID: 11400000, guid: f182dc233ababd94a9bfbc39e20142ec, type: 2}
   itemPrefab: {fileID: 133187885602096500, guid: 28fef7d8878447f4686a48579e7bd82d, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
   itemScale: {x: 2, y: 2, z: 2}

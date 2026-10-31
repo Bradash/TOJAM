@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: box of crisps two
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: box of crisps two
+  swappableItems:
+  - {fileID: 11400000, guid: 377966e29c835dc4fa5f482ed296bcd3, type: 2}
+  - {fileID: 11400000, guid: 4dec4bf90ce899b46bfa8d96abf4f931, type: 2}
   itemPrefab: {fileID: 1700245748925546585, guid: 8d5c941a05fb78549a6cfb883a108686, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
   itemScale: {x: 2, y: 2, z: 2}

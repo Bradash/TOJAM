@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: small crate of cereal
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: small crate of cereal
+  swappableItems:
+  - {fileID: 11400000, guid: 1915ffdb80e9fc143a304943a4ed6c01, type: 2}
   itemPrefab: {fileID: 956476994414668145, guid: 37aa5e1cf037ca043a02defa9812d9b9, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
   itemScale: {x: 2, y: 2, z: 2}

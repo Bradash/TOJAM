@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 3rd crater of soda
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: 3rd crater of soda
+  swappableItems:
+  - {fileID: 11400000, guid: eddbdd80821f5bf47926e2df2b7e1a26, type: 2}
   itemPrefab: {fileID: 3282081187305998661, guid: 7c8d0136b74d48a48bedb6d0ad0b1585, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
   itemScale: {x: 2, y: 2, z: 2}

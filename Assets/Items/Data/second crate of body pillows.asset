@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: second crate of body pillows
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: second crate of body pillows
+  swappableItems:
+  - {fileID: 11400000, guid: 54f30e2d97c53d74da7c51e1ae4984ef, type: 2}
   itemPrefab: {fileID: 127585471650273619, guid: cba8b8efe6d730c418d016eb82255647, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
   itemScale: {x: 1, y: 1, z: 1}

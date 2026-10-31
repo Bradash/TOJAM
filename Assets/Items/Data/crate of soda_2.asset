@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: crate of soda_2
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: crate of soda_2
+  swappableItems:
+  - {fileID: 11400000, guid: 604568cda99b02b4fa50d96e9ab60408, type: 2}
   itemPrefab: {fileID: 3692545307412751367, guid: e383c50a4ad24344999609a30ce0aae9, type: 3}
   itemOffset: {x: 0, y: 0, z: 0}
   itemScale: {x: 1.8, y: 1.8, z: 1.8}

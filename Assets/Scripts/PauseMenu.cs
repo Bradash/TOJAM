@@ -30,6 +30,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        if (PowerUpShop.IsOpen) return;
         if (!Input.GetKeyDown(pauseKey)) return;
         if (GameManager.Instance != null && GameManager.Instance.GameOver) return;
 

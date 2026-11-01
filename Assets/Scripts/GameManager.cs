@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+        PowerUpProgress.BeginLevel(gameObject.scene.name);
+        if (GetComponent<LevelPowerUps>() == null) gameObject.AddComponent<LevelPowerUps>();
     }
 
     void Start()
@@ -78,7 +80,11 @@ public class GameManager : MonoBehaviour
     {
         if (_playerRespawn != null) _playerRespawn.OnRespawn -= HandleCaught;
         ItemInteraction.OnStoreSwapCompleted -= HandleSwap;
-        if (Instance == this) Instance = null;
+        if (Instance == this)
+        {
+            Instance = null;
+            PowerUpProgress.EndLevel(gameObject.scene.name);
+        }
     }
 
     void HandleCaught()
@@ -102,19 +108,18 @@ public class GameManager : MonoBehaviour
 
     void Win()
     {
+        if (GameOver) return;
+        GameOver = true;
+        PowerUpProgress.AwardWin(gameObject.scene.name);
+        OnWin?.Invoke();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene("WinCutscene");
-        /* 
-        GameOver = true;
-        if (winPanel) winPanel.SetActive(true);
-        FreezeAndUnlockCursor();
-        OnWin?.Invoke() 
-        */
     }
 
     void Lose()
     {
+        if (GameOver) return;
         GameOver = true;
         if (losePanel) losePanel.SetActive(true);
         FreezeAndUnlockCursor();
@@ -131,9 +136,10 @@ public class GameManager : MonoBehaviour
     /// <summary>Wire this to a Restart button's OnClick.</summary>
     public void Restart()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PowerUpShop.Open(SceneManager.GetActiveScene().name);
     }
+
+    public void TimeExpired() => Lose();
 
     void UpdateUI()
     {

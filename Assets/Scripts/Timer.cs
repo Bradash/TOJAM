@@ -7,18 +7,22 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI textMeshProUGUI;
     float currentTime;
     string timerText;
+    bool expired;
     private void Start()
     {
         currentTime = GameData.difficulty.timerAmount * 60;
     }
     private void Update()
     {
+        if (expired || (GameManager.Instance != null && GameManager.Instance.GameOver)) return;
         timerFormat();
         currentTime -= Time.deltaTime;
         textMeshProUGUI.text = "Time:" + timerText;
         if (currentTime <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            expired = true;
+            if (GameManager.Instance != null) GameManager.Instance.TimeExpired();
+            else PowerUpShop.Open(SceneManager.GetActiveScene().name);
         }
     }
     void timerFormat()

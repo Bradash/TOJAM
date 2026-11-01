@@ -20,7 +20,6 @@ public class StartGameButton : MonoBehaviour
 
     public void StartGame()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneToLoad);
+        PowerUpShop.Open(sceneToLoad);
     }
 }

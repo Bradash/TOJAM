@@ -133,6 +133,20 @@ public class EnemyAI : MonoBehaviour
         _stateMachine != null &&
         (_stateMachine.CurrentState == _grabbingState || _stateMachine.CurrentState == _returningState);
 
+    public bool CanAnswerPhone => isActiveAndEnabled && Agent != null && Agent.enabled && Agent.isOnNavMesh
+        && _stateMachine?.CurrentState != null && !IsHandlingCaught && !(_stateMachine.CurrentState is EnemyStatePhone);
+
+    public bool TryAnswerPhone(StorePhone phone)
+    {
+        if (phone == null || !CanAnswerPhone) return false;
+        Vector3 point = phone.answerPoint != null ? phone.answerPoint.position : phone.transform.position;
+        if (!NavMesh.SamplePosition(point, out NavMeshHit hit, 2f, Agent.areaMask)) return false;
+        NavMeshPath path = new NavMeshPath();
+        if (!Agent.CalculatePath(hit.position, path) || path.status != NavMeshPathStatus.PathComplete) return false;
+        _stateMachine.TransitionTo(new EnemyStatePhone(this, phone, path));
+        return true;
+    }
+
 #if UNITY_EDITOR
     void OnDrawGizmosSelected()
     {

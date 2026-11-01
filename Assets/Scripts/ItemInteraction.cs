@@ -89,19 +89,7 @@ public class ItemInteraction : MonoBehaviour
 
         if (hit.collider.CompareTag("Scouter"))
         {
-            if (!scouter)
-            {
-                scouter = FindFirstObjectByType<Scouter>();
-            }
-            if (scouter)
-            {
-                scouter.scouterOnline = true;
-                hit.collider.gameObject.SetActive(false);
-            }
-            else
-            {
-                Debug.LogWarning($"Interacted with a Scouter item, but the 'scouter' reference is missing on {gameObject.name}!", this);
-            }
+            // Scouter access now comes from the pre-level power-up loadout.
             return;
         }
 

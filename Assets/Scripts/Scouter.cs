@@ -6,6 +6,11 @@ public class Scouter : MonoBehaviour
     
     private Transform pointerTransform;
     public bool scouterOnline;
+    private void Start()
+    {
+        scouterOnline = PowerUpProgress.IsEquipped(PowerUpSelection.Scouter);
+        if (!scouterOnline && pointerObject != null) pointerObject.SetActive(false);
+    }
     private Transform PointerTransform
     {
         get
@@ -22,6 +27,7 @@ public class Scouter : MonoBehaviour
     public void SetLocation(ItemDisplay itemDisplay)
     {
         // 1. Guard clause in case itemDisplay or the pointer doesn't exist
+        if (pointerObject == null) return;
         if (!scouterOnline || itemDisplay == null || PointerTransform == null)
         {
             pointerObject.SetActive(false);

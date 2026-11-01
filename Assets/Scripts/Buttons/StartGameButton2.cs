@@ -20,7 +20,11 @@ public class StartGameButton2 : MonoBehaviour
 
     public void StartGame()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(scenesToLoad[GameData.currentLevel]);
+        if (scenesToLoad == null || GameData.currentLevel < 0 || GameData.currentLevel >= scenesToLoad.Length)
+        {
+            Debug.LogError("No scene is configured for the selected level.", this);
+            return;
+        }
+        PowerUpShop.Open(scenesToLoad[GameData.currentLevel]);
     }
 }

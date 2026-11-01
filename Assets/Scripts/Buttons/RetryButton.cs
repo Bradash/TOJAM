@@ -16,7 +16,6 @@ public class RetryButton : MonoBehaviour
 
     public void Retry()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PowerUpShop.Open(SceneManager.GetActiveScene().name);
     }
 }

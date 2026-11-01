@@ -13,8 +13,12 @@ public sealed class LevelPowerUps : MonoBehaviour
         if (phone != null) phone.Configure(PowerUpProgress.IsEquipped(PowerUpSelection.PhoneDistraction), PowerUpProgress.Catalog);
         if (!PowerUpProgress.IsEquipped(PowerUpSelection.Scouter)
             && !PowerUpProgress.IsEquipped(PowerUpSelection.PhoneDistraction)) return;
-        PowerUpHUD prefab = Resources.Load<PowerUpHUD>("PowerUps/PowerUpHUD");
-        if (prefab != null) Instantiate(prefab).Initialize(phone);
-        else Debug.LogError("Power-up HUD prefab is missing.", this);
+        PowerUpHUD powerUpHUD = FindFirstObjectByType<PowerUpHUD>(FindObjectsInactive.Include);
+        if (powerUpHUD != null)
+        {
+            powerUpHUD.gameObject.SetActive(true);
+            powerUpHUD.Initialize(phone);
+        }
+        else Debug.LogError("Power-up HUD is missing.", this);
     }
 }
